@@ -1,3 +1,20 @@
 Shoeb Raza — Portfolio (1).html
 * (1).html
 *.backup
+test_script.js
+
+# Exclude Series project (as requested)
+Portfolio_series/
+
+# Ignore loose root image dumps (assets/ is used instead)
+/Medipulse.png
+/aistdysuit.png
+/codextreme3.png
+/focusguard.png
+/indian_high_school.png
+/infosys.png
+/jansetu.png
+/lpu_building.png
+/lpubuilding.png
+/rapidx.png
+/Shoeb_Raza_Resume.pdf

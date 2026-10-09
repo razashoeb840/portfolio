@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
 
   <style>
@@ -4174,97 +4174,515 @@
       font-weight: 600;
     }
 
-    /* Certifications Carousel */
-    .cr {
+    /* =========================================================
+       DUAL CREDENTIALS SYSTEM (CERTIFICATIONS & ACHIEVEMENTS 1:1)
+       ========================================================= */
+    .cred-split-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      position: relative;
+      width: 100%;
+      margin-top: 36px;
+    }
+
+    .cred-split-col {
+      min-width: 0;
       overflow: hidden;
-      margin: 0 -32px;
-      padding: 12px 0;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-
-    .cr>div {
-      display: flex;
-      gap: 20px;
-      width: max-content;
-      animation: mq 42s linear infinite;
-    }
-
-    .cr:hover>div {
-      animation-play-state: paused;
-    }
-
-    .cc {
-      width: 320px;
-      flex: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      min-height: 230px;
-      padding: 24px 26px;
     }
 
-    .cc small {
-      margin: 0;
-      color: var(--acc2);
+    .cred-col-cert {
+      padding-right: 32px;
+      border-right: 1px solid rgba(0, 245, 255, 0.22);
+      position: relative;
     }
 
-    .cc h3 {
-      font-size: 20px;
-      line-height: 1.3;
+    /* Vertical illuminated border glow line */
+    .cred-col-cert::after {
+      content: '';
+      position: absolute;
+      top: 5%;
+      bottom: 5%;
+      right: -1px;
+      width: 1.5px;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 245, 255, 0.85) 30%, rgba(74, 91, 255, 0.85) 70%, transparent 100%);
+      box-shadow: 0 0 14px rgba(0, 245, 255, 0.5);
+      pointer-events: none;
     }
 
-    .cc p {
-      font-size: 14px;
+    .cred-col-ach {
+      padding-left: 32px;
+      position: relative;
+    }
+
+    @media (max-width: 960px) {
+      .cred-split-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .cred-col-cert {
+        padding-right: 0;
+        padding-bottom: 40px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 245, 255, 0.22);
+      }
+      .cred-col-cert::after {
+        top: auto;
+        bottom: -1px;
+        left: 5%;
+        right: 5%;
+        height: 1.5px;
+        width: auto;
+        background: linear-gradient(90deg, transparent 0%, rgba(0, 245, 255, 0.85) 30%, rgba(74, 91, 255, 0.85) 70%, transparent 100%);
+      }
+      .cred-col-ach {
+        padding-left: 0;
+      }
+    }
+
+    /* CYBER HEADER BAR MATCHING SCREENSHOT */
+    .cred-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: rgba(6, 9, 22, 0.82);
+      border: 1px solid rgba(0, 245, 255, 0.28);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 245, 255, 0.03);
+      backdrop-filter: blur(10px);
+      margin-bottom: 20px;
+    }
+
+    .cred-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cred-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid rgba(0, 245, 255, 0.45);
+      background: rgba(0, 245, 255, 0.08);
+      color: #00f5ff;
+      box-shadow: 0 0 12px rgba(0, 245, 255, 0.2);
+    }
+
+    .ach-header-bar .cred-badge-icon {
+      border-color: rgba(251, 191, 36, 0.45);
+      background: rgba(251, 191, 36, 0.08);
+      color: #fbbf24;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.2);
+    }
+
+    .cred-badge-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .cred-title-bold {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      font-family: 'Outfit', 'Inter', sans-serif;
+    }
+
+    .cred-title-sep {
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 15px;
+    }
+
+    .cred-title-count {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    .cred-header-tech {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       flex: 1;
-      color: var(--text-muted);
+      max-width: 200px;
+      margin-left: 18px;
     }
 
-    .cc em {
-      font-style: normal;
-      font-size: 12px;
-      letter-spacing: 0.14em;
+    .cred-tech-slashes {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(0, 245, 255, 0.65);
+      letter-spacing: 0.1em;
+    }
+    .ach-header-bar .cred-tech-slashes {
+      color: rgba(251, 191, 36, 0.65);
+    }
+
+    .cred-tech-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0, 245, 255, 0.4), rgba(0, 245, 255, 0.1));
+    }
+    .ach-header-bar .cred-tech-line {
+      background: linear-gradient(90deg, rgba(251, 191, 36, 0.4), rgba(251, 191, 36, 0.1));
+    }
+
+    .cred-tech-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .cred-tech-dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 1px;
+      background: rgba(0, 245, 255, 0.45);
+    }
+    .ach-header-bar .cred-tech-dots span {
+      background: rgba(251, 191, 36, 0.45);
+    }
+
+    /* SCROLL CONTAINER & RAIL */
+    .cred-scroll-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+      padding: 6px 0 16px;
+    }
+
+    .cred-scroll-rail {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 6px 4px 10px;
+      cursor: grab;
+      user-select: none;
+      will-change: scroll-position;
+      scroll-behavior: auto !important;
+    }
+
+    .cred-scroll-rail:active {
+      cursor: grabbing;
+    }
+
+    .cred-scroll-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* CARD DESIGN (SPACIOUS, CYBER NEON, HIGH CONTRAST) */
+    .cred-card {
+      flex: 0 0 420px;
+      width: 420px;
+      min-height: 240px;
+      display: flex;
+      align-items: stretch;
+      gap: 18px;
+      padding: 24px 24px;
+      border-radius: 16px;
+      background: rgba(6, 9, 22, 0.88);
+      border: 1px solid rgba(0, 245, 255, 0.28);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), inset 0 0 20px rgba(0, 245, 255, 0.04);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 480px) {
+      .cred-card {
+        flex: 0 0 330px;
+        width: 330px;
+        min-height: 250px;
+        padding: 18px 16px;
+        gap: 14px;
+      }
+    }
+
+    /* Skills Chips inside Card */
+    .cred-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin: 8px 0 14px;
+    }
+
+    .cred-chip {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2.5px 7.5px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #cbd5e1;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cred-card:hover .cred-chip {
+      border-color: rgba(0, 245, 255, 0.3);
+      color: #ffffff;
+      background: rgba(0, 245, 255, 0.08);
+    }
+
+    @media (max-width: 480px) {
+      .cred-card {
+        flex: 0 0 310px;
+        width: 310px;
+        padding: 14px 16px;
+        gap: 13px;
+      }
+    }
+
+    .cred-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 245, 255, 0.7);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 245, 255, 0.28);
+    }
+
+    .cred-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      pointer-events: none;
+    }
+
+    /* Logo Box */
+    .cred-logo-box {
+      width: 68px;
+      height: 68px;
+      min-width: 68px;
+      align-self: flex-start;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8px;
+    }
+
+    .cred-logo-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* Themed Logo Box & Card Accents */
+    .cred-card-oracle .cred-logo-box {
+      border: 1.5px solid rgba(235, 30, 30, 0.55);
+      background: radial-gradient(circle, rgba(235, 30, 30, 0.18) 0%, rgba(12, 5, 8, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(235, 30, 30, 0.25);
+    }
+    .cred-card-oracle:hover {
+      border-color: rgba(235, 30, 30, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(235, 30, 30, 0.28);
+    }
+
+    .cred-card-infosys .cred-logo-box {
+      border: 1.5px solid rgba(0, 150, 255, 0.55);
+      background: radial-gradient(circle, rgba(0, 150, 255, 0.18) 0%, rgba(4, 10, 25, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(0, 150, 255, 0.25);
+    }
+    .cred-card-infosys:hover {
+      border-color: rgba(0, 150, 255, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 150, 255, 0.28);
+    }
+
+    .cred-card-lpu .cred-logo-box {
+      border: 1.5px solid rgba(245, 158, 11, 0.55);
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(18, 12, 4, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(245, 158, 11, 0.25);
+    }
+    .cred-card-lpu:hover {
+      border-color: rgba(245, 158, 11, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(245, 158, 11, 0.28);
+    }
+
+    .cred-card-flipkart .cred-logo-box {
+      border: 1.5px solid rgba(251, 191, 36, 0.55);
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(20, 15, 4, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.25);
+    }
+    .cred-card-flipkart:hover {
+      border-color: rgba(251, 191, 36, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(251, 191, 36, 0.28);
+    }
+
+    .cred-card-leetcode .cred-logo-box {
+      border: 1.5px solid rgba(16, 185, 129, 0.55);
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(4, 18, 10, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+    }
+    .cred-card-leetcode:hover {
+      border-color: rgba(16, 185, 129, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(16, 185, 129, 0.28);
+    }
+
+    .cred-card-codechef .cred-logo-box {
+      border: 1.5px solid rgba(217, 119, 6, 0.55);
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, rgba(22, 12, 4, 0.9) 100%);
+      box-shadow: 0 0 16px rgba(217, 119, 6, 0.25);
+    }
+    .cred-card-codechef:hover {
+      border-color: rgba(217, 119, 6, 0.65);
+      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.85), 0 0 24px rgba(217, 119, 6, 0.28);
+    }
+
+    /* Card Content */
+    .cred-card-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+      height: 100%;
+    }
+
+    .cred-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .cred-issuer {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cred-card-oracle .cred-issuer { color: #ff4d4d; }
+    .cred-card-infosys .cred-issuer { color: #38bdf8; }
+    .cred-card-lpu .cred-issuer { color: #fbbf24; }
+    .cred-card-flipkart .cred-issuer { color: #fde047; }
+    .cred-card-leetcode .cred-issuer { color: #34d399; }
+    .cred-card-codechef .cred-issuer { color: #f59e0b; }
+
+    .cred-dash {
+      opacity: 0.55;
     }
 
-    /* Cert card top row: label + optional link badge */
-    .cc-top {
+    .cred-arrow {
+      color: #00f5ff;
+      font-size: 15px;
+      font-weight: 700;
+      transition: transform 0.25s ease;
+    }
+    .cred-card:hover .cred-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .cred-proof-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 99px;
+      background: rgba(0, 245, 255, 0.12);
+      border: 1px solid rgba(0, 245, 255, 0.38);
+      color: #00f5ff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+    .cred-card:hover .cred-proof-badge {
+      background: rgba(0, 245, 255, 0.28);
+      border-color: #00f5ff;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+      transform: translateY(-1px);
+    }
+
+    .cred-pill-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0, 245, 255, 0.12) !important;
+      border: 1px solid rgba(0, 245, 255, 0.38) !important;
+      color: #00f5ff !important;
+      transition: all 0.25s ease;
+    }
+    .cred-card:hover .cred-pill-proof {
+      background: rgba(0, 245, 255, 0.28) !important;
+      border-color: #00f5ff !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+    }
+
+    .cred-card-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #ffffff;
+      margin: 0 0 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cred-card-detail {
+      font-size: 11.5px;
+      line-height: 1.4;
+      color: #cbd5e1;
+      margin: 0 0 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cred-card-meta {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
     }
 
-    .cc-badge-link {
-      font-size: 10px;
+    .cred-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 3px 9px;
-      border-radius: 99px;
-      background: rgba(0, 245, 255, 0.12);
-      border: 1px solid rgba(0, 245, 255, 0.35);
-      color: var(--acc2);
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: background 0.2s, border-color 0.2s;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
     }
 
-    .cc-link:hover .cc-badge-link {
-      background: rgba(0, 245, 255, 0.22);
-      border-color: var(--acc2);
-    }
-
-    .cc-link {
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-    }
-
-    .cc-link:hover {
-      border-color: var(--acc2) !important;
-      box-shadow: 0 0 0 1px rgba(0, 245, 255, 0.25), 0 8px 30px rgba(0, 245, 255, 0.08) !important;
-      transform: translateY(-3px);
+    .cred-pill {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(0, 245, 255, 0.1);
+      border: 1px solid rgba(0, 245, 255, 0.25);
+      color: #00f5ff;
+      text-transform: uppercase;
     }
 
     /* =========================================
@@ -4581,6 +4999,1362 @@
         transform: none;
       }
     }
+
+    /* ===================================================
+       SERIES TRAILER HERO BUTTON (PORTFOLIO SERIES STYLE)
+       =================================================== */
+    .hero-btn-trailer {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(3, 16, 28, 0.94) 0%, rgba(13, 11, 32, 0.96) 100%);
+      border: 1.5px solid rgba(0, 245, 255, 0.5);
+      color: #ffffff;
+      cursor: pointer;
+      text-decoration: none;
+      overflow: hidden;
+      box-shadow: 0 0 24px rgba(0, 245, 255, 0.25), inset 0 0 14px rgba(0, 245, 255, 0.1), 0 10px 28px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2;
+    }
+
+    .hero-btn-trailer::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 999px;
+      background: conic-gradient(from 0deg, #00f5ff, #6366f1, #c084fc, #00f5ff);
+      z-index: -2;
+      opacity: 0.45;
+      animation: spinConic 6s linear infinite;
+    }
+
+    .hero-btn-trailer::after {
+      content: '';
+      position: absolute;
+      inset: 1.5px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(3, 16, 28, 0.96) 0%, rgba(12, 10, 28, 0.97) 100%);
+      z-index: -1;
+    }
+
+    @keyframes spinConic {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-btn-trailer:hover {
+      transform: translateY(-2px) scale(1.02);
+      border-color: #00f5ff;
+      box-shadow: 0 0 38px rgba(0, 245, 255, 0.65), 0 12px 36px rgba(0, 0, 0, 0.75);
+    }
+
+    .trailer-btn-icon-wrap {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00f5ff 0%, #6366f1 100%);
+      color: #040409;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 10px rgba(0, 245, 255, 0.7);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .hero-btn-trailer:hover .trailer-btn-icon-wrap {
+      transform: scale(1.1);
+    }
+
+    .trailer-btn-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 13.5px;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .trailer-btn-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      padding: 2.5px 7px;
+      border-radius: 99px;
+      background: rgba(0, 245, 255, 0.16);
+      border: 1px solid rgba(0, 245, 255, 0.6);
+      color: #00f5ff;
+      text-transform: uppercase;
+      box-shadow: 0 0 8px rgba(0, 245, 255, 0.35);
+      white-space: nowrap;
+    }
+
+    /* FULLSCREEN CINEMATIC TRAILER MODAL OVERLAY */
+    .trailer-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #030409;
+      color: #ffffff;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+      user-select: none;
+    }
+
+    .trailer-modal[hidden] {
+      display: none !important;
+    }
+
+    .trailer-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* VIGNETTE & AMBIENT RADIAL GLOW */
+    .trailer-ambient-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 60% at 50% 45%, rgba(0, 245, 255, 0.22), rgba(99, 102, 241, 0.12) 40%, transparent 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ZOOM PHASE PORTRAIT LAYER */
+    .trailer-portrait-layer {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      transform-origin: 50% 30%;
+      pointer-events: none;
+      z-index: 2;
+      transition: transform 1.7s cubic-bezier(0.7, 0, 0.2, 1), opacity 1.7s cubic-bezier(0.7, 0, 0.2, 1), filter 1.2s ease;
+    }
+
+    .trailer-portrait-img {
+      height: 88vh;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    }
+
+    /* When zooming */
+    .trailer-modal.phase-zoom .trailer-portrait-layer {
+      transform: scale(2.6);
+      opacity: 0;
+    }
+
+    /* When in reel mode, faint blurred background */
+    .trailer-modal.phase-reel .trailer-portrait-layer {
+      transform: scale(1.25);
+      opacity: 0.08;
+      filter: blur(8px);
+    }
+
+    /* TOP PROGRESS BARS */
+    .trailer-progress-wrap {
+      position: absolute;
+      inset-x: 0;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      gap: 6px;
+      padding: 16px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .trailer-progress-wrap {
+        padding: 24px 40px;
+        gap: 8px;
+      }
+    }
+
+    .trailer-prog-bar {
+      height: 3px;
+      flex: 1;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.16);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .trailer-prog-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00f5ff, #8b5cf6);
+      border-radius: 4px;
+      transform-origin: left;
+      transition: width 0.08s linear;
+    }
+
+    .trailer-prog-bar.completed .trailer-prog-fill {
+      width: 100% !important;
+    }
+
+    /* REEL CENTER CONTENT */
+    .trailer-reel-stage {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px 20px;
+      max-width: 960px;
+      width: 100%;
+      min-height: 480px;
+    }
+
+    .trailer-slide-card {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      opacity: 0;
+      transform: scale(1.06);
+      filter: blur(14px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .trailer-slide-card.active {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+      filter: blur(0px);
+    }
+
+    /* EPISODE KICKER */
+    .trailer-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.45em;
+      color: #00f5ff;
+      margin-bottom: 14px;
+      text-shadow: 0 0 12px rgba(0, 245, 255, 0.5);
+    }
+
+    @media (min-width: 640px) {
+      .trailer-kicker {
+        font-size: 12.5px;
+        letter-spacing: 0.5em;
+        margin-bottom: 18px;
+      }
+    }
+
+    /* GIANT DISPLAY TITLE */
+    .trailer-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.4rem, 7.5vw, 6.2rem);
+      font-weight: 900;
+      line-height: 0.92;
+      color: #ffffff;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    /* LINES WRAPPER */
+    .trailer-lines-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 820px;
+      margin: 0 auto 20px;
+    }
+
+    .trailer-line {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(14px, 1.8vw, 19px);
+      color: rgba(230, 233, 255, 0.88);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .trailer-line strong {
+      color: #00f5ff;
+      font-weight: 700;
+    }
+
+    /* CHIPS WRAPPER */
+    .trailer-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      max-width: 760px;
+    }
+
+    .trailer-chip {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 14px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(0, 245, 255, 0.35);
+      color: #f4f5ff;
+      box-shadow: 0 0 12px rgba(0, 245, 255, 0.12);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+    }
+
+    .trailer-chip.highlight {
+      background: rgba(0, 245, 255, 0.15);
+      border-color: #00f5ff;
+      color: #00f5ff;
+      box-shadow: 0 0 16px rgba(0, 245, 255, 0.35);
+    }
+
+    /* FINALE SLIDE: NOW STREAMING */
+    .trailer-finale-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .trailer-now-streaming {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+      text-transform: uppercase;
+    }
+
+    .trailer-stream-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.45em;
+      color: #00f5ff;
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+
+    .trailer-finale-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .trailer-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 99px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .trailer-action-btn.primary {
+      background: linear-gradient(135deg, #00f5ff 0%, #6366f1 100%);
+      color: #040409;
+      box-shadow: 0 0 25px rgba(0, 245, 255, 0.5);
+    }
+
+    .trailer-action-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(0, 245, 255, 0.8);
+    }
+
+    .trailer-action-btn.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
+
+    .trailer-action-btn.secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: #00f5ff;
+      transform: translateY(-2px);
+    }
+
+    /* TOUCH / CLICK TAP ZONES (LEFT 25% / RIGHT 25%) */
+    .trailer-tap-zone {
+      position: absolute;
+      inset-y: 0;
+      width: 25%;
+      z-index: 25;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+    }
+
+    .trailer-tap-left { left: 0; }
+    .trailer-tap-right { right: 0; }
+
+    /* BOTTOM CONTROLS BAR */
+    .trailer-bottom-bar {
+      position: absolute;
+      inset-x: 0;
+      bottom: 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .trailer-bottom-bar {
+        padding: 24px 40px;
+      }
+    }
+
+    .trailer-left-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .trailer-ctrl-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.4);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .trailer-ctrl-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #00f5ff;
+      color: #00f5ff;
+    }
+
+    .trailer-key-hints {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: rgba(255, 255, 255, 0.5);
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .trailer-key-hints {
+        display: block;
+      }
+    }
+
+    .trailer-close-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      padding: 10px 22px;
+      border-radius: 99px;
+      background: #00f5ff;
+      color: #040409;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.45);
+    }
+
+    .trailer-close-btn:hover {
+      background: #ffffff;
+      transform: scale(1.04);
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.7);
+    }
+
+    /* ===================================================
+       PLAY INTRO HERO BUTTON (SERIES STYLE)
+       =================================================== */
+    .hero-btn-play-intro {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 28px;
+      border-radius: 999px;
+      background: #00f5ff;
+      color: #030409;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 24px rgba(0, 245, 255, 0.45), 0 8px 24px rgba(0, 0, 0, 0.5);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-btn-play-intro:hover {
+      transform: translateY(-2px) scale(1.03);
+      background: #ffffff;
+      color: #030409;
+      box-shadow: 0 0 40px rgba(0, 245, 255, 0.8), 0 12px 32px rgba(0, 0, 0, 0.7);
+    }
+
+    .intro-play-triangle {
+      font-size: 13px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    /* OUTLINE TEXT UTILITY */
+    .text-outline {
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0.38);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      transition: -webkit-text-stroke-color 0.4s ease;
+    }
+
+    /* ===================================================
+       SEASONS "MY JOURNEY" SECTION (SERIES REPO 1:1)
+       =================================================== */
+    .seasons-section {
+      position: relative;
+      padding: 100px 0 80px;
+      overflow: hidden;
+    }
+
+    .seasons-heading-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    @media (min-width: 768px) {
+      .seasons-heading-row {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    .seasons-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: #00f5ff;
+      margin-bottom: 6px;
+    }
+
+    .seasons-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .seasons-aside-text {
+      font-size: 14px;
+      color: #abb0d8;
+      max-width: 320px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* SEASON TABS RAIL */
+    .seasons-tabs-rail {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 12px;
+      margin-bottom: 32px;
+    }
+
+    .seasons-tabs-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .season-tab-btn {
+      position: relative;
+      flex-shrink: 0;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #abb0d8;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .season-tab-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(0, 245, 255, 0.4);
+    }
+
+    .season-tab-btn.active {
+      background: #ffffff;
+      color: #030409;
+      border-color: #ffffff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .season-tab-num {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .season-tab-name {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* ACTIVE SEASON HEADER */
+    .season-active-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+
+    .season-active-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .season-active-title .season-ghost-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+    }
+
+    .season-period-badge {
+      font-size: 14px;
+      color: #abb0d8;
+      font-weight: 500;
+    }
+
+    .season-synopsis {
+      font-size: 15px;
+      color: rgba(230, 233, 255, 0.82);
+      max-width: 800px;
+      line-height: 1.6;
+      margin: 0 0 28px;
+    }
+
+    /* EPISODES RAIL */
+    .episodes-rail-wrap {
+      position: relative;
+    }
+
+    .episodes-rail {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 10px 0 24px;
+    }
+
+    .episodes-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .episode-card {
+      flex: 0 0 min(82vw, 360px);
+      scroll-snap-align: start;
+      border-radius: 18px;
+      background: #080a18;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .episode-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 245, 255, 0.5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(0, 245, 255, 0.2);
+    }
+
+    .episode-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px 16px;
+    }
+
+    .episode-thumb.pal-amber {
+      background: linear-gradient(135deg, #1f1103 0%, #7c4305 60%, #0a0703 100%);
+    }
+
+    .episode-thumb.pal-violet {
+      background: linear-gradient(135deg, #170428 0%, #5b1a8f 60%, #09030e 100%);
+    }
+
+    .episode-thumb.pal-cyan {
+      background: linear-gradient(135deg, #021a22 0%, #006c84 60%, #040e14 100%);
+    }
+
+    .episode-thumb.pal-crimson {
+      background: linear-gradient(135deg, #2a050e 0%, #8f0e29 60%, #0c0307 100%);
+    }
+
+    .episode-thumb.pal-ocean {
+      background: linear-gradient(135deg, #041624 0%, #0f5982 60%, #050a10 100%);
+    }
+
+    .episode-thumb.pal-jade {
+      background: linear-gradient(135deg, #021a0d 0%, #0e6b3b 60%, #030f08 100%);
+    }
+
+    .episode-watermark {
+      position: absolute;
+      right: 8px;
+      bottom: -18px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 7.2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .episode-top-badges {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ep-season-pill {
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: #ffffff;
+    }
+
+    .ep-num-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .episode-thumb-title {
+      position: relative;
+      z-index: 2;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #ffffff;
+      margin: 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .episode-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .episode-runtime-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .episode-runtime {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #00f5ff;
+    }
+
+    .episode-play-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: grid;
+      place-items: center;
+      font-size: 10px;
+      color: #ffffff;
+      transition: all 0.2s ease;
+    }
+
+    .episode-card:hover .episode-play-icon {
+      background: #00f5ff;
+      border-color: #00f5ff;
+      color: #030409;
+      transform: scale(1.1);
+    }
+
+    .episode-desc {
+      font-size: 13px;
+      color: rgba(230, 233, 255, 0.8);
+      line-height: 1.55;
+      margin: 0 0 16px;
+    }
+
+    .episode-tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .episode-tag {
+      font-size: 11px;
+      color: #abb0d8;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 99px;
+      padding: 3px 9px;
+    }
+
+    /* RAIL NAV BUTTONS */
+    .rail-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(8, 10, 24, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .rail-btn:hover {
+      background: #00f5ff;
+      border-color: #00f5ff;
+      color: #030409;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .rail-btn.prev { left: -16px; }
+    .rail-btn.next { right: -16px; }
+
+    /* ===================================================
+       TOP PICKS AUTO-SCROLL RAIL & CARDS (INFINITE GLIDE)
+       =================================================== */
+    /* ===================================================
+       TOP PICKS PREMIUM CARDS & CLEAR HEADINGS
+       =================================================== */
+    .top-picks-section {
+      position: relative;
+      padding: 85px 0 95px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    #top-picks .seasons-kicker {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      color: #ff3d5a;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    #top-picks .seasons-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1.5px;
+      background: #ff3d5a;
+    }
+
+    #top-picks .seasons-main-title {
+      font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f4f1ec;
+      margin: 0;
+    }
+
+    .top-picks-fullwidth-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+    }
+
+    .top-picks-rail {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: auto !important;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 24px 44px 38px;
+      touch-action: pan-y;
+      overscroll-behavior-y: auto;
+      overscroll-behavior-x: contain;
+      cursor: grab;
+      user-select: none;
+      will-change: scroll-position;
+    }
+
+    .top-picks-rail:active {
+      cursor: grabbing;
+    }
+
+    .top-picks-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .top-pick-item {
+      display: flex;
+      align-items: flex-end;
+      flex-shrink: 0;
+      height: 300px;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* OUTLINE RANK - EXACT BEBAS NEUE DISPLAY TYPOGRAPHY */
+    .top-pick-rank {
+      font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+      font-size: clamp(10.5rem, 24vw, 17.5rem);
+      font-weight: 400;
+      line-height: 0.78;
+      letter-spacing: 0;
+      margin-right: -24px;
+      user-select: none;
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(244, 241, 236, 0.28);
+      transition: -webkit-text-stroke-color 0.4s ease, transform 0.4s ease;
+    }
+
+    .top-pick-item:hover .top-pick-rank {
+      -webkit-text-stroke-color: rgba(0, 245, 255, 0.85);
+      transform: translateX(-4px);
+    }
+
+    .top-pick-rank.rank-10,
+    .top-pick-item[data-rank="10"] .top-pick-rank {
+      font-size: clamp(8.8rem, 20vw, 14.5rem);
+      letter-spacing: -0.06em;
+      margin-right: -28px;
+    }
+
+    /* CARD CONTAINER - EXACT SERIES POSTER DIMENSIONS (180px x 270px) */
+    .top-pick-card {
+      position: relative;
+      z-index: 2;
+      width: 180px;
+      height: 270px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: -12px 0 32px rgba(0, 0, 0, 0.75);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 14px 13px 14px;
+      background: #07070a;
+    }
+
+    @media (max-width: 640px) {
+      .top-pick-card {
+        width: 150px;
+        height: 240px;
+        padding: 12px 10px 12px;
+      }
+    }
+
+    .top-pick-item:hover .top-pick-card {
+      transform: translateY(-8px);
+      border-color: rgba(0, 245, 255, 0.55);
+      box-shadow: -14px 12px 36px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 245, 255, 0.25);
+    }
+
+    /* PALETTE BACKDROP GLOWS MATCHING SERIES POSTER ART */
+    .top-pick-card.card-pal-crimson {
+      background: radial-gradient(120% 90% at 85% 10%, #5e0b19 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #1a0408 0%, transparent 70%),
+                  linear-gradient(160deg, #1a0408 0%, #0b0204 100%);
+    }
+    .top-pick-card.card-pal-cyan {
+      background: radial-gradient(120% 90% at 85% 10%, #08485e 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #02131a 0%, transparent 70%),
+                  linear-gradient(160deg, #02131a 0%, #02090d 100%);
+    }
+    .top-pick-card.card-pal-ocean {
+      background: radial-gradient(120% 90% at 85% 10%, #0f4c6e 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #04121f 0%, transparent 70%),
+                  linear-gradient(160deg, #04121f 0%, #05080d 100%);
+    }
+    .top-pick-card.card-pal-jade {
+      background: radial-gradient(120% 90% at 85% 10%, #0c5c32 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #02160b 0%, transparent 70%),
+                  linear-gradient(160deg, #02160b 0%, #030d07 100%);
+    }
+    .top-pick-card.card-pal-amber {
+      background: radial-gradient(120% 90% at 85% 10%, #6e4408 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #1f1304 0%, transparent 70%),
+                  linear-gradient(160deg, #1f1304 0%, #0a0601 100%);
+    }
+    .top-pick-card.card-pal-violet {
+      background: radial-gradient(120% 90% at 85% 10%, #4b1575 0%, transparent 60%),
+                  radial-gradient(90% 80% at 0% 100%, #130421 0%, transparent 70%),
+                  linear-gradient(160deg, #130421 0%, #08030d 100%);
+    }
+
+    /* SOFT DIAGONAL LIGHT STREAK */
+    .top-pick-card::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -25%;
+      width: 70%;
+      height: 140%;
+      transform: rotate(18deg);
+      opacity: 0.35;
+      filter: blur(22px);
+      pointer-events: none;
+      z-index: 2;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    }
+    .top-pick-card.card-pal-crimson::before { background: linear-gradient(90deg, transparent, rgba(255, 61, 90, 0.45), transparent); }
+    .top-pick-card.card-pal-cyan::before { background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.45), transparent); }
+    .top-pick-card.card-pal-ocean::before { background: linear-gradient(90deg, transparent, rgba(76, 201, 255, 0.45), transparent); }
+    .top-pick-card.card-pal-jade::before { background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.45), transparent); }
+    .top-pick-card.card-pal-amber::before { background: linear-gradient(90deg, transparent, rgba(255, 181, 71, 0.45), transparent); }
+    .top-pick-card.card-pal-violet::before { background: linear-gradient(90deg, transparent, rgba(192, 132, 252, 0.45), transparent); }
+
+    /* SUBTLE SCANLINE OVERLAY */
+    .top-pick-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.16;
+      background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.06) 0px, rgba(255, 255, 255, 0.06) 1px, transparent 1px, transparent 4px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* THUMBNAIL BLEND LAYER */
+    .top-pick-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.36;
+      mix-blend-mode: luminosity;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+
+    .top-pick-bg-img.fit-screenshot {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .top-pick-bg-img.fit-contain {
+      object-fit: contain;
+      object-position: center 36%;
+      padding: 24px 18px;
+    }
+
+    .top-pick-item:hover .top-pick-bg-img {
+      transform: scale(1.08);
+      opacity: 0.52;
+    }
+
+    /* FULL CARD PROTECTIVE DARK GRADIENT */
+    .top-pick-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.2) 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* TOP CATEGORY BADGE - EXACT SERIES TRACKED UPPERCASE TEXT */
+    .top-pick-header-badge {
+      position: relative;
+      z-index: 10;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .top-pick-label {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      color: rgba(255, 255, 255, 0.78);
+      margin: 0;
+      padding: 0;
+      background: none;
+      border: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
+    }
+
+    /* BOTTOM INFO AREA - EXACT BEBAS NEUE TITLE & INTER DETAIL */
+    .top-pick-info {
+      position: relative;
+      z-index: 10;
+      padding: 0;
+      background: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-pick-title {
+      font-family: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin: 0 0 6px 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+    }
+
+    .top-pick-detail {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.35;
+      color: #cbd5e1;
+      margin: 0;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .top-picks-section.reveal-in .top-pick-item {
+      animation: topPickReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-delay: calc(min(var(--pick-idx, 0), 9) * 0.055s);
+    }
+    @keyframes topPickReveal {
+      from { opacity: 0; transform: translateY(36px) scale(0.94); filter: blur(6px); }
+      to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    /* ===================================================
+       CINEMATIC REVEAL KEYFRAMES (PLAY INTRO MODAL)
+       =================================================== */
+    @keyframes cineKicker {
+      from { opacity: 0; transform: translateY(-14px); filter: blur(6px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes cineTitle {
+      from { opacity: 0; transform: scale(1.08) translateY(10px); filter: blur(14px); }
+      to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+    }
+    @keyframes cineLine {
+      from { opacity: 0; transform: translateY(18px); filter: blur(5px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    @keyframes cineChip {
+      from { opacity: 0; transform: scale(0.7) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .trailer-slide-card.active .trailer-kicker {
+      animation: cineKicker 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .trailer-slide-card.active .trailer-title {
+      animation: cineTitle 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+    }
+    .trailer-slide-card.active .trailer-line:nth-child(1) {
+      animation: cineLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+    }
+    .trailer-slide-card.active .trailer-line:nth-child(2) {
+      animation: cineLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.34s both;
+    }
+    .trailer-slide-card.active .trailer-line:nth-child(3) {
+      animation: cineLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.46s both;
+    }
+    .trailer-slide-card.active .trailer-chip {
+      animation: cineChip 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+    .trailer-slide-card.active .trailer-chip:nth-child(1) { animation-delay: 0.46s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(2) { animation-delay: 0.53s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(3) { animation-delay: 0.60s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(4) { animation-delay: 0.67s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(5) { animation-delay: 0.74s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(6) { animation-delay: 0.81s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(7) { animation-delay: 0.88s; }
+    .trailer-slide-card.active .trailer-chip:nth-child(8) { animation-delay: 0.95s; }
+
+    /* ===================================================
+       SEASON TRANSITION ANIMATIONS & PERSPECTIVE
+       =================================================== */
+    @keyframes seasonPaneEnter {
+      from { opacity: 0; transform: translateX(45px); filter: blur(10px); }
+      to { opacity: 1; transform: translateX(0); filter: blur(0); }
+    }
+    @keyframes seasonPaneExit {
+      from { opacity: 1; transform: translateX(0); filter: blur(0); }
+      to { opacity: 0; transform: translateX(-40px); filter: blur(8px); }
+    }
+    @keyframes episodeCardStagger {
+      from { opacity: 0; transform: translateY(35px) rotateY(-8deg); }
+      to { opacity: 1; transform: translateY(0) rotateY(0deg); }
+    }
+
+    .season-pane.entering {
+      animation: seasonPaneEnter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .season-pane.exiting {
+      animation: seasonPaneExit 0.28s cubic-bezier(0.4, 0, 1, 1) both;
+    }
+
+    .episodes-rail-wrap {
+      perspective: 1200px;
+    }
+
+    /* EPISODE CARD IMAGE STYLES */
+    .episode-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .episode-thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #090a18;
+    }
+
+    .episode-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1;
+    }
+
+    .episode-card:hover .episode-bg-img {
+      transform: scale(1.12);
+    }
+
+    .episode-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3, 5, 15, 0.35) 0%, rgba(3, 5, 15, 0.9) 100%);
+      z-index: 2;
+    }
+
+    .episode-watermark {
+      z-index: 3;
+    }
+
+    .episode-top-badges {
+      position: relative;
+      z-index: 4;
+    }
+
+    .episode-thumb-title {
+      position: relative;
+      z-index: 4;
+    }
+
+/* Top Picks CSS consolidated above */
   </style>
 </head>
 
@@ -4666,6 +6440,13 @@
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
       </svg>
       <span class="tip">DSA</span>
+    </a>
+    <a href="#top-picks" aria-label="Standout Milestones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+      <span class="tip">Milestones</span>
     </a>
     <a href="#skills" aria-label="Skills">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -4753,16 +6534,17 @@
           </div>
 
           <div class="hero-actions-wrap">
-            <a class="hero-btn-primary" href="#contact">
-              Open to Work <span style="font-size: 15px;">↗</span>
-            </a>
-            <a class="hero-btn-secondary" href="Shoeb_Raza_Resume.pdf" download target="_blank">
+            <button type="button" class="hero-btn-play-intro" id="openIntroBtn" aria-label="Play Cinematic Intro">
+              <span class="intro-play-triangle">▶</span>
+              <span>Play Intro</span>
+            </button>
+            <a class="hero-btn-secondary" href="Shoeb_Raza_Specialised_CV.pdf" download target="_blank">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
               </svg>
-              Download Resume
+              Download CV <span style="font-size: 14px;">↗</span>
             </a>
           </div>
         </div>
@@ -5204,371 +6986,432 @@
     </section>
 
     <!-- =========================================================
-     PROFESSIONAL JOURNEY (CHRONOLOGICAL ORDER: OLDEST TO NEWEST)
+     MY JOURNEY & 5 SEASONS (PORTFOLIO SERIES REPO 1:1)
      ========================================================= -->
-    <section id="journey">
+    <section id="journey" class="seasons-section">
       <div class="w">
-        <div class="kick rv">04 · Experience &amp; Milestones</div>
-        <h2 class="rv" style="margin-bottom:8px">My Journey & <em>Milestones</em></h2>
-        <p class="rv" style="color:var(--text-muted);font-size:14.5px;max-width:70ch;margin:0 0 45px">
-          A timeline of my education, projects, certifications, achievements and experiences.
-        </p>
-
-        <!-- Professional Journey Timeline Matching User Design -->
-        <div class="pj-timeline rv">
-
-          <!-- 1. B.Tech in CSE -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">AUG 2024 – PRESENT</div>
-              <div class="pj-cat">Education</div>
-            </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="4" y="2" width="16" height="20" rx="2" />
-                  <path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01" />
-                </svg>
-              </div>
-              <div class="pj-body">
-                <h3 class="pj-title">B.Tech in Computer Science &amp; Engineering</h3>
-                <div class="pj-sub">Lovely Professional University · CGPA: 8.94 / 10.0</div>
-                <p class="pj-desc">Currently pursuing B.Tech with a focus on DSA, web development and real-world projects.</p>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/lpu_building_real.jpg" alt="Lovely Professional University" class="pj-preview-img" loading="lazy" />
-              </div>
-            </div>
+        <div class="seasons-heading-row">
+          <div>
+            <div class="seasons-kicker">— 5 SEASONS</div>
+            <h2 class="seasons-main-title">MY JOURNEY</h2>
           </div>
+          <p class="seasons-aside-text">
+            Every stage of the resume, told as a season — select one to see its episodes.
+          </p>
+        </div>
 
-          <!-- 2. CodeXtreme 2.0 -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">MAY 2025</div>
-              <div class="pj-cat">Certification / Event</div>
-            </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                <path d="M4 22h16" />
-                <path d="M10 14.66V17c0 .55-.45 1-1 1H7" />
-                <path d="M14 14.66V17c0 .55.45 1 1 1h2" />
-                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box gold">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-                  <path d="M4 22h16" />
-                  <path d="M10 14.66V17c0 .55-.45 1-1 1H7" />
-                  <path d="M14 14.66V17c0 .55.45 1 1 1h2" />
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-                </svg>
-              </div>
-              <div class="pj-body">
-                <h3 class="pj-title">CodeXtreme 2.0</h3>
-                <div class="pj-sub">Lovely Professional University</div>
-                <p class="pj-desc">Participated and completed CodeXtreme 2.0, a university-level coding event.</p>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card2_lpu_logo.png" alt="LPU CodeXtreme" class="pj-preview-img" loading="lazy" />
-              </div>
-            </div>
-          </div>
+        <!-- Season Selector Tabs -->
+        <div class="seasons-tabs-rail" role="tablist" aria-label="Journey Seasons">
+          
+          <button type="button" role="tab" class="season-tab-btn active" data-season-idx="0" aria-selected="true">
+            <span class="season-tab-num">SEASON 01</span>
+            <span class="season-tab-name">The Foundation</span>
+          </button>
+          <button type="button" role="tab" class="season-tab-btn " data-season-idx="1" aria-selected="false">
+            <span class="season-tab-num">SEASON 02</span>
+            <span class="season-tab-name">Entering Engineering</span>
+          </button>
+          <button type="button" role="tab" class="season-tab-btn " data-season-idx="2" aria-selected="false">
+            <span class="season-tab-num">SEASON 03</span>
+            <span class="season-tab-name">Algorithmic Mastery</span>
+          </button>
+          <button type="button" role="tab" class="season-tab-btn " data-season-idx="3" aria-selected="false">
+            <span class="season-tab-num">SEASON 04</span>
+            <span class="season-tab-name">Industry Experience</span>
+          </button>
+          <button type="button" role="tab" class="season-tab-btn " data-season-idx="4" aria-selected="false">
+            <span class="season-tab-num">SEASON 05</span>
+            <span class="season-tab-name">The Originals Era</span>
+          </button>
+        </div>
 
-          <!-- 3. Oracle Cloud Certified -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">AUG 2025</div>
-              <div class="pj-cat">Certification</div>
+        <!-- Active Season Container -->
+        <div id="seasonContentArea">
+          
+          <div class="season-pane active" id="seasonPane0" style="">
+            <div class="season-active-meta">
+              <h3 class="season-active-title">
+                <span class="text-outline season-ghost-num">S01</span>
+                <span>THE FOUNDATION</span>
+              </h3>
+              <span class="season-period-badge">2021 – 2024 · 2 Episodes</span>
             </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <polyline points="14 2 14 8 20 8" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box red">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="8" r="6" />
-                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
-                </svg>
-              </div>
-              <div class="pj-body">
-                <h3 class="pj-title">Oracle Cloud Infrastructure 2025 Certified Generative AI</h3>
-                <div class="pj-sub red">Oracle</div>
-                <p class="pj-desc">Certified in Generative AI on OCI, gaining hands-on experience with cloud-based AI services.</p>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card3_oracle_logo.png" alt="Oracle Certified" class="pj-preview-img" loading="lazy" />
-              </div>
-            </div>
-          </div>
+            <p class="season-synopsis">Schooling and Intermediate education in Bihar — strong grounding in mathematics, science and academic discipline.</p>
 
-          <!-- 4 & 5 — FocusGuard Pro + AI Study Suite Pro (same SEP-OCT 2025 period, shown side-by-side) -->
-          <div class="pj-dual-row">
-
-            <!-- FocusGuard Pro -->
-            <div class="pj-item">
-              <div class="pj-meta">
-                <div class="pj-date">SEP 2025</div>
-                <div class="pj-cat">Project</div>
-              </div>
-              <div class="pj-node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-              <div class="pj-card">
-                <div class="pj-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                </div>
-                <div class="pj-body">
-                  <h3 class="pj-title">FocusGuard Pro</h3>
-                  <p class="pj-desc">Browser extension to block distracting websites, monitor activity and improve focus.</p>
-                  <div class="pj-chips">
-                    <span class="pj-chip">HTML</span>
-                    <span class="pj-chip">CSS</span>
-                    <span class="pj-chip">JavaScript</span>
-                    <span class="pj-chip">Chrome Extension API</span>
+            <div class="episodes-rail-wrap">
+              <button type="button" class="rail-btn prev" aria-label="Previous Episodes" onclick="scrollEpisodesRail(0, -1)">‹</button>
+              <div class="episodes-rail" id="episodesRail0">
+                
+                <article class="episode-card" style="--i: 0;">
+                  <div class="episode-thumb pal-amber ">
+                    <img src="assets/journey/indian_high_school_real.png" alt="Matriculation Honors" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E01</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S01</span>
+                      <span class="ep-num-label">EPISODE 01</span>
+                    </div>
+                    <h4 class="episode-thumb-title">MATRICULATION HONORS</h4>
                   </div>
-                </div>
-                <div class="pj-preview">
-                  <img src="assets/journey/hd_card4_focusguard_preview.png" alt="FocusGuard Pro" class="pj-preview-img" loading="lazy" />
-                </div>
-              </div>
-            </div>
-
-            <!-- AI Study Suite Pro -->
-            <div class="pj-item">
-              <div class="pj-meta">
-                <div class="pj-date">OCT 2025</div>
-                <div class="pj-cat">Project</div>
-              </div>
-              <div class="pj-node">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-              <div class="pj-card">
-                <div class="pj-icon-box">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                </div>
-                <div class="pj-body">
-                  <h3 class="pj-title">AI Study Suite Pro</h3>
-                  <p class="pj-desc">AI-powered study platform for PDF to interactive content, smart testing and analytics.</p>
-                  <div class="pj-chips">
-                    <span class="pj-chip">Python</span>
-                    <span class="pj-chip">Flask</span>
-                    <span class="pj-chip">Gemini API</span>
-                    <span class="pj-chip">SQLite</span>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">May 2021 – Apr 2022</span>
+                    </div>
+                    <p class="episode-desc">Completed Secondary Examination at Indian High School, Saharsa, Bihar with an outstanding 90% score.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">Indian High School</span><span class="episode-tag">90% Score</span><span class="episode-tag">Saharsa</span>
+                    </div>
                   </div>
-                </div>
-                <div class="pj-preview">
-                  <img src="assets/journey/hd_card6_aistudy_preview.png" alt="AI Study Suite Pro" class="pj-preview-img" loading="lazy" />
-                </div>
+                </article>
+                <article class="episode-card" style="--i: 1;">
+                  <div class="episode-thumb pal-violet ">
+                    <img src="assets/journey/school_supaul_inter.jpg" alt="Intermediate Sprint" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E02</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S01</span>
+                      <span class="ep-num-label">EPISODE 02</span>
+                    </div>
+                    <h4 class="episode-thumb-title">INTERMEDIATE SPRINT</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">May 2023 – Apr 2024</span>
+                    </div>
+                    <p class="episode-desc">Completed Intermediate studies at DS Boarding School, Supaul, Bihar with 74% score, laying the quantitative foundation for engineering.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">DS Boarding School</span><span class="episode-tag">74% Score</span><span class="episode-tag">Supaul</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-            </div>
-
-          </div><!-- end pj-dual-row -->
-
-          <!-- 7. Embarked on DSA Journey — LeetCode + CodeChef -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">SEP 2025</div>
-              <div class="pj-cat">DSA Journey</div>
-            </div>
-            <div class="pj-node purple">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10" />
-                <line x1="12" y1="20" x2="12" y2="4" />
-                <line x1="6" y1="20" x2="6" y2="14" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box orange">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <div class="pj-body">
-                <h3 class="pj-title">Embarked on My DSA Journey</h3>
-                <div class="pj-sub orange">LeetCode &amp; CodeChef</div>
-                <p class="pj-desc">Started structured competitive programming on LeetCode and CodeChef — practicing arrays, strings, trees, and algorithmic problem-solving consistently.</p>
-                <div class="pj-chips">
-                  <span class="pj-chip" style="color:#ff7a00;border-color:rgba(255,122,0,0.4)">LeetCode</span>
-                  <span class="pj-chip" style="color:#d8b4fe;border-color:rgba(168,85,247,0.4)">CodeChef</span>
-                  <span class="pj-chip">DSA</span>
-                  <span class="pj-chip">C++</span>
-                </div>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card7_leetcode_logo.png" alt="DSA Journey" class="pj-preview-img" loading="lazy" />
-              </div>
+              <button type="button" class="rail-btn next" aria-label="Next Episodes" onclick="scrollEpisodesRail(0, 1)">›</button>
             </div>
           </div>
+          <div class="season-pane " id="seasonPane1" style="display:none;">
+            <div class="season-active-meta">
+              <h3 class="season-active-title">
+                <span class="text-outline season-ghost-num">S02</span>
+                <span>ENTERING ENGINEERING</span>
+              </h3>
+              <span class="season-period-badge">2024 – 2025 · 5 Episodes</span>
+            </div>
+            <p class="season-synopsis">B.Tech in Computer Science and Engineering at Lovely Professional University, Phagwara, Punjab — certifications and productivity engineering.</p>
 
-          <!-- 8. RapidX -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">FEB 2026</div>
-              <div class="pj-cat">Project</div>
-            </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box red">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
+            <div class="episodes-rail-wrap">
+              <button type="button" class="rail-btn prev" aria-label="Previous Episodes" onclick="scrollEpisodesRail(1, -1)">‹</button>
+              <div class="episodes-rail" id="episodesRail1">
+                
+                <article class="episode-card" style="--i: 0;">
+                  <div class="episode-thumb pal-cyan ">
+                    <img src="assets/journey/lpu_building_real.png" alt="The University Leap" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E01</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S02</span>
+                      <span class="ep-num-label">EPISODE 01</span>
+                    </div>
+                    <h4 class="episode-thumb-title">THE UNIVERSITY LEAP</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Aug 2024 – Present</span>
+                    </div>
+                    <p class="episode-desc">Pursuing Bachelor of Technology in Computer Science & Engineering at LPU with an academic CGPA of 8.94 / 10.0.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">B.Tech CSE</span><span class="episode-tag">LPU</span><span class="episode-tag">CGPA 8.94</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 1;">
+                  <div class="episode-thumb pal-crimson card-logo card-logo-lpu">
+                    <img src="assets/journey/codextreme_lpu_real.png" alt="CodeXtreme 2.0" class="episode-bg-img fit-contain" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E02</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S02</span>
+                      <span class="ep-num-label">EPISODE 02</span>
+                    </div>
+                    <h4 class="episode-thumb-title">CODEXTREME 2.0</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">May 2025</span>
+                    </div>
+                    <p class="episode-desc">Participated and secured Top 30 Rank (Certificate of Excellence) in CodeXtreme 2.0, a premier university coding challenge.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">CodeXtreme 2.0 (Top 30)</span><span class="episode-tag">Competitive Coding</span><span class="episode-tag">LPU</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 2;">
+                  <div class="episode-thumb pal-jade card-logo card-logo-oracle">
+                    <img src="assets/journey/oracle_real.png" alt="Oracle GenAI Certification" class="episode-bg-img fit-contain" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E03</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S02</span>
+                      <span class="ep-num-label">EPISODE 03</span>
+                    </div>
+                    <h4 class="episode-thumb-title">ORACLE GENAI CERTIFICATION</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Aug 2025</span>
+                    </div>
+                    <p class="episode-desc">Certified as an Oracle Cloud Infrastructure 2025 Generative AI Professional — validating expertise in LLMs and cloud AI.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">Oracle Cloud</span><span class="episode-tag">Generative AI</span><span class="episode-tag">Certification</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 3;">
+                  <div class="episode-thumb pal-jade ">
+                    <img src="assets/journey/focusguard_real.png" alt="FocusGuard Pro" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E04</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S02</span>
+                      <span class="ep-num-label">EPISODE 04</span>
+                    </div>
+                    <h4 class="episode-thumb-title">FOCUSGUARD PRO</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Sep 2025</span>
+                    </div>
+                    <p class="episode-desc">Engineered FocusGuard Pro, a low-latency Manifest V3 Chrome extension curbing digital distractions with declarative URL controls.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">Chrome Extension</span><span class="episode-tag">Manifest V3</span><span class="episode-tag">FocusGuard</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 4;">
+                  <div class="episode-thumb pal-violet ">
+                    <img src="assets/journey/aistudysuite_real.png" alt="AI Study Suite Pro" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E05</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S02</span>
+                      <span class="ep-num-label">EPISODE 05</span>
+                    </div>
+                    <h4 class="episode-thumb-title">AI STUDY SUITE PRO</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Oct 2025</span>
+                    </div>
+                    <p class="episode-desc">AI-driven academic workspace transforming textbooks into active-recall flashcards and diagnostic tests via Google Gemini LLM.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">AI Study Suite</span><span class="episode-tag">Gemini AI</span><span class="episode-tag">Python / Flask</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="pj-body">
-                <h3 class="pj-title">RapidX – Smart Helper Auto Assignment System</h3>
-                <p class="pj-desc">Automated task assignment based on availability, workload and requirements.</p>
-                <div class="pj-chips">
-                  <span class="pj-chip">React.js</span>
-                  <span class="pj-chip">Node.js</span>
-                  <span class="pj-chip">Express.js</span>
-                  <span class="pj-chip">MongoDB</span>
-                </div>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card8_rapidx_preview.png" alt="RapidX" class="pj-preview-img" loading="lazy" />
-              </div>
+              <button type="button" class="rail-btn next" aria-label="Next Episodes" onclick="scrollEpisodesRail(1, 1)">›</button>
             </div>
           </div>
+          <div class="season-pane " id="seasonPane2" style="display:none;">
+            <div class="season-active-meta">
+              <h3 class="season-active-title">
+                <span class="text-outline season-ghost-num">S03</span>
+                <span>ALGORITHMIC MASTERY</span>
+              </h3>
+              <span class="season-period-badge">2025 – Present · 2 Episodes</span>
+            </div>
+            <p class="season-synopsis">Structured competitive programming across LeetCode, CodeChef, and Codeforces.</p>
 
-          <!-- 9. Full Stack Development Intern (Infosys) -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">FEB 2026 – APR 2026</div>
-              <div class="pj-cat">Internship</div>
-            </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box blue">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                </svg>
+            <div class="episodes-rail-wrap">
+              <button type="button" class="rail-btn prev" aria-label="Previous Episodes" onclick="scrollEpisodesRail(2, -1)">‹</button>
+              <div class="episodes-rail" id="episodesRail2">
+                
+                <article class="episode-card" style="--i: 0;">
+                  <div class="episode-thumb pal-ocean ">
+                    <img src="assets/journey/leetcode_real.png" alt="The Problem Solver" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E01</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S03</span>
+                      <span class="ep-num-label">EPISODE 01</span>
+                    </div>
+                    <h4 class="episode-thumb-title">THE PROBLEM SOLVER</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Oct 2025 – Present</span>
+                    </div>
+                    <p class="episode-desc">Solved 350+ algorithmic problems on LeetCode with a contest rating of 1432, mastering trees, hashing, and sliding window patterns.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">LeetCode 350+</span><span class="episode-tag">Rating 1432</span><span class="episode-tag">DSA in C++</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 1;">
+                  <div class="episode-thumb pal-amber card-logo card-logo-codechef">
+                    <img src="assets/journey/codechef_real.png" alt="2-Star CodeChef Milestone" class="episode-bg-img fit-contain" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E02</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S03</span>
+                      <span class="ep-num-label">EPISODE 02</span>
+                    </div>
+                    <h4 class="episode-thumb-title">2-STAR CODECHEF MILESTONE</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Sep 2025 – Present</span>
+                    </div>
+                    <p class="episode-desc">Earned 2-Star coder distinction on CodeChef with rating of 1428 and 120+ competitive challenges solved in global Division contests.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">CodeChef 2★</span><span class="episode-tag">Rating 1428</span><span class="episode-tag">120+ Solved</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="pj-body">
-                <h3 class="pj-title">Full Stack Development Intern (Virtual)</h3>
-                <div class="pj-sub">Infosys Springboard · Remote</div>
-                <p class="pj-desc">Worked on CampusEventHub using Angular, reusable components, routing, services and REST API integration.</p>
-                <div class="pj-chips">
-                  <span class="pj-chip">Angular</span>
-                  <span class="pj-chip">TypeScript</span>
-                  <span class="pj-chip">REST APIs</span>
-                  <span class="pj-chip">Authentication</span>
-                </div>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card9_infosys_logo.png" alt="Infosys" class="pj-preview-img" loading="lazy" />
-              </div>
+              <button type="button" class="rail-btn next" aria-label="Next Episodes" onclick="scrollEpisodesRail(2, 1)">›</button>
             </div>
           </div>
+          <div class="season-pane " id="seasonPane3" style="display:none;">
+            <div class="season-active-meta">
+              <h3 class="season-active-title">
+                <span class="text-outline season-ghost-num">S04</span>
+                <span>INDUSTRY EXPERIENCE</span>
+              </h3>
+              <span class="season-period-badge">Feb 2026 – Apr 2026 · 2 Episodes</span>
+            </div>
+            <p class="season-synopsis">Full Stack Development Intern at Infosys Springboard — engineering CampusEventHub.</p>
 
-          <!-- 10. MediPulse (Correct Tech Stack: HTML, CSS, JS, Node, Express, MongoDB, Socket.io) -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">APR 2026</div>
-              <div class="pj-cat">Project</div>
-            </div>
-            <div class="pj-node">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-              </svg>
-            </div>
-            <div class="pj-card">
-              <div class="pj-icon-box blue">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                </svg>
+            <div class="episodes-rail-wrap">
+              <button type="button" class="rail-btn prev" aria-label="Previous Episodes" onclick="scrollEpisodesRail(3, -1)">‹</button>
+              <div class="episodes-rail" id="episodesRail3">
+                
+                <article class="episode-card" style="--i: 0;">
+                  <div class="episode-thumb pal-ocean ">
+                    <img src="assets/journey/infosys_real.png" alt="The Infosys Internship" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E01</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S04</span>
+                      <span class="ep-num-label">EPISODE 01</span>
+                    </div>
+                    <h4 class="episode-thumb-title">THE INFOSYS INTERNSHIP</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Feb 2026 – Apr 2026</span>
+                    </div>
+                    <p class="episode-desc">Completed virtual Full Stack Development Internship at Infosys Springboard, building enterprise-grade Angular web platforms.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">Infosys Springboard</span><span class="episode-tag">Internship</span><span class="episode-tag">Angular</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 1;">
+                  <div class="episode-thumb pal-crimson ">
+                    <img src="assets/journey/infosys_real.png" alt="CampusEventHub" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E02</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S04</span>
+                      <span class="ep-num-label">EPISODE 02</span>
+                    </div>
+                    <h4 class="episode-thumb-title">CAMPUSEVENTHUB</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Apr 2026</span>
+                    </div>
+                    <p class="episode-desc">Engineered 10+ reusable Angular components and 8+ responsive screens with 100% REST API integration for university event management.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">CampusEventHub</span><span class="episode-tag">REST APIs</span><span class="episode-tag">RxJS</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="pj-body">
-                <h3 class="pj-title">MediPulse – Smart Hospital Management Platform</h3>
-                <p class="pj-desc">Full-stack hospital platform with real-time operations, role-based access and automated workflows.</p>
-                <div class="pj-chips">
-                  <span class="pj-chip">HTML5</span>
-                  <span class="pj-chip">CSS3</span>
-                  <span class="pj-chip">JavaScript</span>
-                  <span class="pj-chip">Node.js</span>
-                  <span class="pj-chip">Express.js</span>
-                  <span class="pj-chip">MongoDB</span>
-                  <span class="pj-chip">Socket.io</span>
-                </div>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card10_medipulse_preview.png" alt="MediPulse" class="pj-preview-img" loading="lazy" />
-              </div>
+              <button type="button" class="rail-btn next" aria-label="Next Episodes" onclick="scrollEpisodesRail(3, 1)">›</button>
             </div>
           </div>
+          <div class="season-pane " id="seasonPane4" style="display:none;">
+            <div class="season-active-meta">
+              <h3 class="season-active-title">
+                <span class="text-outline season-ghost-num">S05</span>
+                <span>THE ORIGINALS ERA</span>
+              </h3>
+              <span class="season-period-badge">2026 – Present · 3 Episodes</span>
+            </div>
+            <p class="season-synopsis">Shoeb’s flagship original platforms solving transit, clinical, and civic societal challenges.</p>
 
-          <!-- 11. JanSetu (Purple glowing node) -->
-          <div class="pj-item">
-            <div class="pj-meta">
-              <div class="pj-date">SEP 2026 – PRESENT</div>
-              <div class="pj-cat" style="color:#d8b4fe">Project</div>
-            </div>
-            <div class="pj-node purple">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-            </div>
-            <div class="pj-card" style="border-color:rgba(168,85,247,0.35)">
-              <div class="pj-icon-box purple">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
+            <div class="episodes-rail-wrap">
+              <button type="button" class="rail-btn prev" aria-label="Previous Episodes" onclick="scrollEpisodesRail(4, -1)">‹</button>
+              <div class="episodes-rail" id="episodesRail4">
+                
+                <article class="episode-card" style="--i: 0;">
+                  <div class="episode-thumb pal-amber ">
+                    <img src="assets/journey/rapidx_real.png" alt="RapidX Dispatch Engine" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E01</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S05</span>
+                      <span class="ep-num-label">EPISODE 01</span>
+                    </div>
+                    <h4 class="episode-thumb-title">RAPIDX DISPATCH ENGINE</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Feb 2026</span>
+                    </div>
+                    <p class="episode-desc">Engineered automated task assignment matching requests with suitable helpers based on spatial geohash proximity and load balancing.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">RapidX</span><span class="episode-tag">Auto Assignment</span><span class="episode-tag">MERN Stack</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 1;">
+                  <div class="episode-thumb pal-crimson ">
+                    <img src="assets/journey/medipulse_real.png" alt="MediPulse Smart Hospital" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E02</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S05</span>
+                      <span class="ep-num-label">EPISODE 02</span>
+                    </div>
+                    <h4 class="episode-thumb-title">MEDIPULSE SMART HOSPITAL</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Apr 2026</span>
+                    </div>
+                    <p class="episode-desc">Architected MediPulse smart hospital management platform featuring real-time bed tracking, token queues, and automated dispensary workflows.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">MediPulse</span><span class="episode-tag">Hospital Platform</span><span class="episode-tag">Socket.io</span>
+                    </div>
+                  </div>
+                </article>
+                <article class="episode-card" style="--i: 2;">
+                  <div class="episode-thumb pal-cyan ">
+                    <img src="assets/journey/jansetu_real.png" alt="JanSetu Platform" class="episode-bg-img fit-screenshot" loading="lazy">
+                    <div class="episode-thumb-overlay"></div>
+                    <span class="episode-watermark">E03</span>
+                    <div class="episode-top-badges">
+                      <span class="ep-season-pill">S05</span>
+                      <span class="ep-num-label">EPISODE 03</span>
+                    </div>
+                    <h4 class="episode-thumb-title">JANSETU PLATFORM</h4>
+                  </div>
+                  <div class="episode-body">
+                    <div class="episode-runtime-row">
+                      <span class="episode-runtime">Sep 2026 – Present</span>
+                    </div>
+                    <p class="episode-desc">Citizen-to-Innovation platform connecting citizens, government bodies, universities and industry to resolve societal issues with AI triage.</p>
+                    <div class="episode-tags">
+                      <span class="episode-tag">JanSetu</span><span class="episode-tag">Civic Tech</span><span class="episode-tag">AI Triage</span>
+                    </div>
+                  </div>
+                </article>
               </div>
-              <div class="pj-body">
-                <h3 class="pj-title">JanSetu – Citizen-to-Innovation Platform</h3>
-                <p class="pj-desc">Multi-stakeholder platform connecting citizens, government, universities and industry to solve societal challenges.</p>
-                <div class="pj-chips">
-                  <span class="pj-chip">React.js</span>
-                  <span class="pj-chip">Node.js</span>
-                  <span class="pj-chip">Express.js</span>
-                  <span class="pj-chip">MongoDB</span>
-                  <span class="pj-chip">AI/ML</span>
-                </div>
-              </div>
-              <div class="pj-preview">
-                <img src="assets/journey/hd_card11_jansetu_preview.png" alt="JanSetu" class="pj-preview-img" loading="lazy" />
-              </div>
+              <button type="button" class="rail-btn next" aria-label="Next Episodes" onclick="scrollEpisodesRail(4, 1)">›</button>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -5740,6 +7583,310 @@
             </div>
             <i><s data-w="89%"></s></i>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+     TOP PICKS SECTION (SERIES REPO 1:1 - JUST BEFORE SKILLS)
+     ========================================================= -->
+    <section id="top-picks" class="top-picks-section">
+      <div class="w">
+        <div class="seasons-heading-row" style="margin-bottom:20px;">
+          <div>
+            <div class="seasons-kicker">TOP 10 · RESUME HIGHLIGHTS</div>
+            <h2 class="seasons-main-title">STANDOUT MILESTONES</h2>
+          </div>
+          <p class="seasons-aside-text">
+            Hand-picked standout achievements, systems, and milestones across engineering.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FULL WIDTH TOP PICKS TICKER (EDGE-TO-EDGE VIEWPORT BLEED - NO ARROWS) -->
+      <div class="top-picks-fullwidth-wrap">
+        <div class="top-picks-rail" id="topPicksRail">
+            <div class="top-pick-item" style="--pick-idx:0;" data-rank="1">
+              <span class="text-outline top-pick-rank">1</span>
+              <div class="top-pick-card card-pal-crimson">
+                <img src="assets/journey/medipulse_real.png" alt="MediPulse" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Health Tech</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">MediPulse</h4>
+                  <p class="top-pick-detail">Smart Hospital Platform • Live Ward Telemetry</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:1;" data-rank="2">
+              <span class="text-outline top-pick-rank">2</span>
+              <div class="top-pick-card card-pal-cyan">
+                <img src="assets/journey/jansetu_real.png" alt="JanSetu" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Core Project</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">JanSetu</h4>
+                  <p class="top-pick-detail">Civic Tech • AI Triage • Multi-stakeholder Platform</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:2;" data-rank="3">
+              <span class="text-outline top-pick-rank">3</span>
+              <div class="top-pick-card card-pal-ocean">
+                <img src="assets/journey/infosys_real.png" alt="Infosys Intern" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Industry Internship</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">Infosys Intern</h4>
+                  <p class="top-pick-detail">Full Stack Development • CampusEventHub</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:3;" data-rank="4">
+              <span class="text-outline top-pick-rank">4</span>
+              <div class="top-pick-card card-pal-jade">
+                <img src="assets/journey/leetcode_real.png" alt="350+ LeetCode" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Competitive DSA</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">350+ LeetCode</h4>
+                  <p class="top-pick-detail">Contest Rating 1432 • Trees, Hashing, Two Pointers</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:4;" data-rank="5">
+              <span class="text-outline top-pick-rank">5</span>
+              <div class="top-pick-card card-pal-amber">
+                <img src="assets/journey/codechef_real.png" alt="2★ CodeChef" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Contest Honor</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">2★ CodeChef</h4>
+                  <p class="top-pick-detail">Rating 1428 • 120+ Algorithmic Challenges</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:5;" data-rank="6">
+              <span class="text-outline top-pick-rank">6</span>
+              <div class="top-pick-card card-pal-amber">
+                <img src="assets/journey/rapidx_real.png" alt="RapidX" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Transit Engine</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">RapidX</h4>
+                  <p class="top-pick-detail">Helper Auto Assignment • Sub-second Dispatch</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:6;" data-rank="7">
+              <span class="text-outline top-pick-rank">7</span>
+              <div class="top-pick-card card-pal-violet">
+                <img src="assets/journey/oracle_real.png" alt="Oracle GenAI" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Cloud Credential</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">Oracle GenAI</h4>
+                  <p class="top-pick-detail">OCI 2025 Certified Generative AI Professional</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:7;" data-rank="8">
+              <span class="text-outline top-pick-rank">8</span>
+              <div class="top-pick-card card-pal-violet">
+                <img src="assets/journey/aistudysuite_real.png" alt="AI Study Suite" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">AI Workspace</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">AI Study Suite</h4>
+                  <p class="top-pick-detail">Google Gemini LLM • Document Intelligence</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:8;" data-rank="9">
+              <span class="text-outline top-pick-rank">9</span>
+              <div class="top-pick-card card-pal-jade">
+                <img src="assets/journey/focusguard_real.png" alt="FocusGuard Pro" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Productivity</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">FocusGuard Pro</h4>
+                  <p class="top-pick-detail">Manifest V3 Browser Extension • Anti-Distraction</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:9;" data-rank="10">
+              <span class="text-outline top-pick-rank rank-10">10</span>
+              <div class="top-pick-card card-pal-crimson">
+                <img src="assets/journey/codextreme_lpu_real.png" alt="CodeXtreme 2.0" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Coding Honor</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">CodeXtreme 2.0</h4>
+                  <p class="top-pick-detail">Top 30 Finalist • Competitive Coding Honor @ LPU</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:10;" data-rank="1">
+              <span class="text-outline top-pick-rank">1</span>
+              <div class="top-pick-card card-pal-crimson">
+                <img src="assets/journey/medipulse_real.png" alt="MediPulse" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Health Tech</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">MediPulse</h4>
+                  <p class="top-pick-detail">Smart Hospital Platform • Live Ward Telemetry</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:11;" data-rank="2">
+              <span class="text-outline top-pick-rank">2</span>
+              <div class="top-pick-card card-pal-cyan">
+                <img src="assets/journey/jansetu_real.png" alt="JanSetu" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Core Project</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">JanSetu</h4>
+                  <p class="top-pick-detail">Civic Tech • AI Triage • Multi-stakeholder Platform</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:12;" data-rank="3">
+              <span class="text-outline top-pick-rank">3</span>
+              <div class="top-pick-card card-pal-ocean">
+                <img src="assets/journey/infosys_real.png" alt="Infosys Intern" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Industry Internship</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">Infosys Intern</h4>
+                  <p class="top-pick-detail">Full Stack Development • CampusEventHub</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:13;" data-rank="4">
+              <span class="text-outline top-pick-rank">4</span>
+              <div class="top-pick-card card-pal-jade">
+                <img src="assets/journey/leetcode_real.png" alt="350+ LeetCode" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Competitive DSA</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">350+ LeetCode</h4>
+                  <p class="top-pick-detail">Contest Rating 1432 • Trees, Hashing, Two Pointers</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:14;" data-rank="5">
+              <span class="text-outline top-pick-rank">5</span>
+              <div class="top-pick-card card-pal-amber">
+                <img src="assets/journey/codechef_real.png" alt="2★ CodeChef" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Contest Honor</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">2★ CodeChef</h4>
+                  <p class="top-pick-detail">Rating 1428 • 120+ Algorithmic Challenges</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:15;" data-rank="6">
+              <span class="text-outline top-pick-rank">6</span>
+              <div class="top-pick-card card-pal-amber">
+                <img src="assets/journey/rapidx_real.png" alt="RapidX" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Transit Engine</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">RapidX</h4>
+                  <p class="top-pick-detail">Helper Auto Assignment • Sub-second Dispatch</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:16;" data-rank="7">
+              <span class="text-outline top-pick-rank">7</span>
+              <div class="top-pick-card card-pal-violet">
+                <img src="assets/journey/oracle_real.png" alt="Oracle GenAI" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Cloud Credential</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">Oracle GenAI</h4>
+                  <p class="top-pick-detail">OCI 2025 Certified Generative AI Professional</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:17;" data-rank="8">
+              <span class="text-outline top-pick-rank">8</span>
+              <div class="top-pick-card card-pal-violet">
+                <img src="assets/journey/aistudysuite_real.png" alt="AI Study Suite" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">AI Workspace</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">AI Study Suite</h4>
+                  <p class="top-pick-detail">Google Gemini LLM • Document Intelligence</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:18;" data-rank="9">
+              <span class="text-outline top-pick-rank">9</span>
+              <div class="top-pick-card card-pal-jade">
+                <img src="assets/journey/focusguard_real.png" alt="FocusGuard Pro" class="top-pick-bg-img fit-screenshot" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Productivity</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">FocusGuard Pro</h4>
+                  <p class="top-pick-detail">Manifest V3 Browser Extension • Anti-Distraction</p>
+                </div>
+              </div>
+            </div>
+            <div class="top-pick-item" style="--pick-idx:19;" data-rank="10">
+              <span class="text-outline top-pick-rank rank-10">10</span>
+              <div class="top-pick-card card-pal-crimson">
+                <img src="assets/journey/codextreme_lpu_real.png" alt="CodeXtreme 2.0" class="top-pick-bg-img fit-contain" loading="lazy">
+                <div class="top-pick-overlay"></div>
+                <div class="top-pick-header-badge">
+                  <span class="top-pick-label">Coding Honor</span>
+                </div>
+                <div class="top-pick-info">
+                  <h4 class="top-pick-title">CodeXtreme 2.0</h4>
+                  <p class="top-pick-detail">Top 30 Finalist • Competitive Coding Honor @ LPU</p>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </section>
@@ -6451,12 +8598,81 @@
       <div class="w">
         <div class="kick rv">07 · Credentials</div>
         <h2 class="rv">Certifications &amp; <em>Achievements</em></h2>
-        <p class="rv" style="color:var(--text-muted);max-width:60ch;margin:-25px 0 40px;font-size:15px">
-          Recognitions, cloud certifications, and technical milestones validating continuous industry readiness.
+        <p class="rv" style="color:var(--text-muted);max-width:65ch;margin:-25px 0 35px;font-size:15px">
+          Recognitions, cloud certifications, and competitive technical milestones validating continuous industry readiness.
         </p>
 
-        <div class="cr rv">
-          <div id="cr"></div>
+        <!-- DUAL SPLIT ROW: LEFT = CERTIFICATIONS | RIGHT = ACHIEVEMENTS (WITH VERTICAL BORDER) -->
+        <div class="cred-split-container rv">
+          
+          <!-- FIRST HALF: CERTIFICATIONS -->
+          <div class="cred-split-col cred-col-cert">
+            <div class="cred-header-bar">
+              <div class="cred-header-left">
+                <div class="cred-badge-icon badge-icon-cert" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                  </svg>
+                </div>
+                <div class="cred-badge-title">
+                  <span class="cred-title-bold">Certified</span>
+                  <span class="cred-title-sep">•</span>
+                  <span class="cred-title-count">3 credentials</span>
+                </div>
+              </div>
+              <div class="cred-header-tech" aria-hidden="true">
+                <span class="cred-tech-slashes">///</span>
+                <span class="cred-tech-line"></span>
+                <div class="cred-tech-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cred-scroll-wrap" id="certScrollWrap">
+              <div class="cred-scroll-rail" id="certScrollRail">
+                <!-- Cert Cards (injected via script, duplicated for smooth loop) -->
+              </div>
+            </div>
+          </div>
+
+          <!-- SECOND HALF: ACHIEVEMENTS -->
+          <div class="cred-split-col cred-col-ach">
+            <div class="cred-header-bar ach-header-bar">
+              <div class="cred-header-left">
+                <div class="cred-badge-icon badge-icon-ach" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                    <path d="M4 22h16"/>
+                    <path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1-.45-1-1v-2.34"/>
+                    <path d="M18 17c0 .55-.45 1-1 1h-2c-.55 0-1-.45-1-1v-2.34"/>
+                    <path d="M6 4h12v7a6 6 0 0 1-12 0V4Z"/>
+                  </svg>
+                </div>
+                <div class="cred-badge-title">
+                  <span class="cred-title-bold">Achievements</span>
+                  <span class="cred-title-sep">•</span>
+                  <span class="cred-title-count">4 honors</span>
+                </div>
+              </div>
+              <div class="cred-header-tech" aria-hidden="true">
+                <span class="cred-tech-slashes">///</span>
+                <span class="cred-tech-line"></span>
+                <div class="cred-tech-dots">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cred-scroll-wrap" id="achScrollWrap">
+              <div class="cred-scroll-rail" id="achScrollRail">
+                <!-- Achievement Cards (injected via script, duplicated for smooth loop) -->
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -6658,57 +8874,215 @@
     ];
     $('#mq').innerHTML = [...techList, ...techList].map(t => `<span>${t}</span>`).join('');
 
-    // Certifications & Recognitions
-    const CERT = [
+    // =========================================================
+    // DUAL CREDENTIALS SYSTEM (CERTIFICATIONS & ACHIEVEMENTS)
+    // =========================================================
+    const CERTIFICATES = [
       {
-        i: 'Infosys Springboard',
-        t: 'Full Stack Development Internship Certificate',
-        d: 'Industry-oriented software training & successfully building CampusEventHub with Angular and REST APIs.',
-        y: 'Apr 2026',
-        u: 'https://drive.google.com/file/d/1ZpbLBsJ9zOfbE0NyYWQbz3hAqnNnY_W4/view?usp=sharing'
+        org: 'Oracle',
+        issuer: 'ORACLE CLOUD INFRASTRUCTURE',
+        title: 'OCI 2025 Certified Generative AI Professional',
+        detail: 'Validated expertise in LLM architectures, fine-tuning, retrieval-augmented generation (RAG), vector databases, and high-throughput deployment on Oracle Cloud Infrastructure.',
+        chips: ['LLMs & RAG', 'Prompt Eng', 'Vector DB', 'OCI AI Services', 'Agents'],
+        date: 'AUG 2025',
+        theme: 'cred-card-oracle',
+        logoImg: 'assets/journey/card3_oracle_logo.png',
+        badge: 'OCI CERTIFIED',
+        url: 'https://drive.google.com/file/d/1Lk8CDU-SlbJRo7cvmmLtZ3Z4VSWU5RFH/view?usp=sharing'
       },
       {
-        i: 'LeetCode Milestone',
-        t: '350+ Algorithmic Problems Solved',
-        d: 'Contest rating 1432, with proven strength in arrays, strings, trees, hashing, sliding window, and two pointers.',
-        y: 'Oct 2025 – Present',
-        u: 'https://leetcode.com/u/razashoeb2358/'
+        org: 'Infosys Springboard',
+        issuer: 'INFOSYS SPRINGBOARD',
+        title: 'Full Stack Web Development Internship Certificate',
+        detail: 'Industry-oriented software engineering internship; engineered CampusEventHub — 10+ modular Angular components, 8+ responsive screens, 100% REST APIs integration, and secure JWT authentication.',
+        chips: ['Angular 16+', 'TypeScript', 'REST APIs', 'JWT Security', 'Full Stack'],
+        date: 'FEB – APR 2026',
+        theme: 'cred-card-infosys',
+        logoImg: 'assets/journey/card9_infosys_logo.png',
+        badge: 'INTERNSHIP',
+        url: 'https://drive.google.com/file/d/1ZpbLBsJ9zOfbE0NyYWQbz3hAqnNnY_W4/view?usp=sharing'
       },
       {
-        i: 'CodeChef Contest Rank',
-        t: '2-Star Coder (Rating 1428)',
-        d: 'Consistently participating in global Division contests with 120+ algorithmic challenges solved.',
-        y: 'Sep 2025 – Present',
-        u: 'https://www.codechef.com/users/razashoeb2358'
-      },
-      {
-        i: 'Oracle Certification',
-        t: 'OCI 2025 Certified Generative AI Professional',
-        d: 'Validated expertise in LLM architectures, prompt engineering, fine-tuning, RAG frameworks, and deployment on Oracle Cloud Infrastructure.',
-        y: 'Aug 2025',
-        u: 'https://drive.google.com/file/d/1Lk8CDU-SlbJRo7cvmmLtZ3Z4VSWU5RFH/view?usp=sharing'
-      },
-      {
-        i: 'Lovely Professional University',
-        t: 'CodeXtreme 2.0 Certificate',
-        d: 'Honored for competitive problem-solving excellence and algorithmic efficiency in university-wide technical challenge.',
-        y: 'May 2025',
-        u: 'https://drive.google.com/file/d/1He9_dtJ6TIiqxEiQVuDhSexOCwElW-0C/view'
+        org: 'Lovely Professional University',
+        issuer: 'LOVELY PROFESSIONAL UNIVERSITY',
+        title: 'CodeXtreme 2.0 Certificate of Excellence (Top 30)',
+        detail: 'Secured Top 30 Rank university-wide for competitive problem-solving excellence and algorithmic efficiency in university-wide annual technical challenge among thousands of participants.',
+        chips: ['Top 30 Finalist', 'Data Structures', 'Algorithms', 'C++ Optimization'],
+        date: 'MAY 2025',
+        theme: 'cred-card-lpu',
+        logoImg: 'assets/journey/card2_lpu_logo.png',
+        badge: 'TOP 30 FINALIST',
+        url: 'https://drive.google.com/file/d/1He9_dtJ6TIiqxEiQVuDhSexOCwElW-0C/view'
       }
     ];
 
-    const card = c => `
-  <${c.u ? `a href="${c.u}" target="_blank" rel="noopener noreferrer"` : 'div'} class="box cc tilt${c.u ? ' cc-link' : ''}">
-    <div class="cc-top">
-      <small>${c.i}</small>
-      ${c.u ? `<span class="cc-badge-link">View ↗</span>` : ''}
-    </div>
-    <h3>${c.t}</h3>
-    <p>${c.d}</p>
-    <em>${c.y}</em>
-  </${c.u ? 'a' : 'div'}>
-`;
-    $('#cr').innerHTML = [...CERT, ...CERT].map(card).join('');
+    const ACHIEVEMENTS = [
+      {
+        org: 'Flipkart GRID 8.0',
+        issuer: 'FLIPKART GRID 8.0',
+        title: 'Semifinalist — Flipkart GRID 8.0',
+        detail: 'Advanced to the Semifinals in India\'s flagship engineering & technology innovation competition organized by Flipkart, competing across live algorithmic rounds and technical problem solving.',
+        chips: ['National Semifinalist', 'System Design', 'Algorithms', 'Engineering'],
+        date: '2025',
+        theme: 'cred-card-flipkart',
+        isSvg: 'flipkart',
+        badge: 'SEMIFINALIST',
+        url: 'https://drive.google.com/file/d/1nAwr9_LXbidGniyEm6d7un5xsMUv5YNG/view?usp=drive_link'
+      },
+      {
+        org: 'CodeXtreme 2.0 @ LPU',
+        issuer: 'CODEXTREME 2.0 @ LPU',
+        title: 'Top 30 Finalist • Competitive Coding Challenge',
+        detail: 'Ranked in the Top 30 out of thousands of university engineering competitors in advanced algorithmic challenges; demonstrated mastery in Trees, Graphs, DP, and Two Pointers in C++.',
+        chips: ['Top 30 Rank', 'Graph Theory', 'Advanced DP', 'C++ STL', 'Timed Rounds'],
+        date: 'MAY 2025',
+        theme: 'cred-card-lpu',
+        logoImg: 'assets/journey/card2_lpu_logo.png',
+        badge: 'TOP 30 FINALIST',
+        url: 'https://drive.google.com/file/d/1He9_dtJ6TIiqxEiQVuDhSexOCwElW-0C/view'
+      },
+      {
+        org: 'LeetCode Milestone',
+        issuer: 'LEETCODE MILESTONE',
+        title: '350+ Problems Solved • Contest Rating 1432',
+        detail: 'Consistent global contest participant with active rating 1432; high-speed problem solver across Trees, Graphs, Sliding Window, Two Pointers, Hashing, Recursion, and Binary Search.',
+        chips: ['350+ Solved', 'Rating 1432', 'Trees & Graphs', 'Sliding Window', 'DP'],
+        date: 'OCT 2025 – PRESENT',
+        theme: 'cred-card-leetcode',
+        logoImg: 'assets/journey/card7_leetcode_logo.png',
+        badge: 'RATING 1432',
+        url: 'https://leetcode.com/u/razashoeb2358/'
+      },
+      {
+        org: 'CodeChef Contest Rank',
+        issuer: 'CODECHEF CONTEST RANK',
+        title: '2-Star Coder • Rating 1428',
+        detail: 'Consistently competing in global Division algorithmic contests with 120+ challenges solved under strict time constraints; proven expertise in mathematical logic and competitive coding.',
+        chips: ['2★ Coder', 'Rating 1428', '120+ Solved', 'Math & Logic', 'Division Contests'],
+        date: 'SEP 2025 – PRESENT',
+        theme: 'cred-card-codechef',
+        logoImg: 'assets/journey/card5_codechef_logo.png',
+        badge: '2★ CODER',
+        url: 'https://www.codechef.com/users/razashoeb2358'
+      }
+    ];
+
+    function renderCredCard(c) {
+      let logoContent = '';
+      if (c.isSvg === 'flipkart') {
+        logoContent = `<svg width="42" height="42" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="56" height="56" rx="14" fill="#2874F0"/>
+          <path d="M32 14c-4.5 0-8 3.5-8 8h16c0-4.5-3.5-8-8-8z" stroke="#FFE500" stroke-width="3" fill="none"/>
+          <path d="M17 22h30l-3.5 28H20.5L17 22z" fill="#FFE500"/>
+          <path d="M30 28h8v5h-8v5h6v4h-6v8h-5V28h5z" fill="#2874F0"/>
+        </svg>`;
+      } else {
+        logoContent = `<img src="${c.logoImg}" alt="${c.org}" class="cred-logo-img" loading="lazy">`;
+      }
+
+      const tag = c.url ? 'a' : 'div';
+      const linkAttrs = c.url ? `href="${c.url}" target="_blank" rel="noopener noreferrer"` : '';
+      const chipsHtml = (c.chips && c.chips.length)
+        ? `<div class="cred-chips">${c.chips.map(ch => `<span class="cred-chip">${ch}</span>`).join('')}</div>`
+        : '';
+
+      return `<${tag} ${linkAttrs} class="cred-card ${c.theme}">
+        <div class="cred-logo-box">
+          ${logoContent}
+        </div>
+        <div class="cred-card-content">
+          <div>
+            <div class="cred-card-top">
+              <span class="cred-issuer">${c.issuer} <span class="cred-dash">—</span></span>
+              ${c.url ? '<span class="cred-arrow">↗</span>' : ''}
+            </div>
+            <h4 class="cred-card-title">${c.title}</h4>
+            <p class="cred-card-detail">${c.detail}</p>
+            ${chipsHtml}
+          </div>
+          <div class="cred-card-meta">
+            <span class="cred-date">${c.date}</span>
+            <span class="cred-pill">${c.badge}</span>
+          </div>
+        </div>
+      </${tag}>`;
+    }
+
+    // Populate rails with duplicates for seamless wrap
+    const certRail = document.getElementById('certScrollRail');
+    if (certRail) {
+      certRail.innerHTML = [...CERTIFICATES, ...CERTIFICATES, ...CERTIFICATES].map(renderCredCard).join('');
+    }
+
+    const achRail = document.getElementById('achScrollRail');
+    if (achRail) {
+      achRail.innerHTML = [...ACHIEVEMENTS, ...ACHIEVEMENTS, ...ACHIEVEMENTS].map(renderCredCard).join('');
+    }
+
+    // Independent smooth auto-scroll engines
+    function setupIndependentRail(railEl, wrapEl, speedPx) {
+      if (!railEl || !wrapEl) return;
+      let isPaused = false;
+      let isDragging = false;
+      let startX = 0;
+      let startScroll = 0;
+      let currentScroll = 0;
+      let lastTime = performance.now();
+
+      function tick(now) {
+        const dt = Math.min((now - lastTime) / 1000, 0.1);
+        lastTime = now;
+
+        if (!isPaused && !isDragging) {
+          const half = railEl.scrollWidth / 2;
+          if (half > 50) {
+            currentScroll += speedPx * dt;
+            if (currentScroll >= half) {
+              currentScroll -= half;
+            }
+            railEl.scrollLeft = Math.round(currentScroll);
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+
+      // Independent Pause on hover & touch
+      wrapEl.addEventListener('pointerenter', () => { isPaused = true; });
+      wrapEl.addEventListener('pointerleave', () => {
+        if (!isDragging) {
+          isPaused = false;
+          currentScroll = railEl.scrollLeft;
+          lastTime = performance.now();
+        }
+      });
+
+      // Pointer drag interaction
+      wrapEl.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        isPaused = true;
+        startX = e.pageX - wrapEl.offsetLeft;
+        startScroll = railEl.scrollLeft;
+      });
+      window.addEventListener('pointerup', () => {
+        if (isDragging) {
+          isDragging = false;
+          currentScroll = railEl.scrollLeft;
+          lastTime = performance.now();
+        }
+      });
+      wrapEl.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - wrapEl.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        railEl.scrollLeft = startScroll - walk;
+        currentScroll = railEl.scrollLeft;
+      });
+    }
+
+    setupIndependentRail(certRail, document.getElementById('certScrollWrap'), 42);
+    setupIndependentRail(achRail, document.getElementById('achScrollWrap'), 42);
 
     // More Non-Repeating Repositories on GitHub (NO MediPulse or JanSetu repeats!)
     const RP = [
@@ -7999,7 +10373,659 @@
       initProjectsSystem();
     }
 
+    /* ===================================================
+       SERIES TRAILER CINEMATIC CONTROLLER (PORTFOLIO SERIES STYLE)
+       =================================================== */
+    function initSeriesFeatures() {
+      // 1. Play Intro Button & Cinematic Modal
+      const modal = document.getElementById('trailerModal');
+      const openBtn = document.getElementById('openIntroBtn');
+      const closeBtn = document.getElementById('closeTrailerBtn');
+      const finaleCloseBtn = document.getElementById('finaleCloseBtn');
+      const tapLeft = document.getElementById('trailerTapLeft');
+      const tapRight = document.getElementById('trailerTapRight');
+      const playPauseBtn = document.getElementById('trailerPlayPauseBtn');
+      const soundBtn = document.getElementById('trailerSoundBtn');
+      const progBars = Array.from(document.querySelectorAll('.trailer-prog-bar'));
+      const slides = Array.from(document.querySelectorAll('.trailer-slide-card'));
+
+      if (modal && openBtn) {
+        const total = slides.length;
+        let current = 0;
+        let isPlaying = true;
+        let isPaused = false;
+        let soundEnabled = true;
+        let progressTimer = null;
+        let startTime = 0;
+        let elapsedBeforePause = 0;
+        const SLIDE_DURATION = 3600;
+
+        let audioCtx = null;
+        function playAudio(type) {
+          if (!soundEnabled) return;
+          try {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!audioCtx) audioCtx = new AudioContextClass();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'zoom') {
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(55, now);
+              osc.frequency.exponentialRampToValueAtTime(32, now + 1.2);
+              gain.gain.setValueAtTime(0.001, now);
+              gain.gain.linearRampToValueAtTime(0.35, now + 0.15);
+              gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.4);
+              osc.start(now);
+              osc.stop(now + 1.4);
+            } else if (type === 'slide') {
+              osc.type = 'sine';
+              osc.frequency.setValueAtTime(520, now);
+              osc.frequency.exponentialRampToValueAtTime(780, now + 0.12);
+              gain.gain.setValueAtTime(0.08, now);
+              gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+              osc.start(now);
+              osc.stop(now + 0.15);
+            }
+          } catch (e) {}
+        }
+
+        function openIntro() {
+          modal.hidden = false;
+          modal.classList.add('active', 'phase-zoom');
+          modal.classList.remove('phase-reel');
+          document.body.style.overflow = 'hidden';
+          playAudio('zoom');
+
+          progBars.forEach(b => {
+            b.classList.remove('completed');
+            const f = b.querySelector('.trailer-prog-fill');
+            if (f) f.style.width = '0%';
+          });
+
+          setTimeout(() => {
+            modal.classList.remove('phase-zoom');
+            modal.classList.add('phase-reel');
+            goToSlide(0);
+          }, 1600);
+        }
+
+        function closeIntro() {
+          pauseTimer();
+          modal.classList.remove('active', 'phase-zoom', 'phase-reel');
+          setTimeout(() => {
+            modal.hidden = true;
+            document.body.style.overflow = '';
+          }, 450);
+        }
+
+        function updateProgressBars() {
+          progBars.forEach((bar, idx) => {
+            const fill = bar.querySelector('.trailer-prog-fill');
+            bar.classList.remove('completed');
+            if (idx < current) {
+              bar.classList.add('completed');
+              if (fill) fill.style.width = '100%';
+            } else if (idx === current) {
+              const pct = Math.min(100, (elapsedBeforePause / SLIDE_DURATION) * 100);
+              if (fill) fill.style.width = pct + '%';
+            } else {
+              if (fill) fill.style.width = '0%';
+            }
+          });
+        }
+
+        function tickProgress() {
+          if (!isPlaying || isPaused) return;
+          const now = performance.now();
+          const currentElapsed = elapsedBeforePause + (now - startTime);
+          const pct = Math.min(100, (currentElapsed / SLIDE_DURATION) * 100);
+
+          const activeBar = progBars[current];
+          if (activeBar) {
+            const fill = activeBar.querySelector('.trailer-prog-fill');
+            if (fill) fill.style.width = pct + '%';
+          }
+
+          if (currentElapsed >= SLIDE_DURATION) {
+            if (current < total - 1) {
+              goToSlide(current + 1);
+            } else {
+              // Final slide completed: fill the last progress bar & auto close modal!
+              pauseTimer();
+              const activeBar = progBars[current];
+              if (activeBar) {
+                activeBar.classList.add('completed');
+                const fill = activeBar.querySelector('.trailer-prog-fill');
+                if (fill) fill.style.width = '100%';
+              }
+              isPlaying = false;
+              updatePlayPauseIcon();
+              setTimeout(() => {
+                closeIntro();
+              }, 450);
+            }
+          } else {
+            progressTimer = requestAnimationFrame(tickProgress);
+          }
+        }
+
+        function startTimer() {
+          cancelAnimationFrame(progressTimer);
+          startTime = performance.now();
+          progressTimer = requestAnimationFrame(tickProgress);
+        }
+
+        function pauseTimer() {
+          if (startTime) {
+            elapsedBeforePause += performance.now() - startTime;
+          }
+          startTime = 0;
+          cancelAnimationFrame(progressTimer);
+        }
+
+        function goToSlide(idx) {
+          if (idx < 0) idx = 0;
+          if (idx >= total) idx = total - 1;
+
+          current = idx;
+          elapsedBeforePause = 0;
+
+          slides.forEach((s, i) => {
+            s.classList.remove('active');
+            if (i === current) {
+              s.classList.add('active');
+              // Restart animation
+              const animatedElements = s.querySelectorAll('.trailer-kicker, .trailer-title, .trailer-line, .trailer-chip');
+              animatedElements.forEach(el => {
+                el.style.animation = 'none';
+                void el.offsetWidth;
+                el.style.animation = '';
+              });
+            }
+          });
+
+          updateProgressBars();
+          playAudio('slide');
+
+          if (isPlaying && !isPaused) {
+            startTimer();
+          }
+        }
+
+        function togglePlayPause() {
+          isPaused = !isPaused;
+          if (isPaused) {
+            pauseTimer();
+          } else {
+            startTimer();
+          }
+          updatePlayPauseIcon();
+        }
+
+        function updatePlayPauseIcon() {
+          if (!playPauseBtn) return;
+          const iconPause = playPauseBtn.querySelector('.icon-pause');
+          const iconPlay = playPauseBtn.querySelector('.icon-play');
+          if (iconPause && iconPlay) {
+            iconPause.style.display = (!isPaused && isPlaying) ? 'block' : 'none';
+            iconPlay.style.display = (!isPaused && isPlaying) ? 'none' : 'block';
+          }
+        }
+
+        function toggleSound() {
+          soundEnabled = !soundEnabled;
+          if (!soundBtn) return;
+          const iconOn = soundBtn.querySelector('.icon-sound-on');
+          const iconOff = soundBtn.querySelector('.icon-sound-off');
+          if (iconOn && iconOff) {
+            iconOn.style.display = soundEnabled ? 'block' : 'none';
+            iconOff.style.display = soundEnabled ? 'none' : 'block';
+          }
+        }
+
+        openBtn.addEventListener('click', e => {
+          e.preventDefault();
+          openIntro();
+        });
+
+        if (closeBtn) closeBtn.addEventListener('click', closeIntro);
+        if (finaleCloseBtn) finaleCloseBtn.addEventListener('click', closeIntro);
+
+        if (tapLeft) tapLeft.addEventListener('click', () => goToSlide(current - 1));
+        if (tapRight) tapRight.addEventListener('click', () => goToSlide(current + 1));
+        if (playPauseBtn) playPauseBtn.addEventListener('click', togglePlayPause);
+        if (soundBtn) soundBtn.addEventListener('click', toggleSound);
+
+        progBars.forEach((bar, idx) => {
+          bar.addEventListener('click', e => {
+            e.stopPropagation();
+            goToSlide(idx);
+          });
+        });
+
+        modal.addEventListener('pointerdown', e => {
+          if (e.target.closest('button, a')) return;
+          pauseTimer();
+        });
+        modal.addEventListener('pointerup', () => {
+          if (isPlaying && !isPaused) startTimer();
+        });
+        modal.addEventListener('pointercancel', () => {
+          if (isPlaying && !isPaused) startTimer();
+        });
+
+        document.addEventListener('keydown', e => {
+          if (!modal.classList.contains('active')) return;
+          if (e.key === 'Escape') closeIntro();
+          else if (e.key === 'ArrowLeft') goToSlide(current - 1);
+          else if (e.key === 'ArrowRight') goToSlide(current + 1);
+          else if (e.key === ' ') {
+            e.preventDefault();
+            togglePlayPause();
+          }
+        });
+      }
+
+      // 2. Seasons Tab Switcher with Framer-style Blur & Slide Transition
+      const seasonTabs = document.querySelectorAll('.season-tab-btn');
+      let currentSeasonIdx = 0;
+      let isTransitioningSeason = false;
+
+      seasonTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetIdx = parseInt(tab.getAttribute('data-season-idx'), 10);
+          if (targetIdx === currentSeasonIdx || isTransitioningSeason) return;
+
+          isTransitioningSeason = true;
+          seasonTabs.forEach((t, i) => {
+            t.classList.toggle('active', i === targetIdx);
+            t.setAttribute('aria-selected', i === targetIdx ? 'true' : 'false');
+          });
+
+          const oldPane = document.getElementById('seasonPane' + currentSeasonIdx);
+          const newPane = document.getElementById('seasonPane' + targetIdx);
+
+          if (oldPane) {
+            oldPane.classList.add('exiting');
+            setTimeout(() => {
+              oldPane.style.display = 'none';
+              oldPane.classList.remove('active', 'exiting');
+
+              if (newPane) {
+                newPane.style.display = 'block';
+                void newPane.offsetWidth;
+                newPane.classList.add('active', 'entering');
+
+                const cards = newPane.querySelectorAll('.episode-card');
+                cards.forEach((card, cI) => {
+                  card.style.animation = 'none';
+                  void card.offsetWidth;
+                  card.style.animation = `episodeCardStagger 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${cI * 0.09}s both`;
+                });
+              }
+              currentSeasonIdx = targetIdx;
+              isTransitioningSeason = false;
+            }, 260);
+          } else {
+            isTransitioningSeason = false;
+          }
+        });
+      });
+
+      // 3. Top Picks Continuous Infinite Auto-Scroll Ticker (Sub-pixel Float Engine)
+      const topPicksRail = document.getElementById('topPicksRail');
+      if (topPicksRail) {
+        let isTopPicksPaused = false;
+        let isDragging = false;
+        let startX = 0;
+        let startScroll = 0;
+        let currentScroll = 0;
+        let lastTime = performance.now();
+        const PIXELS_PER_SEC = 55; // Steady, buttery-smooth cinematic pace (~55px/sec)
+
+        function autoScrollTicker(now) {
+          const dt = Math.min((now - lastTime) / 1000, 0.1);
+          lastTime = now;
+
+          if (!isTopPicksPaused && !isDragging) {
+            const halfWidth = topPicksRail.scrollWidth / 2;
+            if (halfWidth > 50) {
+              currentScroll += PIXELS_PER_SEC * dt;
+              if (currentScroll >= halfWidth) {
+                currentScroll -= halfWidth; // Seamless infinite wrap!
+              }
+              topPicksRail.scrollLeft = Math.round(currentScroll);
+            }
+          }
+          requestAnimationFrame(autoScrollTicker);
+        }
+        requestAnimationFrame(autoScrollTicker);
+
+        // Pause on mouse hover & mobile touch
+        topPicksRail.addEventListener('pointerenter', () => { isTopPicksPaused = true; });
+        topPicksRail.addEventListener('pointerleave', () => {
+          if (!isDragging) {
+            isTopPicksPaused = false;
+            currentScroll = topPicksRail.scrollLeft;
+            lastTime = performance.now();
+          }
+        });
+
+        // Drag-to-scroll support without blocking vertical page scroll
+        topPicksRail.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          isDragging = true;
+          isTopPicksPaused = true;
+          startX = e.pageX;
+          startScroll = topPicksRail.scrollLeft;
+          topPicksRail.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('pointermove', (e) => {
+          if (!isDragging) return;
+          const dx = e.pageX - startX;
+          topPicksRail.scrollLeft = startScroll - dx;
+          currentScroll = topPicksRail.scrollLeft;
+        });
+
+        const stopDrag = () => {
+          if (isDragging) {
+            isDragging = false;
+            topPicksRail.style.cursor = 'grab';
+            currentScroll = topPicksRail.scrollLeft;
+            lastTime = performance.now();
+            setTimeout(() => { isTopPicksPaused = false; }, 600);
+          }
+        };
+        window.addEventListener('pointerup', stopDrag);
+        window.addEventListener('pointercancel', stopDrag);
+
+        // Sync accumulator if external scroll happens (touchpad swipe, buttons)
+        topPicksRail.addEventListener('scroll', () => {
+          if (isDragging || isTopPicksPaused || Math.abs(topPicksRail.scrollLeft - currentScroll) > 8) {
+            const halfWidth = topPicksRail.scrollWidth / 2;
+            if (halfWidth > 50 && topPicksRail.scrollLeft >= halfWidth) {
+              topPicksRail.scrollLeft -= halfWidth;
+            }
+            currentScroll = topPicksRail.scrollLeft;
+          }
+        }, { passive: true });
+
+        // Scroll reveal on entry
+        if ('IntersectionObserver' in window) {
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                document.getElementById('top-picks')?.classList.add('reveal-in');
+                obs.disconnect();
+              }
+            });
+          }, { threshold: 0.15 });
+          const sec = document.getElementById('top-picks');
+          if (sec) obs.observe(sec);
+        }
+
+        // Global function for arrow buttons
+        window.scrollTopPicks = function(direction) {
+          isTopPicksPaused = true;
+          topPicksRail.scrollBy({ left: direction * 360, behavior: 'smooth' });
+          setTimeout(() => {
+            const halfWidth = topPicksRail.scrollWidth / 2;
+            if (halfWidth > 50 && topPicksRail.scrollLeft >= halfWidth) {
+              topPicksRail.scrollLeft -= halfWidth;
+            }
+            currentScroll = topPicksRail.scrollLeft;
+            lastTime = performance.now();
+            isTopPicksPaused = false;
+          }, 650);
+        };
+      }
+    }
+
+    // Global Rail Scrolling Functions with Auto-Season Switching
+    window.scrollEpisodesRail = function(seasonIdx, direction) {
+      const rail = document.getElementById('episodesRail' + seasonIdx);
+      if (!rail) return;
+
+      const tolerance = 25;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - tolerance;
+      const atStart = rail.scrollLeft <= tolerance;
+
+      if (direction === 1 && atEnd) {
+        // Switch to Next Season
+        const nextIdx = seasonIdx + 1;
+        const nextTab = document.querySelector(`.season-tab-btn[data-season-idx="${nextIdx}"]`);
+        if (nextTab) {
+          nextTab.click();
+          setTimeout(() => {
+            const nextRail = document.getElementById('episodesRail' + nextIdx);
+            if (nextRail) nextRail.scrollLeft = 0;
+          }, 300);
+        }
+      } else if (direction === -1 && atStart) {
+        // Switch to Previous Season
+        const prevIdx = seasonIdx - 1;
+        const prevTab = document.querySelector(`.season-tab-btn[data-season-idx="${prevIdx}"]`);
+        if (prevTab) {
+          prevTab.click();
+          setTimeout(() => {
+            const prevRail = document.getElementById('episodesRail' + prevIdx);
+            if (prevRail) prevRail.scrollLeft = prevRail.scrollWidth;
+          }, 300);
+        }
+      } else {
+        // Normal horizontal smooth glide within the current season
+        rail.scrollBy({ left: direction * 380, behavior: 'smooth' });
+      }
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSeriesFeatures);
+    } else {
+      initSeriesFeatures();
+    }
   </script>
+
+  <!-- FULLSCREEN CINEMATIC TRAILER MODAL (PORTFOLIO SERIES STYLE) -->
+  <div id="trailerModal" class="trailer-modal" role="dialog" aria-modal="true" aria-label="Shoeb Raza Series Trailer" hidden>
+    <div class="trailer-ambient-glow" aria-hidden="true"></div>
+
+    <!-- Zoom In Portrait Silhouette -->
+    <div class="trailer-portrait-layer" id="trailerPortraitLayer" aria-hidden="true">
+      <img src="assets/portrait-1100.webp" alt="Shoeb Raza Portrait" class="trailer-portrait-img">
+    </div>
+
+    <!-- Top Segmented Progress Bars (Series Style) -->
+    <div class="trailer-progress-wrap" id="trailerProgressWrap">
+      <div class="trailer-prog-bar" title="Episode 1: Academics"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 2: Core Stack"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 3: Originals"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 4: DSA"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 5: Internship"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 6: Credentials"><div class="trailer-prog-fill"></div></div>
+      <div class="trailer-prog-bar" title="Episode 7: Now Streaming"><div class="trailer-prog-fill"></div></div>
+    </div>
+
+    <!-- Mobile & Desktop Tap Nav Zones -->
+    <button type="button" class="trailer-tap-zone trailer-tap-left" id="trailerTapLeft" aria-label="Previous Highlight"></button>
+    <button type="button" class="trailer-tap-zone trailer-tap-right" id="trailerTapRight" aria-label="Next Highlight"></button>
+
+    <!-- Center Reel Stage -->
+    <div class="trailer-reel-stage" id="trailerReelStage">
+
+      <!-- EPISODE 1: FULL ACADEMIC JOURNEY (SCHOOLING + UNIVERSITY) -->
+      <div class="trailer-slide-card active" data-index="0">
+        <div class="trailer-kicker">EPISODE 01 · ACADEMIC JOURNEY &amp; FOUNDATION</div>
+        <h2 class="trailer-title">LPU &amp; SCHOOLING</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line">🎓 <strong>University:</strong> B.Tech in CSE @ Lovely Professional University, Punjab (2024 – Present) · <strong>CGPA 8.94</strong></p>
+          <p class="trailer-line">🏫 <strong>Intermediate (12th):</strong> DS Boarding School, Supaul, Bihar (May 2023 – Apr 2024) · <strong>74% Marks</strong></p>
+          <p class="trailer-line">🏫 <strong>Matriculation (10th):</strong> Indian High School, Saharsa, Bihar (May 2021 – Apr 2022) · <strong>90% Marks</strong></p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">B.Tech CSE (8.94 CGPA)</span>
+          <span class="trailer-chip highlight">10th Matric (90%)</span>
+          <span class="trailer-chip">12th Inter (74%)</span>
+          <span class="trailer-chip">Consistent Academic Rigor</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 2: CORE TECH STACK -->
+      <div class="trailer-slide-card" data-index="1">
+        <div class="trailer-kicker">EPISODE 02 · TECHNICAL ARSENAL</div>
+        <h2 class="trailer-title">MERN + NEXT.JS + REAL-TIME</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line">React.js, Next.js, Node.js, Express.js, MongoDB, Angular, TypeScript</p>
+          <p class="trailer-line">Socket.io Real-Time Telemetry, Python Flask, C++ Algorithmic Engineering</p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">React</span>
+          <span class="trailer-chip highlight">Next.js</span>
+          <span class="trailer-chip highlight">Node.js</span>
+          <span class="trailer-chip">Express</span>
+          <span class="trailer-chip">MongoDB</span>
+          <span class="trailer-chip highlight">Socket.io</span>
+          <span class="trailer-chip">C++</span>
+          <span class="trailer-chip">Python</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 3: PRODUCTION ORIGINALS -->
+      <div class="trailer-slide-card" data-index="2">
+        <div class="trailer-kicker">EPISODE 03 · PRODUCTION ORIGINALS</div>
+        <h2 class="trailer-title">REAL-WORLD IMPACT</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line"><strong>JanSetu:</strong> Citizen-to-Innovation civic platform with AI triage &amp; department routing</p>
+          <p class="trailer-line"><strong>MediPulse:</strong> Smart hospital management with live bed/ICU telemetry &amp; OPD queues</p>
+          <p class="trailer-line"><strong>RapidX:</strong> Helper auto-assignment dispatch engine with sub-second matching</p>
+          <p class="trailer-line"><strong>AI Study Suite Pro:</strong> Document intelligence &amp; active recall via Gemini LLM</p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">JanSetu</span>
+          <span class="trailer-chip highlight">MediPulse</span>
+          <span class="trailer-chip highlight">RapidX</span>
+          <span class="trailer-chip">AI Study Suite Pro</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 4: 350+ LEETCODE & 2* CODECHEF -->
+      <div class="trailer-slide-card" data-index="3">
+        <div class="trailer-kicker">EPISODE 04 · ALGORITHMIC MASTERY</div>
+        <h2 class="trailer-title">350+ LEETCODE · 2★ CODECHEF</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line"><strong>LeetCode:</strong> 350+ problems solved with Contest Rating <strong>1432</strong></p>
+          <p class="trailer-line"><strong>CodeChef:</strong> 2-Star rated (<strong>1428</strong>) across 120+ competitive coding challenges</p>
+          <p class="trailer-line">Deep algorithmic focus in C++: Trees, Graphs, Sliding Window, DP &amp; Binary Search</p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">350+ LeetCode (1432)</span>
+          <span class="trailer-chip highlight">2★ CodeChef (1428)</span>
+          <span class="trailer-chip">C++ STL</span>
+          <span class="trailer-chip">Data Structures</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 5: INFOSYS SPRINGBOARD INTERNSHIP -->
+      <div class="trailer-slide-card" data-index="4">
+        <div class="trailer-kicker">EPISODE 05 · PROFESSIONAL EXPERIENCE</div>
+        <h2 class="trailer-title">INFOSYS SPRINGBOARD</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line">Full Stack Web Development Intern (Virtual) · Feb – Apr 2026</p>
+          <p class="trailer-line">Engineered <strong>CampusEventHub</strong> — 10+ Angular components &amp; 8+ responsive screens</p>
+          <p class="trailer-line">100% RESTful API integration with secure JWT authentication &amp; organizer workflows</p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">Infosys Springboard</span>
+          <span class="trailer-chip highlight">CampusEventHub</span>
+          <span class="trailer-chip">Angular</span>
+          <span class="trailer-chip">REST APIs</span>
+          <span class="trailer-chip">JWT Auth</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 6: VALIDATED CREDENTIALS -->
+      <div class="trailer-slide-card" data-index="5">
+        <div class="trailer-kicker">EPISODE 06 · VALIDATED CREDENTIALS</div>
+        <h2 class="trailer-title">CLOUD &amp; CODING HONORS</h2>
+        <div class="trailer-lines-wrap">
+          <p class="trailer-line">☁️ <strong>Oracle Cloud Infrastructure:</strong> 2025 Certified Generative AI Professional</p>
+          <p class="trailer-line">🏅 <strong>CodeXtreme 2.0:</strong> Top 30 Finalist in University Competitive Coding @ LPU</p>
+          <p class="trailer-line">📜 <strong>Infosys Springboard:</strong> Full Stack Web Development Certification</p>
+        </div>
+        <div class="trailer-chips-wrap">
+          <span class="trailer-chip highlight">OCI GenAI 2025</span>
+          <span class="trailer-chip highlight">CodeXtreme 2.0 (Top 30)</span>
+          <span class="trailer-chip">Infosys Springboard</span>
+        </div>
+      </div>
+
+      <!-- EPISODE 7: FINALE - NOW STREAMING -->
+      <div class="trailer-slide-card" data-index="6">
+        <div class="trailer-finale-box">
+          <div class="trailer-kicker">EPISODE 07 · THE FINALE</div>
+          <h2 class="trailer-now-streaming">NOW STREAMING</h2>
+          <p class="trailer-stream-name">SHOEB RAZA</p>
+          <p class="trailer-line" style="margin-top:12px; max-width:600px;">
+            Actively available for Full-Stack Developer, SDE &amp; Frontend/Backend engineering opportunities.
+          </p>
+          <div class="trailer-finale-actions">
+            <a href="Shoeb_Raza_Specialised_CV.pdf" download class="trailer-action-btn primary">
+              <span>⤓</span> Download CV (PDF)
+            </a>
+            <a href="https://wa.me/918406022747" target="_blank" rel="noopener" class="trailer-action-btn secondary">
+              <span>💬</span> WhatsApp (+91 8406022747)
+            </a>
+            <a href="mailto:razashoeb840@gmail.com" class="trailer-action-btn secondary">
+              <span>✉️</span> Email Direct
+            </a>
+            <button type="button" class="trailer-action-btn secondary" id="finaleCloseBtn">
+              <span>✕</span> Return to Portfolio
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Controls Bar (Series Style) -->
+    <div class="trailer-bottom-bar">
+      <div class="trailer-left-controls">
+        <button type="button" class="trailer-ctrl-btn" id="trailerPlayPauseBtn" aria-label="Toggle Pause">
+          <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16" rx="1.5"/>
+            <rect x="14" y="4" width="4" height="16" rx="1.5"/>
+          </svg>
+          <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+            <polygon points="6 4 20 12 6 20 6 4"/>
+          </svg>
+        </button>
+
+        <button type="button" class="trailer-ctrl-btn" id="trailerSoundBtn" aria-label="Toggle Sound" title="Sound Effects">
+          <svg class="icon-sound-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg class="icon-sound-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M23 9l-6 6"></path>
+          </svg>
+        </button>
+
+        <span class="trailer-key-hints">SPACE · ← → · ESC</span>
+      </div>
+
+      <button type="button" class="trailer-close-btn" id="closeTrailerBtn">
+        BACK TO BROWSE ✕
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>
