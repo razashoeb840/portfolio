@@ -7,7 +7,7 @@
 
 <!-- STREAMING ACTION CONTROLS -->
 <p align="center">
-  <a href="https://razashoeb840.github.io/portfolio/">
+  <a href="https://portfolio-kappa-dun-13.vercel.app/">
     <img src="https://img.shields.io/badge/▶_STREAM_PORTFOLIO-E50914?style=for-the-badge&logoColor=white&logo=googlechrome" alt="Stream Portfolio" />
   </a>
   <a href="https://raw.githubusercontent.com/razashoeb840/portfolio/main/Shoeb_Raza_Specialised_CV.pdf">
@@ -480,7 +480,7 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 <h3><i>"Engineering high-throughput systems, line by line."</i></h3>
 
 <p>
-  <a href="https://razashoeb840.github.io/portfolio/">
+  <a href="https://portfolio-kappa-dun-13.vercel.app/">
     <img src="https://img.shields.io/badge/PORTFOLIO_SITE-E50914?style=for-the-badge&logo=googlechrome&logoColor=white" />
   </a>
   <a href="https://raw.githubusercontent.com/razashoeb840/portfolio/main/Shoeb_Raza_Specialised_CV.pdf">
