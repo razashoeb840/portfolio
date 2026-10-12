@@ -121,8 +121,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 <table>
   <!-- PROJECT 1: JANSETU -->
   <tr>
-    <td width="42%" valign="middle" align="center">
-      <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/hd_card11_jansetu_preview.png" alt="JanSetu Preview" width="100%" style="border-radius:8px;" />
+    <td width="46%" valign="middle" align="center">
+      <a href="https://jansetu-h177.onrender.com/">
+        <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/jansetu.png" alt="JanSetu Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(0,245,255,0.3); box-shadow:0 8px 24px rgba(0,0,0,0.8);" />
+      </a>
       <br/><br/>
       <a href="https://jansetu-h177.onrender.com/">
         <img src="https://img.shields.io/badge/▶_STREAM_LIVE-00F5FF?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
@@ -131,7 +133,7 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
         <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="58%" valign="top">
+    <td width="54%" valign="top">
       <h3>#01 · JanSetu <img src="https://img.shields.io/badge/A_SHOEB_ORIGINAL-E50914?style=flat-square" /> <img src="https://img.shields.io/badge/LIVE_PRODUCTION-22C55E?style=flat-square" /></h3>
       <p><b>Genre:</b> Civic Tech • AI Triage • Multi-Stakeholder Innovation</p>
       <p><i>Citizen-to-Innovation platform connecting citizens, government bodies, universities, and industry to report, track, and resolve municipal challenges.</i></p>
@@ -155,8 +157,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
   <!-- PROJECT 2: MEDIPULSE -->
   <tr>
-    <td width="42%" valign="middle" align="center">
-      <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/hd_card10_medipulse_preview.png" alt="MediPulse Preview" width="100%" style="border-radius:8px;" />
+    <td width="46%" valign="middle" align="center">
+      <a href="https://deploy-fcr3.onrender.com/1index.html">
+        <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/Medipulse.png" alt="MediPulse Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,45,85,0.3); box-shadow:0 8px 24px rgba(0,0,0,0.8);" />
+      </a>
       <br/><br/>
       <a href="https://deploy-fcr3.onrender.com/1index.html">
         <img src="https://img.shields.io/badge/▶_STREAM_LIVE-FF2D55?style=for-the-badge&logoColor=white" alt="Live Demo" />
@@ -165,7 +169,7 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
         <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="58%" valign="top">
+    <td width="54%" valign="top">
       <h3>#02 · MediPulse <img src="https://img.shields.io/badge/A_SHOEB_ORIGINAL-E50914?style=flat-square" /> <img src="https://img.shields.io/badge/REAL--TIME_TELEMETRY-FF2D55?style=flat-square" /></h3>
       <p><b>Genre:</b> HealthTech • Real-Time Telemetry • Unified Clinical Ledger</p>
       <p><i>Unified smart hospital platform governing patient registration, live bed & ICU occupancy telemetry, doctor consultation desks, pharmacy automation, and hospital billing.</i></p>
@@ -188,8 +192,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
   <!-- PROJECT 3: RAPIDX -->
   <tr>
-    <td width="42%" valign="middle" align="center">
-      <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/hd_card8_rapidx_preview.png" alt="RapidX Preview" width="100%" style="border-radius:8px;" />
+    <td width="46%" valign="middle" align="center">
+      <a href="https://rapidx-transit.onrender.com/">
+        <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/rapidx.png" alt="RapidX Real Dispatch Engine Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,181,71,0.3); box-shadow:0 8px 24px rgba(0,0,0,0.8);" />
+      </a>
       <br/><br/>
       <a href="https://rapidx-transit.onrender.com/">
         <img src="https://img.shields.io/badge/▶_STREAM_LIVE-FFB547?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
@@ -198,7 +204,7 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
         <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="58%" valign="top">
+    <td width="54%" valign="top">
       <h3>#03 · RapidX <img src="https://img.shields.io/badge/A_SHOEB_ORIGINAL-E50914?style=flat-square" /> <img src="https://img.shields.io/badge/DISPATCH_ENGINE-FFB547?style=flat-square" /></h3>
       <p><b>Genre:</b> Transit & Logistics • Real-Time Allocation Engine</p>
       <p><i>High-concurrency task allocation engine pairing service requests with proximate active helpers via spatial geohashing and dynamic load balancing.</i></p>
@@ -220,8 +226,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
   <!-- PROJECT 4: AI STUDY SUITE PRO -->
   <tr>
-    <td width="42%" valign="middle" align="center">
-      <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/hd_card6_aistudy_preview.png" alt="AI Study Suite Preview" width="100%" style="border-radius:8px;" />
+    <td width="46%" valign="middle" align="center">
+      <a href="https://ai-study-suite-alpha.vercel.app">
+        <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/aistdysuit.png" alt="AI Study Suite Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(192,132,252,0.3); box-shadow:0 8px 24px rgba(0,0,0,0.8);" />
+      </a>
       <br/><br/>
       <a href="https://ai-study-suite-alpha.vercel.app">
         <img src="https://img.shields.io/badge/▶_STREAM_LIVE-C084FC?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
@@ -230,7 +238,7 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
         <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="58%" valign="top">
+    <td width="54%" valign="top">
       <h3>#04 · AI Study Suite Pro <img src="https://img.shields.io/badge/A_SHOEB_ORIGINAL-E50914?style=flat-square" /> <img src="https://img.shields.io/badge/GEMINI_LLM-C084FC?style=flat-square" /></h3>
       <p><b>Genre:</b> EdTech • Document Intelligence • Generative AI</p>
       <p><i>Intelligent academic workspace ingesting textbooks and lecture slides to synthesize chapter breakdowns, active-recall flashcards, and diagnostic exams.</i></p>
@@ -252,14 +260,16 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
   <!-- PROJECT 5: FOCUSGUARD PRO -->
   <tr>
-    <td width="42%" valign="middle" align="center">
-      <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/hd_card4_focusguard_preview.png" alt="FocusGuard Pro Preview" width="100%" style="border-radius:8px;" />
+    <td width="46%" valign="middle" align="center">
+      <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon">
+        <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/focusguard.png" alt="FocusGuard Pro Real Extension Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(52,211,153,0.3); box-shadow:0 8px 24px rgba(0,0,0,0.8);" />
+      </a>
       <br/><br/>
       <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon">
         <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="58%" valign="top">
+    <td width="54%" valign="top">
       <h3>#05 · FocusGuard Pro <img src="https://img.shields.io/badge/A_SHOEB_ORIGINAL-E50914?style=flat-square" /> <img src="https://img.shields.io/badge/MANIFEST_V3-34D399?style=flat-square" /></h3>
       <p><b>Genre:</b> Productivity Tech • Chrome Extension • Low-Latency Controls</p>
       <p><i>Ultra-lightweight browser extension curbing digital distractions through deterministic Declarative Net Request URL filtering and tamper-resistant timers.</i></p>
@@ -360,6 +370,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 <details open>
   <summary><b>💼 SEASON 04: Industry Experience (Feb 2026 – Apr 2026)</b> — <i>Full-stack enterprise engineering</i></summary>
   <br/>
+  <div align="center">
+    <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/journey/infosys_real.png" alt="Infosys Springboard" width="90%" style="border-radius:8px; border:1px solid rgba(255,255,255,0.1);" />
+  </div>
+  <br/>
   <ul>
     <li><b>S04 E01 · The Infosys Internship:</b> Virtual Full Stack Development Intern at Infosys Springboard specializing in reactive Angular architectures.</li>
     <li><b>S04 E02 · CampusEventHub:</b> Engineered 10+ reusable modular Angular components, 8+ screens, reactive forms, and 100% RESTful API integration.</li>
@@ -380,6 +394,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 <details>
   <summary><b>🎓 SEASON 02: Entering Engineering (2024 – Present)</b> — <i>B.Tech CSE @ Lovely Professional University</i></summary>
   <br/>
+  <div align="center">
+    <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/lpu_building.png" alt="LPU Campus" width="90%" style="border-radius:8px; border:1px solid rgba(255,255,255,0.1);" />
+  </div>
+  <br/>
   <ul>
     <li><b>S02 E01 · The University Leap:</b> Enrolled in B.Tech CSE at LPU, maintaining an outstanding cumulative <b>CGPA of 8.94 / 10.0</b>.</li>
     <li><b>S02 E02 · CodeXtreme 2.0:</b> Ranked in the Top 30 university-wide algorithmic competitive programming tournament.</li>
@@ -389,6 +407,10 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
 <details>
   <summary><b>🌱 SEASON 01: The Foundation (2021 – 2024)</b> — <i>Schooling & quantitative grounding in Bihar</i></summary>
+  <br/>
+  <div align="center">
+    <img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/indian_high_school.png" alt="Indian High School" width="90%" style="border-radius:8px; border:1px solid rgba(255,255,255,0.1);" />
+  </div>
   <br/>
   <ul>
     <li><b>S01 E01 · Matriculation Honors:</b> Indian High School, Saharsa, Bihar — completed with an exceptional <b>90% score</b>.</li>
@@ -416,17 +438,26 @@ RANK   TITLE                 GENRE & FOCUS                         SYSTEM HIGHLI
 
 ---
 
-### 📡 LIVE TELEMETRY & STREAMING STATS (GitHub Activity Radar)
+### 🟩 GITHUB ACTIVITY RADAR & DATEWISE COMMIT GRAPH
 
 <div align="center">
 
-<table border="0">
+<p align="center">
+  <b>⚡ Real 365-Day Datewise Commit Activity (Official GitHub Black & Neon Green)</b>
+</p>
+
+<!-- REAL DATEWISE CONTRIBUTION GRAPH WITH BLACK & NEON GREEN -->
+<img src="https://raw.githubusercontent.com/razashoeb840/portfolio/main/assets/github-contributions.svg" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)" width="100%" />
+
+<br/><br/>
+
+<table border="0" width="100%">
   <tr>
-    <td align="center" valign="middle">
-      <img src="https://github-readme-stats.vercel.app/api?username=razashoeb840&show_icons=true&theme=radical&bg_color=05070d&title_color=e50914&text_color=cbd5e1&icon_color=00f5ff&border_color=e50914&hide_border=false" alt="Shoeb's GitHub Stats" />
+    <td align="center" valign="middle" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api?username=razashoeb840&show_icons=true&theme=radical&bg_color=05070d&title_color=e50914&text_color=cbd5e1&icon_color=00f5ff&border_color=e50914&hide_border=false" alt="Shoeb's GitHub Stats" width="100%" />
     </td>
-    <td align="center" valign="middle">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=razashoeb840&layout=compact&theme=radical&bg_color=05070d&title_color=e50914&text_color=cbd5e1&border_color=00f5ff&hide_border=false" alt="Top Languages" />
+    <td align="center" valign="middle" width="50%">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=razashoeb840&layout=compact&theme=radical&bg_color=05070d&title_color=e50914&text_color=cbd5e1&border_color=00f5ff&hide_border=false" alt="Top Languages" width="100%" />
     </td>
   </tr>
   <tr>
