@@ -8150,162 +8150,151 @@
             </div>
           </div>
 
-                    <!-- RIGHT: 3D SOLAR SYSTEM TECH STACK ORRERY (Exact 1:1 Reference Artwork + Cosmic Holographic FX) -->
+                    <!-- RIGHT: 3D REVOLVING PLANETARY SOLAR SYSTEM (Real 3D CGI Planets Orbiting) -->
           <div class="ta-right">
-            <div class="ta-solar-showcase" id="solarShowcase">
-              <!-- 1:1 DITTO USER ARTWORK -->
-              <img src="assets/tech_solar_system.jpg" alt="Technical Stack Solar System Orrery" class="ta-solar-img" id="solarImg" loading="lazy">
+            <div class="ta-solar-container" id="taSolarSystem">
+              <div class="ta-solar-warp"></div>
+              <div class="ta-solar-stars"></div>
 
-              <!-- Dynamic Specular Starlight Glare -->
-              <div class="ta-solar-glare"></div>
-
-              <!-- Live Telemetry Status Pill -->
               <div class="ta-live-badge">
                 <span class="live-dot"></span>
                 <span>SOLAR ORRERY · REAL-TIME TELEMETRY</span>
               </div>
 
-              <!-- INTERACTIVE HOLOGRAPHIC SVG OVERLAY (Aligned 1:1 to 1024x682) -->
-              <svg viewBox="0 0 1024 682" class="ta-solar-svg-overlay">
-                <defs>
-                  <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="5" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <radialGradient id="sunGlowGrad" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#00f5ff" stop-opacity="0.5" />
-                    <stop offset="50%" stop-color="#247bff" stop-opacity="0.22" />
-                    <stop offset="100%" stop-color="#050814" stop-opacity="0" />
-                  </radialGradient>
-                </defs>
+              <div class="ta-solar-stage">
+                <div class="ta-solar-plane">
 
-                <!-- Circulating Elliptical Orbit Energy Streams -->
-                <!-- Orbit 1: Inner (Linux, C++) -->
-                <ellipse cx="506" cy="338" rx="220" ry="105" transform="rotate(-7 506 338)" class="orbit-pulse-path" />
-
-                <!-- Orbit 2: Inner-Mid (Express, MySQL, PostgreSQL, Angular) -->
-                <ellipse cx="506" cy="338" rx="320" ry="155" transform="rotate(-7 506 338)" class="orbit-pulse-path-reverse" />
-
-                <!-- Orbit 3: Middle (Node, HTML5, CSS3, JS, Java) -->
-                <ellipse cx="506" cy="338" rx="415" ry="200" transform="rotate(-7 506 338)" class="orbit-pulse-path" />
-
-                <!-- Orbit 4: Outer (React, Next.js, MongoDB) -->
-                <ellipse cx="506" cy="338" rx="490" ry="240" transform="rotate(-7 506 338)" class="orbit-pulse-path-reverse" />
-
-                <!-- Central GitHub Sun Coronal Pulses -->
-                <circle class="sun-core-pulse" cx="506" cy="338" r="75" fill="url(#sunGlowGrad)" />
-                <circle cx="506" cy="338" r="62" fill="none" stroke="#00f5ff" stroke-width="1.6" stroke-dasharray="6 4" opacity="0.8">
-                  <animateTransform attributeName="transform" type="rotate" from="0 506 338" to="360 506 338" dur="18s" repeatCount="indefinite" />
-                </circle>
-
-                <!-- =========================================
-                     INTERACTIVE PLANET TARGET NODES (Precise Centers)
-                     ========================================= -->
-
-                <!-- 1. Central GitHub Star -->
-                <g class="ta-planet-target" data-name="GitHub Core Hub" data-desc="Version Control, GitHub Actions, CI/CD &amp; 365-Day Commit Activity" data-meta="Version Control Hub" data-color="#00f5ff" transform="translate(506, 338)">
-                  <circle cx="0" cy="0" r="54" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="56" style="--glow: #00f5ff;" />
-                </g>
-
-                <!-- 2. Linux (Tux) -->
-                <g class="ta-planet-target" data-name="Linux OS" data-desc="Kernel Architecture, Bash Scripting, Daemons &amp; Server Administration" data-meta="Operating System" data-color="#f59e0b" transform="translate(306, 372)">
-                  <circle cx="0" cy="0" r="34" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="36" style="--glow: #f59e0b;" />
-                </g>
-
-                <!-- 3. C++ -->
-                <g class="ta-planet-target" data-name="C++ &amp; STL" data-desc="350+ LeetCode Solutions, Low-Level Memory &amp; Graph Algorithms" data-meta="Core Language" data-color="#008cff" transform="translate(451, 131)">
-                  <circle cx="0" cy="0" r="32" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="35" style="--glow: #008cff;" />
-                </g>
-
-                <!-- 4. MySQL / Dolphin -->
-                <g class="ta-planet-target" data-name="MySQL Database" data-desc="Relational Modeling, Indexing, B-Trees &amp; High-Throughput Queries" data-meta="Relational DB" data-color="#06b6d4" transform="translate(337, 230)">
-                  <circle cx="0" cy="0" r="30" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="34" style="--glow: #06b6d4;" />
-                </g>
-
-                <!-- 5. PostgreSQL -->
-                <g class="ta-planet-target" data-name="PostgreSQL" data-desc="ACID Transactions, Complex Relational Joins &amp; Geospatial Queries" data-meta="Relational DB" data-color="#38bdf8" transform="translate(618, 255)">
-                  <circle cx="0" cy="0" r="32" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="35" style="--glow: #38bdf8;" />
-                </g>
-
-                <!-- 6. Angular / NestJS / Git -->
-                <g class="ta-planet-target" data-name="Angular &amp; Enterprise Web" data-desc="CampusEventHub Frontend, 10+ Modular Components &amp; RxJS" data-meta="Enterprise Web" data-color="#f43f5e" transform="translate(718, 185)">
-                  <circle cx="0" cy="0" r="32" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="35" style="--glow: #f43f5e;" />
-                </g>
-
-                <!-- 7. Express.js -->
-                <g class="ta-planet-target" data-name="Express.js" data-desc="RESTful APIs, Custom Middleware, JWT Auth &amp; Microservices" data-meta="Backend Engine" data-color="#c084fc" transform="translate(190, 285)">
-                  <circle cx="0" cy="0" r="36" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="40" style="--glow: #c084fc;" />
-                </g>
-
-                <!-- 8. Node.js -->
-                <g class="ta-planet-target" data-name="Node.js" data-desc="Asynchronous Non-Blocking Event-Loop &amp; Real-Time Telemetry" data-meta="Backend Runtime" data-color="#22c55e" transform="translate(127, 460)">
-                  <circle cx="0" cy="0" r="42" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="46" style="--glow: #22c55e;" />
-                </g>
-
-                <!-- 9. HTML5 -->
-                <g class="ta-planet-target" data-name="HTML5" data-desc="Semantic Document Architecture, Canvas &amp; Web Accessibility (a11y)" data-meta="Web Standard" data-color="#ef4444" transform="translate(166, 595)">
-                  <circle cx="0" cy="0" r="38" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="42" style="--glow: #ef4444;" />
-                </g>
-
-                <!-- 10. CSS3 -->
-                <g class="ta-planet-target" data-name="CSS3 Architecture" data-desc="Modern Flexbox, CSS Grid, 3D Transforms &amp; Micro-Animations" data-meta="Styling Standard" data-color="#3b82f6" transform="translate(263, 486)">
-                  <circle cx="0" cy="0" r="36" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="40" style="--glow: #3b82f6;" />
-                </g>
-
-                <!-- 11. Java -->
-                <g class="ta-planet-target" data-name="Java Platform" data-desc="Object-Oriented Programming, Multithreading &amp; Design Patterns" data-meta="Backend / OOP" data-color="#f97316" transform="translate(412, 526)">
-                  <circle cx="0" cy="0" r="40" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="44" style="--glow: #f97316;" />
-                </g>
-
-                <!-- 12. JavaScript (JS) -->
-                <g class="ta-planet-target" data-name="JavaScript (ES6+)" data-desc="Closures, Promises, Async/Await &amp; DOM Manipulation" data-meta="Core Web Engine" data-color="#facc15" transform="translate(680, 525)">
-                  <circle cx="0" cy="0" r="44" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="48" style="--glow: #facc15;" />
-                </g>
-
-                <!-- 13. React.js -->
-                <g class="ta-planet-target" data-name="React.js" data-desc="Component Architecture, Hooks, Context API &amp; State Management" data-meta="Frontend Framework" data-color="#00f5ff" transform="translate(855, 425)">
-                  <circle cx="0" cy="0" r="46" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="50" style="--glow: #00f5ff;" />
-                </g>
-
-                <!-- 14. Next.js / Vercel -->
-                <g class="ta-planet-target" data-name="Next.js 14" data-desc="Server-Side Rendering (SSR), App Router &amp; Server Actions" data-meta="Production Stack" data-color="#ffffff" transform="translate(785, 495)">
-                  <circle cx="0" cy="0" r="38" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="42" style="--glow: #ffffff;" />
-                </g>
-
-                <!-- 15. MongoDB -->
-                <g class="ta-planet-target" data-name="MongoDB" data-desc="NoSQL Document Stores, Complex Aggregations &amp; Geospatial Index" data-meta="Database Engine" data-color="#22c55e" transform="translate(870, 335)">
-                  <circle cx="0" cy="0" r="42" fill="transparent" />
-                  <circle class="target-halo" cx="0" cy="0" r="46" style="--glow: #22c55e;" />
-                </g>
-              </svg>
-
-              <!-- Sleek Holographic HUD Inspection Bar -->
-              <div class="ta-hud-card" id="hudCard">
-                <div class="hud-badge">
-                  <div class="hud-icon-box" id="hudIcon">🪐</div>
-                  <div>
-                    <h5 class="hud-title" id="hudTitle">GitHub Core Hub</h5>
-                    <p class="hud-subtitle" id="hudSubtitle">Central Codebase &amp; 365-Day Commit Telemetry</p>
+                  <!-- CENTRAL CELESTIAL SUN: GITHUB STAR -->
+                  <div class="ta-solar-sun" title="GitHub">
+                    <div class="ta-sun-halo"></div>
+                    <div class="ta-sun-ring"></div>
+                    <div class="ta-sun-core">
+                      <svg width="38" height="38" viewBox="0 0 24 24" fill="#ffffff">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                      </svg>
+                    </div>
+                    <div class="ta-simple-tooltip">GitHub</div>
                   </div>
+
+                  <!-- ORBIT 1: INNER (r=85px) - Linux, C++ -->
+                  <div class="ta-orbit-layer ta-orbit-1">
+                    <div class="ta-orbit-track-path"></div>
+                    <!-- Linux Tux -->
+                    <div class="ta-planet-slot" style="transform: rotate(0deg) translateX(85px);">
+                      <div class="ta-planet-body" data-deg="0" style="--glow: #f59e0b;">
+                        <img src="assets/solar_sprites/linux.png" alt="Linux" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Linux</div>
+                      </div>
+                    </div>
+                    <!-- C++ -->
+                    <div class="ta-planet-slot" style="transform: rotate(180deg) translateX(85px);">
+                      <div class="ta-planet-body" data-deg="180" style="--glow: #008cff;">
+                        <img src="assets/solar_sprites/cpp.png" alt="C++" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">C++</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ORBIT 2: INNER-MID (r=140px) - Express, Java, PostgreSQL, MySQL -->
+                  <div class="ta-orbit-layer ta-orbit-2">
+                    <div class="ta-orbit-track-path"></div>
+                    <!-- Express -->
+                    <div class="ta-planet-slot" style="transform: rotate(30deg) translateX(140px);">
+                      <div class="ta-planet-body" data-deg="30" style="--glow: #c084fc;">
+                        <img src="assets/solar_sprites/express.png" alt="Express" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Express.js</div>
+                      </div>
+                    </div>
+                    <!-- Java -->
+                    <div class="ta-planet-slot" style="transform: rotate(135deg) translateX(140px);">
+                      <div class="ta-planet-body" data-deg="135" style="--glow: #f97316;">
+                        <img src="assets/solar_sprites/java.png" alt="Java" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Java</div>
+                      </div>
+                    </div>
+                    <!-- PostgreSQL -->
+                    <div class="ta-planet-slot" style="transform: rotate(225deg) translateX(140px);">
+                      <div class="ta-planet-body" data-deg="225" style="--glow: #38bdf8;">
+                        <img src="assets/solar_sprites/postgres.png" alt="PostgreSQL" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">PostgreSQL</div>
+                      </div>
+                    </div>
+                    <!-- MySQL / Dolphin -->
+                    <div class="ta-planet-slot" style="transform: rotate(315deg) translateX(140px);">
+                      <div class="ta-planet-body" data-deg="315" style="--glow: #06b6d4;">
+                        <img src="assets/solar_sprites/dolphin.png" alt="MySQL" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">MySQL</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ORBIT 3: MIDDLE (r=195px) - Node.js, HTML5, CSS3, Git -->
+                  <div class="ta-orbit-layer ta-orbit-3">
+                    <div class="ta-orbit-track-path"></div>
+                    <!-- Node.js -->
+                    <div class="ta-planet-slot" style="transform: rotate(20deg) translateX(195px);">
+                      <div class="ta-planet-body" data-deg="20" style="--glow: #22c55e;">
+                        <img src="assets/solar_sprites/node.png" alt="Node.js" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Node.js</div>
+                      </div>
+                    </div>
+                    <!-- HTML5 -->
+                    <div class="ta-planet-slot" style="transform: rotate(110deg) translateX(195px);">
+                      <div class="ta-planet-body" data-deg="110" style="--glow: #ef4444;">
+                        <img src="assets/solar_sprites/html.png" alt="HTML5" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">HTML5</div>
+                      </div>
+                    </div>
+                    <!-- CSS3 -->
+                    <div class="ta-planet-slot" style="transform: rotate(200deg) translateX(195px);">
+                      <div class="ta-planet-body" data-deg="200" style="--glow: #3b82f6;">
+                        <img src="assets/solar_sprites/css.png" alt="CSS3" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">CSS3</div>
+                      </div>
+                    </div>
+                    <!-- Git -->
+                    <div class="ta-planet-slot" style="transform: rotate(290deg) translateX(195px);">
+                      <div class="ta-planet-body" data-deg="290" style="--glow: #f43f5e;">
+                        <img src="assets/solar_sprites/angular.png" alt="Git" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Git</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ORBIT 4: OUTER (r=248px) - React, JavaScript, Next.js, MongoDB -->
+                  <div class="ta-orbit-layer ta-orbit-4">
+                    <div class="ta-orbit-track-path"></div>
+                    <!-- React.js -->
+                    <div class="ta-planet-slot" style="transform: rotate(25deg) translateX(248px);">
+                      <div class="ta-planet-body" data-deg="25" style="--glow: #00f5ff;">
+                        <img src="assets/solar_sprites/react.png" alt="React" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">React</div>
+                      </div>
+                    </div>
+                    <!-- JavaScript (JS) -->
+                    <div class="ta-planet-slot" style="transform: rotate(115deg) translateX(248px);">
+                      <div class="ta-planet-body" data-deg="115" style="--glow: #facc15;">
+                        <img src="assets/solar_sprites/js.png" alt="JavaScript" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">JavaScript</div>
+                      </div>
+                    </div>
+                    <!-- Next.js -->
+                    <div class="ta-planet-slot" style="transform: rotate(205deg) translateX(248px);">
+                      <div class="ta-planet-body" data-deg="205" style="--glow: #ffffff;">
+                        <img src="assets/solar_sprites/next.png" alt="Next.js" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">Next.js</div>
+                      </div>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="ta-planet-slot" style="transform: rotate(295deg) translateX(248px);">
+                      <div class="ta-planet-body" data-deg="295" style="--glow: #22c55e;">
+                        <img src="assets/solar_sprites/mongo.png" alt="MongoDB" class="ta-planet-img" loading="lazy">
+                        <div class="ta-simple-tooltip">MongoDB</div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
-                <div class="hud-meta" id="hudMeta">Version Control</div>
               </div>
             </div>
           </div>
@@ -8390,7 +8379,7 @@
         }
 
         /* =========================================
-           3D SOLAR SYSTEM TECH STACK ORRERY (1:1 DITTO IMAGE + HOLOGRAPHIC FX)
+           3D REVOLVING PLANETARY SOLAR SYSTEM (Real 3D CGI Planets Orbiting)
            ========================================= */
         .ta-right {
           position: relative;
@@ -8398,217 +8387,258 @@
           align-items: center;
           justify-content: center;
           width: 100%;
+          min-height: 560px;
         }
 
-        .ta-solar-showcase {
+        .ta-solar-container {
           position: relative;
           width: 100%;
-          max-width: 540px;
-          aspect-ratio: 1024 / 682;
-          border-radius: 24px;
-          overflow: hidden;
-          background: #050814;
+          max-width: 580px;
+          height: 560px;
+          background: radial-gradient(circle at 50% 50%, #0d1733 0%, #060a1c 55%, #03050c 100%);
+          border-radius: 28px;
           border: 1.5px solid rgba(0, 245, 255, 0.28);
           box-shadow: 
             0 25px 70px rgba(0, 0, 0, 0.85),
-            0 0 35px rgba(0, 245, 255, 0.15),
-            inset 0 0 40px rgba(0, 245, 255, 0.05);
-          transform-style: preserve-3d;
-          perspective: 1000px;
-          transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            0 0 40px rgba(0, 245, 255, 0.15),
+            inset 0 0 60px rgba(0, 245, 255, 0.05);
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           user-select: none;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .ta-solar-showcase:hover {
-          border-color: rgba(0, 245, 255, 0.6);
+        .ta-solar-container:hover {
+          border-color: rgba(0, 245, 255, 0.55);
           box-shadow: 
             0 30px 85px rgba(0, 0, 0, 0.95),
-            0 0 55px rgba(0, 245, 255, 0.3),
-            inset 0 0 60px rgba(0, 245, 255, 0.1);
+            0 0 55px rgba(0, 245, 255, 0.25),
+            inset 0 0 70px rgba(0, 245, 255, 0.08);
         }
 
-        /* 1:1 DITTO IMAGE LAYER */
-        .ta-solar-img {
+        /* Spacetime Warp Mesh Grid */
+        .ta-solar-warp {
           position: absolute;
           inset: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          background-image: 
+            linear-gradient(rgba(36, 123, 255, 0.09) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(36, 123, 255, 0.09) 1px, transparent 1px);
+          background-size: 32px 32px;
+          transform: perspective(600px) rotateX(60deg) translateY(75px) scale(1.4);
+          transform-origin: bottom center;
+          mask-image: radial-gradient(ellipse at 50% 70%, black 25%, transparent 75%);
+          -webkit-mask-image: radial-gradient(ellipse at 50% 70%, black 25%, transparent 75%);
           pointer-events: none;
           z-index: 1;
         }
 
-        /* DYNAMIC SPECULAR SHINE FOLLOWING MOUSE */
-        .ta-solar-glare {
+        /* Twinkling Starfield */
+        .ta-solar-stars {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 245, 255, 0.18), transparent 70%);
+          background-image: 
+            radial-gradient(1.2px 1.2px at 15% 18%, rgba(255,255,255,0.9), transparent),
+            radial-gradient(1.5px 1.5px at 82% 14%, rgba(0,245,255,0.9), transparent),
+            radial-gradient(1px 1px at 75% 82%, rgba(255,255,255,0.8), transparent),
+            radial-gradient(1.2px 1.2px at 20% 78%, rgba(168,85,247,0.8), transparent),
+            radial-gradient(2px 2px at 48% 10%, rgba(255,255,255,0.7), transparent),
+            radial-gradient(1.5px 1.5px at 90% 60%, rgba(250,204,21,0.8), transparent),
+            radial-gradient(1px 1px at 30% 35%, rgba(255,255,255,0.6), transparent),
+            radial-gradient(1.8px 1.8px at 10% 50%, rgba(0,245,255,0.7), transparent);
           pointer-events: none;
+          z-index: 1;
+        }
+
+        /* 3D PERSPECTIVE STAGE */
+        .ta-solar-stage {
+          position: relative;
+          width: 520px;
+          height: 520px;
+          perspective: 1100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           z-index: 2;
-          mix-blend-mode: screen;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-        .ta-solar-showcase:hover .ta-solar-glare {
-          opacity: 1;
         }
 
-        /* INTERACTIVE SVG OVERLAY (Aligned 100% to 1024x682 coordinate system) */
-        .ta-solar-svg-overlay {
+        /* THE 3D INCLINED PLANETARY PLANE */
+        .ta-solar-plane {
           position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 3;
-          overflow: visible;
+          width: 520px;
+          height: 520px;
+          transform-style: preserve-3d;
+          transform: rotateX(62deg) rotateZ(-12deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        /* Flowing Orbital Pulse Streams */
-        .orbit-pulse-path {
-          fill: none;
-          stroke: #00f5ff;
-          stroke-width: 1.8;
-          stroke-linecap: round;
-          stroke-dasharray: 20 180;
-          animation: flow-orbit 8s linear infinite;
-          opacity: 0.75;
-          filter: drop-shadow(0 0 6px #00f5ff);
-        }
-
-        .orbit-pulse-path-reverse {
-          fill: none;
-          stroke: #a855f7;
-          stroke-width: 1.6;
-          stroke-linecap: round;
-          stroke-dasharray: 25 220;
-          animation: flow-orbit-rev 12s linear infinite;
-          opacity: 0.7;
-          filter: drop-shadow(0 0 6px #a855f7);
-        }
-
-        @keyframes flow-orbit {
-          from { stroke-dashoffset: 0; }
-          to { stroke-dashoffset: -1000; }
-        }
-        @keyframes flow-orbit-rev {
-          from { stroke-dashoffset: 0; }
-          to { stroke-dashoffset: 1000; }
-        }
-
-        /* Central GitHub Sun Coronal Pulses */
-        .sun-core-pulse {
-          transform-origin: 506px 338px;
-          animation: sun-pulse-anim 3.5s ease-in-out infinite alternate;
-        }
-        @keyframes sun-pulse-anim {
-          0% { transform: scale(0.96); opacity: 0.5; }
-          100% { transform: scale(1.08); opacity: 0.95; }
-        }
-
-        /* Planet Interactive Target Nodes */
-        .ta-planet-target {
+        /* CENTRAL SUN: GITHUB STAR */
+        .ta-solar-sun {
+          position: absolute;
+          width: 76px;
+          height: 76px;
+          transform-style: preserve-3d;
+          transform: rotateZ(12deg) rotateX(-62deg);
+          z-index: 100;
+          pointer-events: auto;
           cursor: pointer;
-          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .ta-planet-target:hover {
-          transform: scale(1.22);
         }
 
-        .target-halo {
-          fill: transparent;
-          stroke: var(--glow, #00f5ff);
-          stroke-width: 2;
-          stroke-dasharray: 4 3;
-          opacity: 0;
-          transition: opacity 0.25s ease, transform 0.25s ease;
-          animation: rotate-target 8s linear infinite;
-          transform-origin: center;
-        }
-        .ta-planet-target:hover .target-halo {
-          opacity: 1;
-          transform: scale(1.15);
+        .ta-sun-halo {
+          position: absolute;
+          inset: -16px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(0, 245, 255, 0.5) 0%, rgba(36, 123, 255, 0.25) 45%, transparent 75%);
+          filter: blur(14px);
+          animation: ta-sun-pulse 3.8s ease-in-out infinite alternate;
         }
 
-        @keyframes rotate-target {
+        .ta-sun-ring {
+          position: absolute;
+          inset: -12px;
+          border-radius: 50%;
+          border: 1.5px solid rgba(0, 245, 255, 0.45);
+          box-shadow: 0 0 16px rgba(0, 245, 255, 0.35);
+          animation: ta-sun-ring-spin 14s linear infinite;
+        }
+
+        .ta-sun-core {
+          position: relative;
+          width: 76px;
+          height: 76px;
+          border-radius: 50%;
+          background: radial-gradient(circle at 35% 30%, #00f5ff 0%, #1d4ed8 50%, #070c24 95%);
+          box-shadow: 
+            0 0 28px rgba(0, 245, 255, 0.9),
+            0 0 55px rgba(36, 123, 255, 0.55),
+            inset -4px -4px 10px rgba(0, 0, 0, 0.8),
+            inset 4px 4px 10px rgba(255, 255, 255, 0.65);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1.5px solid rgba(0, 245, 255, 0.8);
+        }
+
+        @keyframes ta-sun-pulse {
+          0% { transform: scale(0.92); opacity: 0.65; }
+          100% { transform: scale(1.15); opacity: 1; }
+        }
+
+        @keyframes ta-sun-ring-spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
 
-        /* HUD Tooltip Card */
-        .ta-hud-card {
+        /* ORBIT RINGS */
+        .ta-orbit-layer {
           position: absolute;
-          bottom: 12px;
-          left: 14px;
-          right: 14px;
-          background: rgba(5, 8, 22, 0.94);
-          border: 1px solid rgba(0, 245, 255, 0.45);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 245, 255, 0.25);
-          border-radius: 12px;
-          padding: 10px 14px;
-          backdrop-filter: blur(12px);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          z-index: 10;
+          border-radius: 50%;
+          transform-style: preserve-3d;
           pointer-events: none;
-          transition: opacity 0.25s ease, transform 0.25s ease;
-          opacity: 0.92;
         }
 
-        .hud-badge {
-          display: flex;
-          align-items: center;
-          gap: 10px;
+        .ta-orbit-track-path {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          border: 1.2px dashed rgba(0, 245, 255, 0.24);
+          box-shadow: 0 0 14px rgba(0, 245, 255, 0.06), inset 0 0 14px rgba(0, 245, 255, 0.04);
         }
 
-        .hud-icon-box {
-          width: 32px;
-          height: 32px;
-          border-radius: 8px;
-          background: rgba(0, 245, 255, 0.12);
-          border: 1px solid rgba(0, 245, 255, 0.4);
+        .ta-orbit-1 { width: 170px; height: 170px; }
+        .ta-orbit-1 .ta-orbit-track-path { border-color: rgba(250, 204, 21, 0.32); }
+
+        .ta-orbit-2 { width: 280px; height: 280px; }
+        .ta-orbit-2 .ta-orbit-track-path { border-color: rgba(168, 85, 247, 0.3); }
+
+        .ta-orbit-3 { width: 390px; height: 390px; }
+        .ta-orbit-3 .ta-orbit-track-path { border-color: rgba(34, 197, 94, 0.3); }
+
+        .ta-orbit-4 { width: 495px; height: 495px; }
+        .ta-orbit-4 .ta-orbit-track-path { border-color: rgba(0, 245, 255, 0.35); }
+
+        /* PLANET SLOT & BODY */
+        .ta-planet-slot {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          transform-style: preserve-3d;
+        }
+
+        .ta-planet-body {
+          position: absolute;
+          width: 52px;
+          height: 52px;
+          margin: -26px 0 0 -26px;
+          border-radius: 50%;
+          transform-style: preserve-3d;
+          cursor: pointer;
+          pointer-events: auto;
+          filter: drop-shadow(0 0 12px var(--glow, #00f5ff));
+          transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.22s ease;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 16px;
-          font-weight: 800;
-          color: #00f5ff;
         }
 
-        .hud-title {
-          font-size: 13.5px;
-          font-weight: 800;
-          color: #fff;
-          margin: 0;
+        .ta-planet-img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          pointer-events: none;
+          filter: drop-shadow(0 0 8px var(--glow, #00f5ff));
         }
 
-        .hud-subtitle {
-          font-size: 11px;
-          color: #94a3b8;
-          margin: 1px 0 0;
+        .ta-planet-body:hover {
+          transform: scale(1.38) !important;
+          filter: drop-shadow(0 0 20px var(--glow)) drop-shadow(0 0 35px var(--glow)) !important;
+          z-index: 150;
         }
 
-        .hud-meta {
-          font-size: 10px;
-          font-weight: 700;
-          color: #38bdf8;
-          background: rgba(56, 189, 248, 0.12);
+        /* CLEAN, CHHOTA SA, CRISP TOOLTIP RIGHT ABOVE PLANET */
+        .ta-simple-tooltip {
+          position: absolute;
+          bottom: calc(100% + 8px);
+          left: 50%;
+          transform: translateX(-50%) translateY(3px);
+          background: rgba(5, 8, 22, 0.95);
+          border: 1px solid var(--glow, #00f5ff);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8), 0 0 10px var(--glow, #00f5ff);
           padding: 3px 8px;
-          border-radius: 99px;
-          border: 1px solid rgba(56, 189, 248, 0.3);
+          border-radius: 6px;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: 0.3px;
           white-space: nowrap;
+          color: #fff;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.18s ease, transform 0.18s ease;
+          backdrop-filter: blur(8px);
+          z-index: 200;
+        }
+
+        .ta-planet-body:hover .ta-simple-tooltip,
+        .ta-solar-sun:hover .ta-simple-tooltip {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
         }
 
         /* Live Orbit Badge on Top-Right */
         .ta-live-badge {
           position: absolute;
-          top: 12px;
-          right: 14px;
-          background: rgba(6, 10, 25, 0.85);
-          border: 1px solid rgba(0, 245, 255, 0.35);
+          top: 14px;
+          right: 18px;
+          background: rgba(6, 10, 25, 0.88);
+          border: 1px solid rgba(0, 245, 255, 0.4);
           border-radius: 99px;
-          padding: 4px 10px;
-          font-size: 9.5px;
+          padding: 5px 12px;
+          font-size: 10px;
           font-weight: 800;
           letter-spacing: 0.5px;
           color: #00f5ff;
@@ -8636,63 +8666,122 @@
             grid-template-columns: 1fr;
             gap: 40px;
           }
-          .ta-solar-showcase {
-            max-width: 100%;
+          .ta-right {
+            min-height: 480px;
+          }
+          .ta-solar-container {
+            max-width: 480px;
+            height: 480px;
+          }
+          .ta-solar-stage {
+            width: 440px;
+            height: 440px;
+          }
+          .ta-solar-plane {
+            width: 440px;
+            height: 440px;
+            transform: rotateX(62deg) rotateZ(-12deg) scale(0.88);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .ta-right {
+            min-height: 360px;
+          }
+          .ta-solar-container {
+            max-width: 360px;
+            height: 360px;
+          }
+          .ta-solar-stage {
+            width: 320px;
+            height: 320px;
+          }
+          .ta-solar-plane {
+            transform: rotateX(62deg) rotateZ(-12deg) scale(0.68);
           }
         }</style>
     
       <script>
-        (function initDittoSolarSystem() {
-          const showcase = document.getElementById('solarShowcase');
-          if (!showcase) return;
+        (function initSolarOrbitTicker() {
+          const container = document.getElementById('taSolarSystem');
+          if (!container) return;
 
-          const hudTitle = document.getElementById('hudTitle');
-          const hudSubtitle = document.getElementById('hudSubtitle');
-          const hudMeta = document.getElementById('hudMeta');
-          const hudIcon = document.getElementById('hudIcon');
+          const orbits = [
+            { el: container.querySelector('.ta-orbit-1'), speed: 20, dir: 1, angle: 0 },
+            { el: container.querySelector('.ta-orbit-2'), speed: 32, dir: -1, angle: 0 },
+            { el: container.querySelector('.ta-orbit-3'), speed: 44, dir: 1, angle: 0 },
+            { el: container.querySelector('.ta-orbit-4'), speed: 58, dir: -1, angle: 0 }
+          ];
 
-          // 3D Parallax Tilt following mouse
-          showcase.addEventListener('mousemove', (e) => {
-            const rect = showcase.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const cx = rect.width / 2;
-            const cy = rect.height / 2;
+          let isPaused = false;
+          let isDragging = false;
+          let startX = 0;
 
-            const rotX = ((y - cy) / cy) * -6.5;
-            const rotY = ((x - cx) / cx) * 6.5;
+          container.addEventListener('mouseenter', () => isPaused = true);
+          container.addEventListener('mouseleave', () => { isPaused = false; isDragging = false; });
 
-            showcase.style.transform = 'perspective(1000px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) scale3d(1.015, 1.015, 1.015)';
-            showcase.style.setProperty('--mouse-x', (x / rect.width * 100) + '%');
-            showcase.style.setProperty('--mouse-y', (y / rect.height * 100) + '%');
+          // Drag-to-spin interaction
+          container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
           });
-
-          showcase.addEventListener('mouseleave', () => {
-            showcase.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-          });
-
-          // Interactive Target Nodes
-          const targets = showcase.querySelectorAll('.ta-planet-target');
-          targets.forEach(t => {
-            t.addEventListener('mouseenter', () => {
-              const name = t.getAttribute('data-name');
-              const desc = t.getAttribute('data-desc');
-              const meta = t.getAttribute('data-meta');
-              const color = t.getAttribute('data-color') || '#00f5ff';
-
-              if (hudTitle) hudTitle.textContent = name;
-              if (hudSubtitle) hudSubtitle.textContent = desc;
-              if (hudMeta) {
-                hudMeta.textContent = meta;
-                hudMeta.style.color = color;
-                hudMeta.style.borderColor = color;
-              }
-              if (hudIcon) {
-                hudIcon.style.color = color;
-                hudIcon.style.borderColor = color;
-              }
+          window.addEventListener('mouseup', () => isDragging = false);
+          window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            startX = e.clientX;
+            orbits.forEach((o, i) => {
+              o.angle += dx * 0.35 * (i % 2 === 0 ? 1 : -1);
             });
+            render();
           });
+
+          // Touch drag
+          container.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+          }, { passive: true });
+          container.addEventListener('touchend', () => isDragging = false);
+          container.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const dx = e.touches[0].clientX - startX;
+            startX = e.touches[0].clientX;
+            orbits.forEach((o, i) => {
+              o.angle += dx * 0.35 * (i % 2 === 0 ? 1 : -1);
+            });
+            render();
+          }, { passive: true });
+
+          let lastTime = performance.now();
+
+          function render() {
+            orbits.forEach(o => {
+              if (!o.el) return;
+              o.el.style.transform = 'rotate(' + o.angle + 'deg)';
+              const planets = o.el.querySelectorAll('.ta-planet-body');
+              planets.forEach(p => {
+                const initialDeg = parseFloat(p.getAttribute('data-deg') || 0);
+                const currentTotalDeg = o.angle + initialDeg;
+                p.style.transform = 'rotateZ(' + (-currentTotalDeg + 12) + 'deg) rotateX(-62deg)';
+              });
+            });
+          }
+
+          function loop(now) {
+            const dt = (now - lastTime) / 1000;
+            lastTime = now;
+
+            if (!isPaused && !isDragging) {
+              orbits.forEach(o => {
+                o.angle = (o.angle + (360 / o.speed) * o.dir * dt) % 360;
+              });
+              render();
+            }
+            requestAnimationFrame(loop);
+          }
+
+          render();
+          requestAnimationFrame(loop);
         })();
       </script>
     </section>
