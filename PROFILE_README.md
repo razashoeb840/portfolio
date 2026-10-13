@@ -2,28 +2,28 @@
 
 <!-- 01 HERO SECTION -->
 <a href="https://portfolio-kappa-dun-13.vercel.app/">
-  <img src="./assets/hero.svg?v=3" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
+  <img src="./assets/hero.svg?v=5" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
 </a>
 
 <br/>
 
 <!-- 02 ABOUT & CAPABILITIES -->
-<img src="./assets/about-life.svg?v=3" alt="Capabilities & Focus Pillars" width="100%" />
+<img src="./assets/about-life.svg?v=5" alt="Capabilities & Focus Pillars" width="100%" />
 
 <br/>
 
 <!-- 03 TECHNICAL ORBITS & STACK -->
-<img src="./assets/stack.svg?v=3" alt="Technical Stack & Orbit Ecosystem" width="100%" />
+<img src="./assets/stack.svg?v=5" alt="Technical Stack & Orbit Ecosystem" width="100%" />
 
 <br/>
 
 <!-- 04 VERIFIED DOSSIER & LANYARD ID -->
-<img src="./assets/id-dashboard.svg?v=3" alt="Developer ID & Verified Metrics" width="100%" />
+<img src="./assets/id-dashboard.svg?v=5" alt="Developer ID & Verified Metrics" width="100%" />
 
 <br/>
 
 <!-- 05 CONNECT & CHANNELS -->
-<img src="./assets/connect.svg?v=3" alt="Connect with Shoeb Raza" width="100%" />
+<img src="./assets/connect.svg?v=5" alt="Connect with Shoeb Raza" width="100%" />
 
 <br/>
 
@@ -235,7 +235,7 @@
 </p>
 
 <!-- SNAKE ANIMATION SVG -->
-<img src="./assets/github-contribution-grid-snake.svg?v=3" alt="GitHub Contribution Snake Animation" width="100%" />
+<img src="./assets/github-contribution-grid-snake.svg?v=5" alt="GitHub Contribution Snake Animation" width="100%" />
 
 <br/><br/>
 
@@ -244,7 +244,7 @@
 </p>
 
 <!-- STATIC DATEWISE COMMIT GRAPH -->
-<img src="./assets/github-contributions.svg?v=3" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)" width="100%" />
+<img src="./assets/github-contributions.svg?v=5" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)" width="100%" />
 
 <br/><br/>
 

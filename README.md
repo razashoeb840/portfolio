@@ -2,28 +2,28 @@
 
 <!-- 01 HERO SECTION -->
 <a href="https://portfolio-kappa-dun-13.vercel.app/">
-  <img src="./assets/hero.svg?v=2" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
+  <img src="./assets/hero.svg?v=5" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
 </a>
 
 <br/>
 
 <!-- 02 ABOUT & CAPABILITIES -->
-<img src="./assets/about-life.svg?v=2" alt="Capabilities & Focus Pillars" width="100%" />
+<img src="./assets/about-life.svg?v=5" alt="Capabilities & Focus Pillars" width="100%" />
 
 <br/>
 
 <!-- 03 TECHNICAL ORBITS & STACK -->
-<img src="./assets/stack.svg?v=2" alt="Technical Stack & Orbit Ecosystem" width="100%" />
+<img src="./assets/stack.svg?v=5" alt="Technical Stack & Orbit Ecosystem" width="100%" />
 
 <br/>
 
 <!-- 04 VERIFIED DOSSIER & LANYARD ID -->
-<img src="./assets/id-dashboard.svg?v=2" alt="Developer ID & Verified Metrics" width="100%" />
+<img src="./assets/id-dashboard.svg?v=5" alt="Developer ID & Verified Metrics" width="100%" />
 
 <br/>
 
 <!-- 05 CONNECT & CHANNELS -->
-<img src="./assets/connect.svg?v=2" alt="Connect with Shoeb Raza" width="100%" />
+<img src="./assets/connect.svg?v=5" alt="Connect with Shoeb Raza" width="100%" />
 
 <br/>
 
@@ -33,16 +33,16 @@
     <img src="https://img.shields.io/badge/▶_STREAM_PORTFOLIO-E50914?style=for-the-badge&logoColor=white&logo=googlechrome" alt="Stream Portfolio" />
   </a>
   <a href="./assets/Shoeb_Raza_Resume.pdf">
-    <img src="https://img.shields.io/badge/📄_RESUME_(PDF)-0B0F19?style=for-the-badge&logo=adobeacrobatreader&logoColor=red&borderColor=247BFF" alt="View Resume" />
+    <img src="https://img.shields.io/badge/📄_RESUME_(PDF)-FF354F?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="View Resume" />
   </a>
   <a href="https://www.linkedin.com/in/shoeb-raza/">
-    <img src="https://img.shields.io/badge/LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LINKEDIN-247BFF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="https://leetcode.com/u/razashoeb2358/">
-    <img src="https://img.shields.io/badge/LEETCODE-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" />
+    <img src="https://img.shields.io/badge/LEETCODE-070B16?style=for-the-badge&logo=leetcode&logoColor=FFA116" alt="LeetCode" />
   </a>
   <a href="https://www.codechef.com/users/razashoeb2358">
-    <img src="https://img.shields.io/badge/CODECHEF_2★-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" />
+    <img src="https://img.shields.io/badge/CODECHEF_2★-070B16?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" />
   </a>
   <a href="https://wa.me/918406022747">
     <img src="https://img.shields.io/badge/WHATSAPP_DIRECT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
@@ -60,20 +60,20 @@
 <table>
   <!-- PROJECT 1: JANSETU -->
   <tr>
-    <td width="48%" valign="middle" align="center">
+    <td width="48%" valign="middle" align="center" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
       <a href="https://jansetu-h177.onrender.com/">
-        <img src="./assets/jansetu.png" alt="JanSetu Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(36,123,255,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.85);" />
+        <img src="./assets/jansetu.png" alt="JanSetu Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,53,79,0.5); box-shadow:0 8px 24px rgba(255,53,79,0.25);" />
       </a>
       <br/><br/>
       <a href="https://jansetu-h177.onrender.com/">
-        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-00F5FF?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
+        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo" />
       </a>
       <a href="https://github.com/razashoeb840/JanSetu1">
-        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
+        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="52%" valign="top">
-      <h3>#01 · JanSetu <img src="https://img.shields.io/badge/FLAGSHIP-247BFF?style=flat-square" /> <img src="https://img.shields.io/badge/PRODUCTION-22C55E?style=flat-square" /></h3>
+    <td width="52%" valign="top" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
+      <h3>#01 · JanSetu <img src="https://img.shields.io/badge/CORE_FLAGSHIP-FF354F?style=flat-square" /> <img src="https://img.shields.io/badge/PRODUCTION-247BFF?style=flat-square" /></h3>
       <p><b>Domain:</b> Civic Tech • Automated AI Triage • Triple-Helix Resolution</p>
       <p><i>Citizen-to-Innovation platform connecting citizens, municipal bodies, universities, and industry to report, track, and resolve societal challenges.</i></p>
       <ul>
@@ -94,19 +94,19 @@
 
   <!-- PROJECT 2: MEDIPULSE -->
   <tr>
-    <td width="48%" valign="middle" align="center">
+    <td width="48%" valign="middle" align="center" style="background:#070b16; border:1px solid rgba(36,123,255,0.4); border-radius:12px; padding:18px;">
       <a href="https://deploy-fcr3.onrender.com/1index.html">
-        <img src="./assets/Medipulse.png" alt="MediPulse Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,53,79,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.85);" />
+        <img src="./assets/Medipulse.png" alt="MediPulse Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(36,123,255,0.5); box-shadow:0 8px 24px rgba(36,123,255,0.25);" />
       </a>
       <br/><br/>
       <a href="https://deploy-fcr3.onrender.com/1index.html">
         <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo" />
       </a>
       <a href="https://github.com/razashoeb840/deploy">
-        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
+        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="52%" valign="top">
+    <td width="52%" valign="top" style="background:#070b16; border:1px solid rgba(36,123,255,0.4); border-radius:12px; padding:18px;">
       <h3>#02 · MediPulse <img src="https://img.shields.io/badge/TELEMETRY-FF354F?style=flat-square" /> <img src="https://img.shields.io/badge/REAL--TIME-247BFF?style=flat-square" /></h3>
       <p><b>Domain:</b> HealthTech • Real-Time Telemetry • Unified Clinical Ledger</p>
       <p><i>Unified smart hospital platform governing patient registration, live bed & ICU occupancy telemetry, doctor consultation desks, pharmacy automation, and billing.</i></p>
@@ -128,20 +128,20 @@
 
   <!-- PROJECT 3: RAPIDX -->
   <tr>
-    <td width="48%" valign="middle" align="center">
+    <td width="48%" valign="middle" align="center" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
       <a href="https://rapidx-transit.onrender.com/">
-        <img src="./assets/rapidx.png" alt="RapidX Real Dispatch Engine Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,181,71,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.85);" />
+        <img src="./assets/rapidx.png" alt="RapidX Real Dispatch Engine Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,53,79,0.5); box-shadow:0 8px 24px rgba(255,53,79,0.25);" />
       </a>
       <br/><br/>
       <a href="https://rapidx-transit.onrender.com/">
-        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FFB547?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
+        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo" />
       </a>
       <a href="https://github.com/razashoeb840/rapidX">
-        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
+        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="52%" valign="top">
-      <h3>#03 · RapidX <img src="https://img.shields.io/badge/DISPATCH_ENGINE-FFB547?style=flat-square" /> <img src="https://img.shields.io/badge/LOW--LATENCY-00F5FF?style=flat-square" /></h3>
+    <td width="52%" valign="top" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
+      <h3>#03 · RapidX <img src="https://img.shields.io/badge/DISPATCH_ENGINE-FF354F?style=flat-square" /> <img src="https://img.shields.io/badge/LOW--LATENCY-247BFF?style=flat-square" /></h3>
       <p><b>Domain:</b> Transit & Logistics • Real-Time Allocation Engine</p>
       <p><i>High-concurrency task allocation engine pairing service requests with proximate active helpers via spatial geohashing and dynamic load balancing.</i></p>
       <ul>
@@ -161,20 +161,20 @@
 
   <!-- PROJECT 4: AI STUDY SUITE PRO -->
   <tr>
-    <td width="48%" valign="middle" align="center">
+    <td width="48%" valign="middle" align="center" style="background:#070b16; border:1px solid rgba(36,123,255,0.4); border-radius:12px; padding:18px;">
       <a href="https://ai-study-suite-alpha.vercel.app">
-        <img src="./assets/aistdysuit.png" alt="AI Study Suite Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(192,132,252,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.85);" />
+        <img src="./assets/aistdysuit.png" alt="AI Study Suite Real Platform Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(36,123,255,0.5); box-shadow:0 8px 24px rgba(36,123,255,0.25);" />
       </a>
       <br/><br/>
       <a href="https://ai-study-suite-alpha.vercel.app">
-        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-C084FC?style=for-the-badge&logoColor=05070D" alt="Live Demo" />
+        <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo" />
       </a>
       <a href="https://github.com/razashoeb840/AI_Study_suite">
-        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
+        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="52%" valign="top">
-      <h3>#04 · AI Study Suite Pro <img src="https://img.shields.io/badge/GEMINI_LLM-C084FC?style=flat-square" /> <img src="https://img.shields.io/badge/EDTECH-247BFF?style=flat-square" /></h3>
+    <td width="52%" valign="top" style="background:#070b16; border:1px solid rgba(36,123,255,0.4); border-radius:12px; padding:18px;">
+      <h3>#04 · AI Study Suite Pro <img src="https://img.shields.io/badge/GEMINI_LLM-FF354F?style=flat-square" /> <img src="https://img.shields.io/badge/EDTECH-247BFF?style=flat-square" /></h3>
       <p><b>Domain:</b> EdTech • Document Intelligence • Generative AI</p>
       <p><i>Intelligent academic workspace ingesting textbooks and lecture slides to synthesize chapter breakdowns, active-recall flashcards, and diagnostic exams.</i></p>
       <ul>
@@ -194,17 +194,17 @@
 
   <!-- PROJECT 5: FOCUSGUARD PRO -->
   <tr>
-    <td width="48%" valign="middle" align="center">
+    <td width="48%" valign="middle" align="center" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
       <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon">
-        <img src="./assets/focusguard.png" alt="FocusGuard Pro Real Extension Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(52,211,153,0.4); box-shadow:0 8px 24px rgba(0,0,0,0.85);" />
+        <img src="./assets/focusguard.png" alt="FocusGuard Pro Real Extension Screenshot" width="100%" style="border-radius:10px; border:1px solid rgba(255,53,79,0.5); box-shadow:0 8px 24px rgba(255,53,79,0.25);" />
       </a>
       <br/><br/>
       <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon">
-        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-18181B?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
+        <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source" />
       </a>
     </td>
-    <td width="52%" valign="top">
-      <h3>#05 · FocusGuard Pro <img src="https://img.shields.io/badge/MANIFEST_V3-34D399?style=flat-square" /> <img src="https://img.shields.io/badge/0MS_LATENCY-00F5FF?style=flat-square" /></h3>
+    <td width="52%" valign="top" style="background:#070b16; border:1px solid rgba(255,53,79,0.4); border-radius:12px; padding:18px;">
+      <h3>#05 · FocusGuard Pro <img src="https://img.shields.io/badge/MANIFEST_V3-FF354F?style=flat-square" /> <img src="https://img.shields.io/badge/0MS_LATENCY-247BFF?style=flat-square" /></h3>
       <p><b>Domain:</b> Productivity Tech • Chrome Extension • Low-Latency Controls</p>
       <p><i>Ultra-lightweight browser extension curbing digital distractions through deterministic Declarative Net Request URL filtering and tamper-resistant timers.</i></p>
       <ul>
@@ -235,7 +235,7 @@
 </p>
 
 <!-- SNAKE ANIMATION SVG -->
-<img src="./assets/github-contribution-grid-snake.svg" alt="GitHub Contribution Snake Animation" width="100%" />
+<img src="./assets/github-contribution-grid-snake.svg?v=5" alt="GitHub Contribution Snake Animation" width="100%" />
 
 <br/><br/>
 
@@ -244,22 +244,22 @@
 </p>
 
 <!-- STATIC DATEWISE COMMIT GRAPH -->
-<img src="./assets/github-contributions.svg" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)" width="100%" />
+<img src="./assets/github-contributions.svg?v=5" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)" width="100%" />
 
 <br/><br/>
 
 <table border="0" width="100%">
   <tr>
-    <td align="center" valign="middle" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api?username=razashoeb840&show_icons=true&theme=radical&bg_color=070b16&title_color=247bff&text_color=cbd5e1&icon_color=ff354f&border_color=247bff&hide_border=false" alt="Shoeb's GitHub Stats" width="100%" />
+    <td align="center" valign="middle" width="50%" style="background:#070b16; border:1px solid rgba(255,53,79,0.35); border-radius:12px; padding:12px;">
+      <img src="https://github-readme-stats.vercel.app/api?username=razashoeb840&show_icons=true&theme=radical&bg_color=070b16&title_color=ff354f&text_color=cbd5e1&icon_color=247bff&border_color=ff354f&hide_border=false" alt="Shoeb's GitHub Stats" width="100%" />
     </td>
-    <td align="center" valign="middle" width="50%">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=razashoeb840&layout=compact&theme=radical&bg_color=070b16&title_color=247bff&text_color=cbd5e1&border_color=ff354f&hide_border=false" alt="Top Languages" width="100%" />
+    <td align="center" valign="middle" width="50%" style="background:#070b16; border:1px solid rgba(36,123,255,0.35); border-radius:12px; padding:12px;">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=razashoeb840&layout=compact&theme=radical&bg_color=070b16&title_color=247bff&text_color=cbd5e1&border_color=247bff&hide_border=false" alt="Top Languages" width="100%" />
     </td>
   </tr>
   <tr>
-    <td colspan="2" align="center" valign="middle">
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=razashoeb840&theme=radical&background=070b16&stroke=247bff&ring=ff354f&fire=247bff&currStreakNum=00f5ff&sideNums=cbd5e1&currStreakLabel=ff354f&sideLabels=64748b" alt="GitHub Streak" width="100%" />
+    <td colspan="2" align="center" valign="middle" style="background:#070b16; border:1px solid rgba(255,53,79,0.35); border-radius:12px; padding:12px;">
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=razashoeb840&theme=radical&background=070b16&stroke=ff354f&ring=247bff&fire=ff354f&currStreakNum=ff354f&sideNums=cbd5e1&currStreakLabel=ff354f&sideLabels=64748b" alt="GitHub Streak" width="100%" />
     </td>
   </tr>
 </table>
