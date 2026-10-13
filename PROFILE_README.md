@@ -2,28 +2,28 @@
 
 <!-- 01 HERO SECTION -->
 <a href="https://portfolio-kappa-dun-13.vercel.app/">
-  <img src="./assets/hero.svg?v=1" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
+  <img src="./assets/hero.svg?v=2" alt="Shoeb Raza — Full-Stack Systems Engineer" width="100%" />
 </a>
 
 <br/>
 
 <!-- 02 ABOUT & CAPABILITIES -->
-<img src="./assets/about-life.svg?v=1" alt="Capabilities & Focus Pillars" width="100%" />
+<img src="./assets/about-life.svg?v=2" alt="Capabilities & Focus Pillars" width="100%" />
 
 <br/>
 
 <!-- 03 TECHNICAL ORBITS & STACK -->
-<img src="./assets/stack.svg?v=1" alt="Technical Stack & Orbit Ecosystem" width="100%" />
+<img src="./assets/stack.svg?v=2" alt="Technical Stack & Orbit Ecosystem" width="100%" />
 
 <br/>
 
 <!-- 04 VERIFIED DOSSIER & LANYARD ID -->
-<img src="./assets/id-dashboard.svg?v=1" alt="Developer ID & Verified Metrics" width="100%" />
+<img src="./assets/id-dashboard.svg?v=2" alt="Developer ID & Verified Metrics" width="100%" />
 
 <br/>
 
 <!-- 05 CONNECT & CHANNELS -->
-<img src="./assets/connect.svg?v=1" alt="Connect with Shoeb Raza" width="100%" />
+<img src="./assets/connect.svg?v=2" alt="Connect with Shoeb Raza" width="100%" />
 
 <br/>
 
