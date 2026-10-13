@@ -1,18 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="100%" height="auto" style="background:#070b16; border-radius:18px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 920 340" width="100%" height="auto" style="background:#070b16; border-radius:18px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
   <defs>
     <radialGradient id="about_glow" cx="80%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#247bff" stop-opacity="0.22" />
+      <stop offset="0%" stop-color="#ff354f" stop-opacity="0.25" />
       <stop offset="100%" stop-color="#070b16" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="about_border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(36,123,255,0.6)" />
+      <stop offset="0%" stop-color="rgba(255,53,79,0.7)" />
       <stop offset="50%" stop-color="rgba(255,255,255,0.08)" />
-      <stop offset="100%" stop-color="rgba(255,53,79,0.5)" />
+      <stop offset="100%" stop-color="rgba(36,123,255,0.6)" />
     </linearGradient>
 
-    <!-- Carousel Timing Styles (3 slides, 4s each = 12s cycle) -->
-    <style>
-      /* Segment progress bars */
+    <style><![CDATA[
       @keyframes prog1 { 0% { width: 0%; } 30%, 100% { width: 100%; } }
       @keyframes prog2 { 0%, 33% { width: 0%; } 63%, 100% { width: 100%; } }
       @keyframes prog3 { 0%, 66% { width: 0%; } 96%, 100% { width: 100%; } }
@@ -21,7 +19,6 @@
       .bar-2 { animation: prog2 12s infinite; }
       .bar-3 { animation: prog3 12s infinite; }
 
-      /* Slides visibility */
       @keyframes slide1 { 0%, 30% { opacity: 1; transform: translateY(0); } 33%, 100% { opacity: 0; transform: translateY(-10px); } }
       @keyframes slide2 { 0%, 33% { opacity: 0; transform: translateY(10px); } 36%, 63% { opacity: 1; transform: translateY(0); } 66%, 100% { opacity: 0; transform: translateY(-10px); } }
       @keyframes slide3 { 0%, 66% { opacity: 0; transform: translateY(10px); } 69%, 96% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-10px); } }
@@ -29,30 +26,30 @@
       .about-slide-1 { animation: slide1 12s infinite; }
       .about-slide-2 { animation: slide2 12s infinite; }
       .about-slide-3 { animation: slide3 12s infinite; }
-    </style>
+    ]]></style>
   </defs>
 
   <rect width="920" height="340" fill="#070b16" rx="18" />
   <rect width="920" height="340" fill="url(#about_glow)" rx="18" />
-  <rect x="0.6" y="0.6" width="918.8" height="338.8" rx="17.4" fill="none" stroke="url(#about_border)" stroke-width="1.2" />
+  <rect x="0.6" y="0.6" width="918.8" height="338.8" rx="17.4" fill="none" stroke="url(#about_border)" stroke-width="1.4" />
 
   <!-- LEFT COLUMN: CAPABILITIES & CORE PILLARS -->
   <g transform="translate(48, 45)">
-    <text x="0" y="0" fill="#247bff" font-size="11" font-weight="800" letter-spacing="2">01 / CAPABILITIES &amp; ARCHITECTURE</text>
+    <text x="0" y="0" fill="#ff354f" font-size="11" font-weight="800" letter-spacing="2">01 / CAPABILITIES &amp; ARCHITECTURE</text>
     <text x="0" y="32" fill="#ffffff" font-size="24" font-weight="900" letter-spacing="0.5">Core Engineering Pillars</text>
 
     <!-- Pillar 1 -->
     <g transform="translate(0, 60)">
-      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.7)" stroke="rgba(36,123,255,0.3)" stroke-width="1" />
-      <circle cx="28" cy="30" r="14" fill="rgba(36,123,255,0.15)" />
-      <text x="23" y="35" fill="#247bff" font-size="14" font-weight="900">💻</text>
+      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.85)" stroke="rgba(255,53,79,0.35)" stroke-width="1.2" />
+      <circle cx="28" cy="30" r="14" fill="rgba(255,53,79,0.15)" />
+      <text x="23" y="35" fill="#ff354f" font-size="14" font-weight="900">💻</text>
       <text x="54" y="26" fill="#f0f6fc" font-size="13" font-weight="800">Full-Stack Enterprise Platforms</text>
       <text x="54" y="44" fill="#94a3b8" font-size="11">React, Next.js, Angular, Node, Express, MongoDB</text>
     </g>
 
     <!-- Pillar 2 -->
     <g transform="translate(0, 132)">
-      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.7)" stroke="rgba(57,211,83,0.3)" stroke-width="1" />
+      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.85)" stroke="rgba(57,211,83,0.35)" stroke-width="1.2" />
       <circle cx="28" cy="30" r="14" fill="rgba(57,211,83,0.15)" />
       <text x="23" y="35" fill="#39d353" font-size="14" font-weight="900">⚡</text>
       <text x="54" y="26" fill="#f0f6fc" font-size="13" font-weight="800">High-Performance Algorithmic DSA</text>
@@ -61,9 +58,9 @@
 
     <!-- Pillar 3 -->
     <g transform="translate(0, 204)">
-      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.7)" stroke="rgba(255,53,79,0.3)" stroke-width="1" />
-      <circle cx="28" cy="30" r="14" fill="rgba(255,53,79,0.15)" />
-      <text x="23" y="35" fill="#ff354f" font-size="14" font-weight="900">📡</text>
+      <rect width="360" height="60" rx="10" fill="rgba(15,23,42,0.85)" stroke="rgba(36,123,255,0.35)" stroke-width="1.2" />
+      <circle cx="28" cy="30" r="14" fill="rgba(36,123,255,0.15)" />
+      <text x="23" y="35" fill="#247bff" font-size="14" font-weight="900">📡</text>
       <text x="54" y="26" fill="#f0f6fc" font-size="13" font-weight="800">Real-Time Telemetry &amp; Cloud AI</text>
       <text x="54" y="44" fill="#94a3b8" font-size="11">Socket.io, Supabase, OCI GenAI, Gemini LLMs</text>
     </g>
@@ -72,46 +69,43 @@
   <!-- VERTICAL DIVIDER -->
   <line x1="455" y1="45" x2="455" y2="295" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4 4" />
 
-  <!-- RIGHT COLUMN: THREE-SLIDE INTERESTS CAROUSEL (Every 4s) -->
+  <!-- RIGHT COLUMN: THREE-SLIDE INTERESTS CAROUSEL -->
   <g transform="translate(490, 45)">
-    <text x="0" y="0" fill="#ff354f" font-size="11" font-weight="800" letter-spacing="2">02 / FOCUS &amp; HIGHLIGHTS (AUTO-CYCLE)</text>
+    <text x="0" y="0" fill="#247bff" font-size="11" font-weight="800" letter-spacing="2">02 / FOCUS &amp; HIGHLIGHTS (AUTO-CYCLE)</text>
     
-    <!-- Segment Progress Bars (3 segments) -->
+    <!-- Segment Progress Bars -->
     <g transform="translate(0, 18)">
-      <!-- Segment 1 BG & Bar -->
       <rect x="0" y="0" width="115" height="3" rx="1.5" fill="rgba(255,255,255,0.12)" />
-      <rect class="bar-1" x="0" y="0" width="0" height="3" rx="1.5" fill="#247bff" />
+      <rect class="bar-1" x="0" y="0" width="0" height="3" rx="1.5" fill="#ff354f" />
 
-      <!-- Segment 2 BG & Bar -->
       <rect x="130" y="0" width="115" height="3" rx="1.5" fill="rgba(255,255,255,0.12)" />
       <rect class="bar-2" x="130" y="0" width="0" height="3" rx="1.5" fill="#39d353" />
 
-      <!-- Segment 3 BG & Bar -->
       <rect x="260" y="0" width="115" height="3" rx="1.5" fill="rgba(255,255,255,0.12)" />
-      <rect class="bar-3" x="260" y="0" width="0" height="3" rx="1.5" fill="#ff354f" />
+      <rect class="bar-3" x="260" y="0" width="0" height="3" rx="1.5" fill="#247bff" />
     </g>
 
     <!-- SLIDE 1: Civic Tech & JanSetu -->
     <g class="about-slide-1" transform="translate(0, 50)">
-      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.9)" stroke="rgba(36,123,255,0.4)" stroke-width="1.2" />
-      <text x="24" y="36" fill="#247bff" font-size="12" font-weight="800" letter-spacing="1">SLIDE 01 · CIVIC TECH PLATFORMS</text>
+      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.95)" stroke="rgba(255,53,79,0.4)" stroke-width="1.2" />
+      <text x="24" y="36" fill="#ff354f" font-size="12" font-weight="800" letter-spacing="1">SLIDE 01 · CIVIC TECH PLATFORMS</text>
       <text x="24" y="66" fill="#f0f6fc" font-size="18" font-weight="900">JanSetu: Citizen-to-Innovation</text>
       <text x="24" y="96" fill="#cbd5e1" font-size="13" font-weight="400">Architected multimodal evidence reporting system</text>
       <text x="24" y="116" fill="#cbd5e1" font-size="13" font-weight="400">with automated AI triage scoring and department dispatch.</text>
-      <text x="24" y="146" fill="#8bc3ff" font-size="12" font-weight="700">✓ 100% Audit Trail  ✓ Sub-second routing latency</text>
+      <text x="24" y="146" fill="#fca5a5" font-size="12" font-weight="700">✓ 100% Audit Trail  ✓ Sub-second routing latency</text>
       <g transform="translate(24, 168)">
-        <rect width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
-        <text x="12" y="16" fill="#60a5fa" font-size="11" font-weight="700">React.js</text>
-        <rect x="100" y="0" width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
-        <text x="112" y="16" fill="#60a5fa" font-size="11" font-weight="700">Supabase</text>
-        <rect x="200" y="0" width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
-        <text x="214" y="16" fill="#60a5fa" font-size="11" font-weight="700">Socket.io</text>
+        <rect width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
+        <text x="14" y="16" fill="#f87171" font-size="11" font-weight="700">React.js</text>
+        <rect x="100" y="0" width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
+        <text x="110" y="16" fill="#f87171" font-size="11" font-weight="700">Supabase</text>
+        <rect x="200" y="0" width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
+        <text x="214" y="16" fill="#f87171" font-size="11" font-weight="700">Socket.io</text>
       </g>
     </g>
 
     <!-- SLIDE 2: HealthTech & Dispatch Engines -->
     <g class="about-slide-2" transform="translate(0, 50)">
-      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.9)" stroke="rgba(57,211,83,0.4)" stroke-width="1.2" />
+      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.95)" stroke="rgba(57,211,83,0.4)" stroke-width="1.2" />
       <text x="24" y="36" fill="#39d353" font-size="12" font-weight="800" letter-spacing="1">SLIDE 02 · REAL-TIME SYSTEMS</text>
       <text x="24" y="66" fill="#f0f6fc" font-size="18" font-weight="900">MediPulse &amp; RapidX Telemetry</text>
       <text x="24" y="96" fill="#cbd5e1" font-size="13" font-weight="400">Unified hospital ICU ward streaming and logistics</text>
@@ -129,19 +123,19 @@
 
     <!-- SLIDE 3: Cloud Credentials & LLMs -->
     <g class="about-slide-3" transform="translate(0, 50)">
-      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.9)" stroke="rgba(255,53,79,0.4)" stroke-width="1.2" />
-      <text x="24" y="36" fill="#ff354f" font-size="12" font-weight="800" letter-spacing="1">SLIDE 03 · ENTERPRISE &amp; CLOUD AI</text>
+      <rect width="380" height="210" rx="12" fill="rgba(12,19,36,0.95)" stroke="rgba(36,123,255,0.4)" stroke-width="1.2" />
+      <text x="24" y="36" fill="#247bff" font-size="12" font-weight="800" letter-spacing="1">SLIDE 03 · ENTERPRISE &amp; CLOUD AI</text>
       <text x="24" y="66" fill="#f0f6fc" font-size="18" font-weight="900">Infosys &amp; Oracle Certified AI</text>
       <text x="24" y="96" fill="#cbd5e1" font-size="13" font-weight="400">Engineered CampusEventHub at Infosys Springboard.</text>
       <text x="24" y="116" fill="#cbd5e1" font-size="13" font-weight="400">OCI Certified Generative AI Professional in LLMs.</text>
-      <text x="24" y="146" fill="#fca5a5" font-size="12" font-weight="700">✓ Angular 10+ Comps  ✓ Gemini RAG Synthesis</text>
+      <text x="24" y="146" fill="#93c5fd" font-size="12" font-weight="700">✓ Angular 10+ Comps  ✓ Gemini RAG Synthesis</text>
       <g transform="translate(24, 168)">
-        <rect width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
-        <text x="18" y="16" fill="#f87171" font-size="11" font-weight="700">Angular</text>
-        <rect x="100" y="0" width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
-        <text x="110" y="16" fill="#f87171" font-size="11" font-weight="700">Oracle AI</text>
-        <rect x="200" y="0" width="90" height="24" rx="4" fill="rgba(255,53,79,0.2)" />
-        <text x="212" y="16" fill="#f87171" font-size="11" font-weight="700">Python</text>
+        <rect width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
+        <text x="18" y="16" fill="#60a5fa" font-size="11" font-weight="700">Angular</text>
+        <rect x="100" y="0" width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
+        <text x="110" y="16" fill="#60a5fa" font-size="11" font-weight="700">Oracle AI</text>
+        <rect x="200" y="0" width="90" height="24" rx="4" fill="rgba(36,123,255,0.2)" />
+        <text x="212" y="16" fill="#60a5fa" font-size="11" font-weight="700">Python</text>
       </g>
     </g>
   </g>

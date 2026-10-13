@@ -3,50 +3,856 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shoeb Raza — GitHub Profile Preview</title>
+  <title>Shoeb Raza — Systems Engineer | Live Profile Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #0d1117;
-      color: #e6edf3;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    :root {
+      --bg-canvas: #070b16;
+      --bg-surface: #0b1120;
+      --bg-surface-elevated: #0f172a;
+      --accent-red: #ff354f;
+      --accent-red-hover: #ff1f3d;
+      --accent-red-glow: rgba(255, 53, 79, 0.28);
+      --accent-blue: #247bff;
+      --accent-blue-glow: rgba(36, 123, 255, 0.28);
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-red: rgba(255, 53, 79, 0.45);
+      --border-blue: rgba(36, 123, 255, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(36, 123, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(255, 53, 79, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 70%, rgba(255, 53, 79, 0.08) 0%, transparent 50%),
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px;
+      color: var(--text-primary);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      padding: 30px 20px 80px 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
-    .markdown-container {
-      max-width: 920px;
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070b16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 5px;
+      border: 2px solid #070b16;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-red);
+    }
+
+    /* Top Global HUD Bar */
+    .hud-bar {
+      max-width: 960px;
       width: 100%;
+      background: rgba(11, 17, 32, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
     }
-    img {
-      max-width: 100%;
+    .hud-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .hud-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-red);
+      box-shadow: 0 0 10px var(--accent-red);
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .hud-metrics {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-muted);
+    }
+    .hud-metrics span {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 960px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Master SVG Section Cards */
+    .svg-frame {
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .svg-frame:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 53, 79, 0.15);
+    }
+    .svg-frame img {
+      width: 100%;
       height: auto;
-      margin-bottom: 24px;
+      display: block;
+      border-radius: 18px;
+    }
+
+    /* Social Dispatch Bar */
+    .dispatch-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 10px 0 30px 0;
+      padding: 16px;
+      background: rgba(11, 17, 32, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle);
       border-radius: 14px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
+    .dispatch-bar a {
+      text-decoration: none;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
-    td {
-      padding: 16px;
-      vertical-align: top;
-      background: #161b22;
-      border: 1px solid #30363d;
+    .dispatch-bar a:hover {
+      transform: translateY(-2px) scale(1.02);
+      filter: drop-shadow(0 4px 12px rgba(255, 53, 79, 0.35));
+    }
+    .dispatch-bar img {
+      display: block;
+      height: 36px;
+      border-radius: 6px;
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 30px 0 14px 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-family: 'Outfit', sans-serif;
+    }
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: #ffffff;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-header h2 span {
+      color: var(--accent-red);
+    }
+
+    /* Production Deployments Showcase Table / Cards */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .project-card {
+      display: grid;
+      grid-template-columns: 46% 54%;
+      gap: 24px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-red);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-red), var(--accent-blue), transparent);
+      opacity: 0.8;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 25px var(--accent-red-glow);
+      border-color: rgba(255, 53, 79, 0.8);
+    }
+    .project-card.blue-variant {
+      border-color: var(--border-blue);
+    }
+    .project-card.blue-variant::before {
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-red), transparent);
+    }
+    .project-card.blue-variant:hover {
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75), 0 0 25px var(--accent-blue-glow);
+      border-color: rgba(36, 123, 255, 0.8);
+    }
+
+    .project-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+    .project-img-wrapper {
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+      position: relative;
+    }
+    .project-img-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover .project-img-wrapper img {
+      transform: scale(1.03);
+    }
+    .project-actions {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+    }
+    .project-actions a {
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .project-actions a:hover {
+      transform: translateY(-2px);
+    }
+    .project-actions img {
+      display: block;
+      height: 32px;
+      border-radius: 6px;
+    }
+
+    .project-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .project-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+    .badge-tag {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .badge-red {
+      background: rgba(255, 53, 79, 0.18);
+      color: #ff4d64;
+      border: 1px solid rgba(255, 53, 79, 0.45);
+    }
+    .badge-blue {
+      background: rgba(36, 123, 255, 0.18);
+      color: #60a5fa;
+      border: 1px solid rgba(36, 123, 255, 0.45);
+    }
+
+    .project-domain {
+      font-size: 12px;
+      color: var(--accent-red);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .project-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .project-bullets {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+    .project-bullets li {
+      position: relative;
+      padding-left: 16px;
+    }
+    .project-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-red);
+      font-weight: 900;
+    }
+    .project-bullets b {
+      color: var(--text-primary);
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .project-stack img {
+      height: 22px;
+      border-radius: 4px;
+    }
+
+    .project-telemetry {
+      background: rgba(7, 11, 22, 0.85);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
+      padding: 8px 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .project-telemetry code {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .project-telemetry code.red-pill {
+      color: #ff6b81;
+    }
+
+    /* Telemetry & Stats Cards */
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 14px;
+    }
+    .telemetry-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-red);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+    .telemetry-card:hover {
+      transform: translateY(-2px);
+    }
+    .telemetry-card.full-width {
+      grid-column: 1 / -1;
+      border-color: var(--border-blue);
+    }
+    .telemetry-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Post-Credits Section */
+    .footer-block {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-red);
+      border-radius: 18px;
+      padding: 36px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+    }
+    .footer-quote {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      font-style: italic;
+    }
+    .ascii-box {
+      background: #05070d;
+      border: 1px solid rgba(255, 53, 79, 0.4);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #ff354f;
+      line-height: 1.4;
+      white-space: pre;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .back-to-top {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s ease;
+    }
+    .back-to-top:hover {
+      color: var(--accent-red);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+      .telemetry-grid {
+        grid-template-columns: 1fr;
+      }
+      .hud-metrics {
+        display: none;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="markdown-container">
-    <img src="./assets/hero.svg?v=2" alt="Hero">
-    <img src="./assets/about-life.svg?v=2" alt="About & Capabilities">
-    <img src="./assets/stack.svg?v=2" alt="Tech Stack">
-    <img src="./assets/id-dashboard.svg?v=2" alt="Lanyard ID & Metrics">
-    <img src="./assets/connect.svg?v=2" alt="Connect">
-    <img src="./assets/github-contribution-grid-snake.svg" alt="Snake Animation">
-    <img src="./assets/github-contributions.svg" alt="Commit Graph">
-  </div>
+<body id="top">
+
+  <!-- HUD STATUS BAR -->
+  <header class="hud-bar">
+    <div class="hud-title">
+      <div class="hud-dot"></div>
+      <span>SHOEB RAZA // PRODUCTION PROFILE PLAYBOOK</span>
+    </div>
+    <div class="hud-metrics">
+      <div>STATUS: <span>ACTIVE ENGINEER</span></div>
+      <div>THEME: <span>CRIMSON &amp; OBSIDIAN</span></div>
+      <div>STACK: <span>MERN • C++ • AI</span></div>
+    </div>
+  </header>
+
+  <!-- MAIN PROFILE PLAYBOOK CONTAINER -->
+  <main class="container">
+
+    <!-- 01 HERO SECTION SVG -->
+    <section class="svg-frame">
+      <a href="https://portfolio-kappa-dun-13.vercel.app/" target="_blank" rel="noopener">
+        <img src="./assets/hero.svg?v=3" alt="Shoeb Raza — Full-Stack Systems Engineer">
+      </a>
+    </section>
+
+    <!-- 02 ABOUT & CAPABILITIES SVG -->
+    <section class="svg-frame">
+      <img src="./assets/about-life.svg?v=3" alt="Capabilities & Core Engineering Pillars">
+    </section>
+
+    <!-- 03 TECHNICAL ORBITS & STACK SVG -->
+    <section class="svg-frame">
+      <img src="./assets/stack.svg?v=3" alt="Technical Stack & Orbit Ecosystem">
+    </section>
+
+    <!-- 04 VERIFIED DOSSIER & LANYARD ID SVG (REAL 3D FIGURINE SCAN) -->
+    <section class="svg-frame">
+      <img src="./assets/id-dashboard.svg?v=3" alt="Developer ID & Verified Metrics Dossier">
+    </section>
+
+    <!-- 05 CONNECT & DISPATCH CHANNELS SVG (REAL 3D FIGURINE POSE) -->
+    <section class="svg-frame">
+      <img src="./assets/connect.svg?v=3" alt="Dispatch Channels & Connect with Shoeb Raza">
+    </section>
+
+    <!-- INTERACTIVE CLICKABLE SOCIAL DISPATCH PILLS -->
+    <nav class="dispatch-bar" aria-label="Social Channels">
+      <a href="https://portfolio-kappa-dun-13.vercel.app/" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/▶_STREAM_PORTFOLIO-E50914?style=for-the-badge&logoColor=white&logo=googlechrome" alt="Stream Portfolio">
+      </a>
+      <a href="./assets/Shoeb_Raza_Resume.pdf" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/📄_RESUME_(PDF)-FF354F?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="View Resume">
+      </a>
+      <a href="https://www.linkedin.com/in/shoeb-raza/" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/LINKEDIN-247BFF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile">
+      </a>
+      <a href="https://leetcode.com/u/razashoeb2358/" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/LEETCODE-070B16?style=for-the-badge&logo=leetcode&logoColor=FFA116" alt="LeetCode 350+">
+      </a>
+      <a href="https://www.codechef.com/users/razashoeb2358" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/CODECHEF_2★-070B16?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef 2-Star">
+      </a>
+      <a href="https://wa.me/918406022747" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/badge/WHATSAPP_DIRECT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Direct">
+      </a>
+    </nav>
+
+    <!-- SECTION 02: PRODUCTION DEPLOYMENTS -->
+    <div class="section-header">
+      <h2><span>🚀</span> Production Deployments &amp; System Architectures</h2>
+    </div>
+
+    <div class="projects-container">
+
+      <!-- PROJECT 1: JANSETU -->
+      <article class="project-card">
+        <div class="project-visual">
+          <div class="project-img-wrapper">
+            <a href="https://jansetu-h177.onrender.com/" target="_blank" rel="noopener">
+              <img src="./assets/jansetu.png" alt="JanSetu Civic Tech Platform Screenshot">
+            </a>
+          </div>
+          <div class="project-actions">
+            <a href="https://jansetu-h177.onrender.com/" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo">
+            </a>
+            <a href="https://github.com/razashoeb840/JanSetu1" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source">
+            </a>
+          </div>
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <span class="project-title">#01 · JanSetu</span>
+            <span class="badge-tag badge-red">Core Flagship</span>
+            <span class="badge-tag badge-blue">Production</span>
+          </div>
+          <div class="project-domain">Civic Tech • Automated AI Triage • Triple-Helix Resolution</div>
+          <p class="project-desc">Citizen-to-Innovation platform connecting citizens, municipal bodies, universities, and industry to report, track, and resolve societal challenges.</p>
+          <ul class="project-bullets">
+            <li><b>Multi-Modal Evidence Submission:</b> Ingests photo, video, audio voice notes, and GPS geolocation with offline sync.</li>
+            <li><b>AI Triage Dispatch:</b> Classifies issues, detects duplicates, scores priority, and routes submissions to verified civic departments in sub-second latency.</li>
+            <li><b>Verified Loop:</b> University &amp; industry problem-matching pipeline for collaborative execution and citizen sign-off.</li>
+          </ul>
+          <div class="project-stack">
+            <img src="https://img.shields.io/badge/React.js-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
+            <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+            <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+            <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase">
+            <img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io">
+          </div>
+          <div class="project-telemetry">
+            <b>Telemetry:</b>
+            <code class="red-pill">100% Audit Trail</code> |
+            <code>5+ Stakeholder Tiers</code> |
+            <code class="red-pill">Sub-sec Routing</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: MEDIPULSE -->
+      <article class="project-card blue-variant">
+        <div class="project-visual">
+          <div class="project-img-wrapper">
+            <a href="https://deploy-fcr3.onrender.com/1index.html" target="_blank" rel="noopener">
+              <img src="./assets/Medipulse.png" alt="MediPulse HealthTech Platform Screenshot">
+            </a>
+          </div>
+          <div class="project-actions">
+            <a href="https://deploy-fcr3.onrender.com/1index.html" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo">
+            </a>
+            <a href="https://github.com/razashoeb840/deploy" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source">
+            </a>
+          </div>
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <span class="project-title">#02 · MediPulse</span>
+            <span class="badge-tag badge-red">Telemetry</span>
+            <span class="badge-tag badge-blue">Real-Time</span>
+          </div>
+          <div class="project-domain">HealthTech • Real-Time Telemetry • Unified Clinical Ledger</div>
+          <p class="project-desc">Unified smart hospital platform governing patient registration, live bed &amp; ICU occupancy telemetry, doctor consultation desks, pharmacy automation, and billing.</p>
+          <ul class="project-bullets">
+            <li><b>Sub-Second Bed &amp; Ward Telemetry:</b> Real-time streaming tracks ICU and general bed capacity with Socket.io push broadcasts.</li>
+            <li><b>Digital Rx &amp; Token Flow:</b> Seamless patient queue, ABHA ID linkage, and digital prescription generation synchronized with pharmacy dispatch.</li>
+            <li><b>Strict RBAC:</b> 4 isolated operational consoles: Admin, Doctor, Receptionist, and Cashier.</li>
+          </ul>
+          <div class="project-stack">
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
+            <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+            <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js">
+            <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+            <img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io">
+          </div>
+          <div class="project-telemetry">
+            <b>Telemetry:</b>
+            <code>Zero Collisions</code> |
+            <code class="red-pill">4-Role Strict RBAC</code> |
+            <code>24/7 Ward Telemetry</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: RAPIDX -->
+      <article class="project-card">
+        <div class="project-visual">
+          <div class="project-img-wrapper">
+            <a href="https://rapidx-transit.onrender.com/" target="_blank" rel="noopener">
+              <img src="./assets/rapidx.png" alt="RapidX Dispatch Engine Screenshot">
+            </a>
+          </div>
+          <div class="project-actions">
+            <a href="https://rapidx-transit.onrender.com/" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo">
+            </a>
+            <a href="https://github.com/razashoeb840/rapidX" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source">
+            </a>
+          </div>
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <span class="project-title">#03 · RapidX</span>
+            <span class="badge-tag badge-red">Dispatch Engine</span>
+            <span class="badge-tag badge-blue">Low-Latency</span>
+          </div>
+          <div class="project-domain">Transit &amp; Logistics • Real-Time Allocation Engine</div>
+          <p class="project-desc">High-concurrency task allocation engine pairing service requests with proximate active helpers via spatial geohashing and dynamic load balancing.</p>
+          <ul class="project-bullets">
+            <li><b>Spatial Matchmaking:</b> Matches tasks with drivers in under 1 second based on real-time geohash clustering and queue weights.</li>
+            <li><b>Atomic Claim Transactions:</b> Prevents concurrent job grabs using MongoDB optimistic concurrency locks.</li>
+            <li><b>Live Operational Radar:</b> Interactive dispatcher telemetry tracking driver GPS pings and ETA updates via WebSockets.</li>
+          </ul>
+          <div class="project-stack">
+            <img src="https://img.shields.io/badge/React.js-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React">
+            <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+            <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+            <img src="https://img.shields.io/badge/Socket.io-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io">
+          </div>
+          <div class="project-telemetry">
+            <b>Telemetry:</b>
+            <code class="red-pill">&lt;1s Matching</code> |
+            <code>100% Atomic Integrity</code> |
+            <code class="red-pill">Zero Grab Collisions</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 4: AI STUDY SUITE PRO -->
+      <article class="project-card blue-variant">
+        <div class="project-visual">
+          <div class="project-img-wrapper">
+            <a href="https://ai-study-suite-alpha.vercel.app" target="_blank" rel="noopener">
+              <img src="./assets/aistdysuit.png" alt="AI Study Suite Pro Platform Screenshot">
+            </a>
+          </div>
+          <div class="project-actions">
+            <a href="https://ai-study-suite-alpha.vercel.app" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/▶_LIVE_DEMO-FF354F?style=for-the-badge&logoColor=white" alt="Live Demo">
+            </a>
+            <a href="https://github.com/razashoeb840/AI_Study_suite" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source">
+            </a>
+          </div>
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <span class="project-title">#04 · AI Study Suite Pro</span>
+            <span class="badge-tag badge-red">Gemini LLM</span>
+            <span class="badge-tag badge-blue">EdTech</span>
+          </div>
+          <div class="project-domain">EdTech • Document Intelligence • Generative AI</div>
+          <p class="project-desc">Intelligent academic workspace ingesting textbooks and lecture slides to synthesize chapter breakdowns, active-recall flashcards, and diagnostic exams.</p>
+          <ul class="project-bullets">
+            <li><b>Semantic PDF Ingestion:</b> Chunking pipeline tokenizes slide decks and syllabi with context-aware windowing.</li>
+            <li><b>Gemini API Generation:</b> Automated synthesis of high-yield active-recall cards and dynamic multiple-choice test banks.</li>
+            <li><b>Cognitive Spaced Repetition:</b> Retention curve tracking identifying topic weaknesses for targeted review.</li>
+          </ul>
+          <div class="project-stack">
+            <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+            <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask">
+            <img src="https://img.shields.io/badge/Google_Gemini_API-8E75B2?style=flat-square&logo=google&logoColor=white" alt="Gemini">
+            <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite">
+          </div>
+          <div class="project-telemetry">
+            <b>Telemetry:</b>
+            <code>100% Auto-Quiz</code> |
+            <code class="red-pill">Multi-Doc Ingestion</code> |
+            <code>Instant LLM Synthesis</code>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 5: FOCUSGUARD PRO -->
+      <article class="project-card">
+        <div class="project-visual">
+          <div class="project-img-wrapper">
+            <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon" target="_blank" rel="noopener">
+              <img src="./assets/focusguard.png" alt="FocusGuard Pro Chrome Extension Screenshot">
+            </a>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/sushantranjan912/FocusguardPro-hackathon" target="_blank" rel="noopener">
+              <img src="https://img.shields.io/badge/📦_SOURCE_CODE-0B0F19?style=for-the-badge&logo=github&logoColor=white" alt="Source">
+            </a>
+          </div>
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <span class="project-title">#05 · FocusGuard Pro</span>
+            <span class="badge-tag badge-red">Manifest V3</span>
+            <span class="badge-tag badge-blue">0ms Latency</span>
+          </div>
+          <div class="project-domain">Productivity Tech • Chrome Extension • Low-Latency Controls</div>
+          <p class="project-desc">Ultra-lightweight browser extension curbing digital distractions through deterministic Declarative Net Request URL filtering and tamper-resistant timers.</p>
+          <ul class="project-bullets">
+            <li><b>0ms Interception Overhead:</b> Utilizes native Manifest V3 network rules for instant blocking without background lag.</li>
+            <li><b>Anti-Override Focus Lock:</b> Tamper-proof Pomodoro timers backed by encrypted browser local storage.</li>
+            <li><b>Screen-Time Telemetry:</b> Visual heatmaps showcasing saved minutes and milestone streaks.</li>
+          </ul>
+          <div class="project-stack">
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
+            <img src="https://img.shields.io/badge/Chrome_API-4285F4?style=flat-square&logo=googlechrome&logoColor=white" alt="Chrome API">
+            <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
+          </div>
+          <div class="project-telemetry">
+            <b>Telemetry:</b>
+            <code class="red-pill">0ms Overhead</code> |
+            <code>100% Privacy</code> |
+            <code class="red-pill">Manifest V3 Compliant</code>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 03: LIVE TELEMETRY & CONTRIBUTION SNAKE GAME -->
+    <div class="section-header">
+      <h2><span>🐍</span> Live Telemetry &amp; Contribution Snake Game</h2>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
+      <p style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#cbd5e1; font-weight:700;">
+        🎮 Real 365-Day Contribution Snake Slither (Datewise Commits)
+      </p>
+      <section class="svg-frame">
+        <img src="./assets/github-contribution-grid-snake.svg?v=3" alt="GitHub Contribution Snake Animation">
+      </section>
+
+      <p style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#cbd5e1; font-weight:700; margin-top:10px;">
+        🟩 Datewise Commits Activity Grid (Exact GitHub Black &amp; Neon Green)
+      </p>
+      <section class="svg-frame">
+        <img src="./assets/github-contributions.svg?v=3" alt="Shoeb Raza GitHub Contribution Graph (Real Datewise Commits)">
+      </section>
+
+      <!-- GITHUB STATS WIDGETS -->
+      <div class="telemetry-grid" style="width:100%;">
+        <div class="telemetry-card">
+          <img src="https://github-readme-stats.vercel.app/api?username=razashoeb840&show_icons=true&theme=radical&bg_color=070b16&title_color=ff354f&text_color=cbd5e1&icon_color=247bff&border_color=ff354f&hide_border=false" alt="Shoeb's GitHub Stats">
+        </div>
+        <div class="telemetry-card" style="border-color:var(--border-blue);">
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=razashoeb840&layout=compact&theme=radical&bg_color=070b16&title_color=247bff&text_color=cbd5e1&border_color=247bff&hide_border=false" alt="Top Languages">
+        </div>
+        <div class="telemetry-card full-width">
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=razashoeb840&theme=radical&background=070b16&stroke=ff354f&ring=247bff&fire=ff354f&currStreakNum=ff354f&sideNums=cbd5e1&currStreakLabel=ff354f&sideLabels=64748b" alt="GitHub Streak">
+        </div>
+      </div>
+    </div>
+
+    <!-- POST-CREDITS & CONTINUE WATCHING -->
+    <footer class="footer-block">
+      <div class="footer-quote">
+        "Engineering high-throughput systems, line by line."
+      </div>
+
+      <nav class="dispatch-bar" style="margin:0; border:none; background:transparent;" aria-label="Footer Links">
+        <a href="https://portfolio-kappa-dun-13.vercel.app/" target="_blank" rel="noopener">
+          <img src="https://img.shields.io/badge/PORTFOLIO_SITE-FF354F?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio Site">
+        </a>
+        <a href="./assets/Shoeb_Raza_Resume.pdf" target="_blank" rel="noopener">
+          <img src="https://img.shields.io/badge/RESUME_(PDF)-247BFF?style=for-the-badge&logoColor=white" alt="Resume PDF">
+        </a>
+        <a href="https://www.linkedin.com/in/shoeb-raza/" target="_blank" rel="noopener">
+          <img src="https://img.shields.io/badge/LINKEDIN-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+        </a>
+        <a href="mailto:razashoeb840@gmail.com">
+          <img src="https://img.shields.io/badge/EMAIL_ME-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+        </a>
+        <a href="https://wa.me/918406022747" target="_blank" rel="noopener">
+          <img src="https://img.shields.io/badge/WHATSAPP-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp">
+        </a>
+      </nav>
+
+      <pre class="ascii-box">
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   TO BE CONTINUED... SEASON 06 COMING SOON                 ║
+║       Current Production: Scalable Distributed Systems & Real-Time AI       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+      </pre>
+
+      <a href="#top" class="back-to-top">▲ RETURN TO TOP</a>
+    </footer>
+
+  </main>
+
 </body>
 </html>
