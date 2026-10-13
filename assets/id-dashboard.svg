@@ -174,12 +174,12 @@
         <text x="18" y="62" fill="#64748b" font-size="10">LLMs, RAG &amp; Fine-Tuning Certified</text>
       </g>
 
-      <!-- Card 6: Infosys Springboard -->
+      <!-- Card 6: 5+ Production Systems -->
       <g transform="translate(285, 176)">
         <rect width="265" height="74" rx="10" fill="rgba(15,23,42,0.85)" stroke="rgba(52,211,153,0.35)" stroke-width="1.2" />
-        <text x="18" y="28" fill="#34d399" font-size="18" font-weight="900">Full-Stack Web Intern</text>
-        <text x="18" y="48" fill="#f0f6fc" font-size="12" font-weight="700">Infosys Springboard</text>
-        <text x="18" y="62" fill="#64748b" font-size="10">Enterprise Angular &amp; REST APIs</text>
+        <text x="18" y="28" fill="#34d399" font-size="18" font-weight="900">5+ Production Systems</text>
+        <text x="18" y="48" fill="#f0f6fc" font-size="12" font-weight="700">Full-Stack &amp; Distributed AI</text>
+        <text x="18" y="62" fill="#64748b" font-size="10">JanSetu • MediPulse • RapidX • 0ms Lag</text>
       </g>
     </g>
   </g>

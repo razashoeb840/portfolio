@@ -98,7 +98,7 @@
       📡 REAL-TIME TELEMETRY ARCHITECT
     </text>
     <text class="hero-role-4" x="0" y="0" fill="#247bff" font-size="20" font-weight="800" letter-spacing="1">
-      💼 INFOSYS SPRINGBOARD INTERN
+      🤖 OCI CERTIFIED GENERATIVE AI PROFESSIONAL
     </text>
   </g>
 
@@ -126,10 +126,10 @@
       <text x="14" y="21" fill="#f87171" font-size="12" font-weight="700">🎓 B.Tech CSE (8.94 CGPA)</text>
     </g>
 
-    <!-- Pill 3: Infosys Springboard -->
+    <!-- Pill 3: OCI Certified GenAI -->
     <g transform="translate(402, 0)">
-      <rect width="180" height="34" rx="8" fill="rgba(15,23,42,0.85)" stroke="rgba(36,123,255,0.5)" stroke-width="1" />
-      <text x="14" y="21" fill="#60a5fa" font-size="12" font-weight="700">💼 Ex-Intern @ Infosys</text>
+      <rect width="195" height="34" rx="8" fill="rgba(15,23,42,0.85)" stroke="rgba(36,123,255,0.5)" stroke-width="1" />
+      <text x="14" y="21" fill="#60a5fa" font-size="12" font-weight="700">🤖 OCI GenAI Certified</text>
     </g>
   </g>
 
