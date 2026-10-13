@@ -8150,108 +8150,92 @@
             </div>
           </div>
 
-                    <!-- RIGHT: 1:1 DITTO SOLAR SYSTEM ARTWORK + MOVABLE PLANETS -->
+                    <!-- RIGHT: 1:1 DITTO SOLAR SYSTEM ARTWORK (CLEAN, WIDE, NO DUPLICATE SPRITES) -->
           <div class="ta-right">
             <div class="ta-solar-showcase" id="solarShowcase">
-              <!-- EXACT DITTO ARTWORK PROVIDED BY USER -->
+              <!-- EXACT 1:1 DITTO ARTWORK PROVIDED BY USER (PRISTINE & SHARP) -->
               <img src="assets/tech_solar_system.jpg" alt="Technical Stack Solar System" class="ta-solar-base-img" id="solarBaseImg">
 
               <!-- Dynamic Specular Glare -->
               <div class="ta-solar-glare"></div>
 
-              <!-- Central GitHub Sun -->
-              <div class="ta-sun-node" title="GitHub">
-                <div class="ta-sun-halo-glow"></div>
-                <div class="ta-simple-tip" style="--glow:#00f5ff;">GitHub</div>
+              <!-- Central GitHub Sun Hotspot -->
+              <div class="ta-sun-hotspot" style="--glow:#00f5ff; --glow-alpha:rgba(0,245,255,0.25);">
+                <div class="ta-sun-halo"></div>
+                <div class="ta-simple-tip">GitHub</div>
               </div>
 
-              <!-- MOVABLE PLANETS LAYER (Calculated as % of 1024x682) -->
-              <div class="ta-solar-planets-layer">
-
-                <!-- 1. React (855, 425) -> (83.5%, 62.3%) -->
-                <div class="ta-planet-node" style="left:83.5%; top:62.3%; width:75px; height:75px; --glow:#00f5ff; --dur:4.2s; --dx:4px; --dy:-5px;">
-                  <img src="assets/solar_sprites/react.png" alt="React" class="ta-planet-sprite">
+              <!-- 14 Interactive Hotspots matching exact 1024x682 coordinates (ZERO DUPLICATES) -->
+              <div class="ta-solar-hotspots">
+                <!-- 1. React (855, 425) -->
+                <div class="ta-planet-hotspot" style="left:83.5%; top:62.3%; width:72px; height:72px; --glow:#00f5ff; --glow-alpha:rgba(0,245,255,0.25);">
                   <div class="ta-simple-tip">React</div>
                 </div>
 
-                <!-- 2. JavaScript JS (680, 525) -> (66.4%, 77.0%) -->
-                <div class="ta-planet-node" style="left:66.4%; top:77.0%; width:70px; height:70px; --glow:#facc15; --dur:3.8s; --dx:-3px; --dy:4px;">
-                  <img src="assets/solar_sprites/js.png" alt="JavaScript" class="ta-planet-sprite">
+                <!-- 2. JavaScript JS (680, 525) -->
+                <div class="ta-planet-hotspot" style="left:66.4%; top:77.0%; width:70px; height:70px; --glow:#facc15; --glow-alpha:rgba(250,204,21,0.25);">
                   <div class="ta-simple-tip">JavaScript</div>
                 </div>
 
-                <!-- 3. Node.js (127, 460) -> (12.4%, 67.4%) -->
-                <div class="ta-planet-node" style="left:12.4%; top:67.4%; width:68px; height:68px; --glow:#22c55e; --dur:4.5s; --dx:3px; --dy:5px;">
-                  <img src="assets/solar_sprites/node.png" alt="Node.js" class="ta-planet-sprite">
+                <!-- 3. Node.js (127, 460) -->
+                <div class="ta-planet-hotspot" style="left:12.4%; top:67.4%; width:68px; height:68px; --glow:#22c55e; --glow-alpha:rgba(34,197,94,0.25);">
                   <div class="ta-simple-tip">Node.js</div>
                 </div>
 
-                <!-- 4. Next.js (785, 495) -> (76.6%, 72.6%) -->
-                <div class="ta-planet-node" style="left:76.6%; top:72.6%; width:60px; height:60px; --glow:#ffffff; --dur:5.0s; --dx:-4px; --dy:-3px;">
-                  <img src="assets/solar_sprites/next.png" alt="Next.js" class="ta-planet-sprite">
+                <!-- 4. Next.js (785, 495) -->
+                <div class="ta-planet-hotspot" style="left:76.6%; top:72.6%; width:60px; height:60px; --glow:#ffffff; --glow-alpha:rgba(255,255,255,0.25);">
                   <div class="ta-simple-tip">Next.js</div>
                 </div>
 
-                <!-- 5. Java (412, 526) -> (40.2%, 77.1%) -->
-                <div class="ta-planet-node" style="left:40.2%; top:77.1%; width:64px; height:64px; --glow:#f97316; --dur:4.1s; --dx:4px; --dy:4px;">
-                  <img src="assets/solar_sprites/java.png" alt="Java" class="ta-planet-sprite">
+                <!-- 5. Java (412, 526) -->
+                <div class="ta-planet-hotspot" style="left:40.2%; top:77.1%; width:66px; height:66px; --glow:#f97316; --glow-alpha:rgba(249,115,22,0.25);">
                   <div class="ta-simple-tip">Java</div>
                 </div>
 
-                <!-- 6. HTML5 (166, 595) -> (16.2%, 87.2%) -->
-                <div class="ta-planet-node" style="left:16.2%; top:87.2%; width:62px; height:62px; --glow:#ef4444; --dur:3.9s; --dx:-3px; --dy:-4px;">
-                  <img src="assets/solar_sprites/html.png" alt="HTML5" class="ta-planet-sprite">
+                <!-- 6. HTML5 (166, 595) -->
+                <div class="ta-planet-hotspot" style="left:16.2%; top:87.2%; width:62px; height:62px; --glow:#ef4444; --glow-alpha:rgba(239,68,68,0.25);">
                   <div class="ta-simple-tip">HTML5</div>
                 </div>
 
-                <!-- 7. CSS3 (263, 486) -> (25.7%, 71.3%) -->
-                <div class="ta-planet-node" style="left:25.7%; top:71.3%; width:58px; height:58px; --glow:#3b82f6; --dur:4.6s; --dx:4px; --dy:-3px;">
-                  <img src="assets/solar_sprites/css.png" alt="CSS3" class="ta-planet-sprite">
+                <!-- 7. CSS3 (263, 486) -->
+                <div class="ta-planet-hotspot" style="left:25.7%; top:71.3%; width:58px; height:58px; --glow:#3b82f6; --glow-alpha:rgba(59,130,246,0.25);">
                   <div class="ta-simple-tip">CSS3</div>
                 </div>
 
-                <!-- 8. Linux (306, 372) -> (29.9%, 54.5%) -->
-                <div class="ta-planet-node" style="left:29.9%; top:54.5%; width:56px; height:56px; --glow:#f59e0b; --dur:4.0s; --dx:-3px; --dy:3px;">
-                  <img src="assets/solar_sprites/linux.png" alt="Linux" class="ta-planet-sprite">
+                <!-- 8. Linux (306, 372) -->
+                <div class="ta-planet-hotspot" style="left:29.9%; top:54.5%; width:58px; height:58px; --glow:#f59e0b; --glow-alpha:rgba(245,158,11,0.25);">
                   <div class="ta-simple-tip">Linux</div>
                 </div>
 
-                <!-- 9. C++ (451, 131) -> (44.0%, 19.2%) -->
-                <div class="ta-planet-node" style="left:44.0%; top:19.2%; width:54px; height:54px; --glow:#008cff; --dur:4.8s; --dx:3px; --dy:3px;">
-                  <img src="assets/solar_sprites/cpp.png" alt="C++" class="ta-planet-sprite">
+                <!-- 9. C++ (451, 131) -->
+                <div class="ta-planet-hotspot" style="left:44.0%; top:19.2%; width:56px; height:56px; --glow:#008cff; --glow-alpha:rgba(0,140,255,0.25);">
                   <div class="ta-simple-tip">C++</div>
                 </div>
 
-                <!-- 10. MongoDB (870, 335) -> (85.0%, 49.1%) -->
-                <div class="ta-planet-node" style="left:85.0%; top:49.1%; width:64px; height:64px; --glow:#22c55e; --dur:4.4s; --dx:-4px; --dy:-4px;">
-                  <img src="assets/solar_sprites/mongo.png" alt="MongoDB" class="ta-planet-sprite">
+                <!-- 10. MongoDB (870, 335) -->
+                <div class="ta-planet-hotspot" style="left:85.0%; top:49.1%; width:64px; height:64px; --glow:#22c55e; --glow-alpha:rgba(34,197,94,0.25);">
                   <div class="ta-simple-tip">MongoDB</div>
                 </div>
 
-                <!-- 11. PostgreSQL (618, 255) -> (60.3%, 37.4%) -->
-                <div class="ta-planet-node" style="left:60.3%; top:37.4%; width:54px; height:54px; --glow:#38bdf8; --dur:4.2s; --dx:3px; --dy:-3px;">
-                  <img src="assets/solar_sprites/postgres.png" alt="PostgreSQL" class="ta-planet-sprite">
+                <!-- 11. PostgreSQL (618, 255) -->
+                <div class="ta-planet-hotspot" style="left:60.3%; top:37.4%; width:56px; height:56px; --glow:#38bdf8; --glow-alpha:rgba(56,189,248,0.25);">
                   <div class="ta-simple-tip">PostgreSQL</div>
                 </div>
 
-                <!-- 12. Express (190, 285) -> (18.6%, 41.8%) -->
-                <div class="ta-planet-node" style="left:18.6%; top:41.8%; width:62px; height:62px; --glow:#c084fc; --dur:4.7s; --dx:-3px; --dy:4px;">
-                  <img src="assets/solar_sprites/express.png" alt="Express" class="ta-planet-sprite">
+                <!-- 12. Express.js (190, 285) -->
+                <div class="ta-planet-hotspot" style="left:18.6%; top:41.8%; width:62px; height:62px; --glow:#c084fc; --glow-alpha:rgba(192,132,252,0.25);">
                   <div class="ta-simple-tip">Express.js</div>
                 </div>
 
-                <!-- 13. MySQL (337, 230) -> (32.9%, 33.7%) -->
-                <div class="ta-planet-node" style="left:32.9%; top:33.7%; width:52px; height:52px; --glow:#06b6d4; --dur:4.3s; --dx:3px; --dy:3px;">
-                  <img src="assets/solar_sprites/dolphin.png" alt="MySQL" class="ta-planet-sprite">
+                <!-- 13. MySQL (337, 230) -->
+                <div class="ta-planet-hotspot" style="left:32.9%; top:33.7%; width:54px; height:54px; --glow:#06b6d4; --glow-alpha:rgba(6,182,212,0.25);">
                   <div class="ta-simple-tip">MySQL</div>
                 </div>
 
-                <!-- 14. Git (718, 185) -> (70.1%, 27.1%) -->
-                <div class="ta-planet-node" style="left:70.1%; top:27.1%; width:54px; height:54px; --glow:#f43f5e; --dur:4.5s; --dx:-3px; --dy:-4px;">
-                  <img src="assets/solar_sprites/angular.png" alt="Git" class="ta-planet-sprite">
+                <!-- 14. Git (718, 185) -->
+                <div class="ta-planet-hotspot" style="left:70.1%; top:27.1%; width:56px; height:56px; --glow:#f43f5e; --glow-alpha:rgba(244,63,94,0.25);">
                   <div class="ta-simple-tip">Git</div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -8261,8 +8245,8 @@
       <style>
         .ta-wrap {
           display: grid;
-          grid-template-columns: 1.15fr 0.85fr;
-          gap: 40px;
+          grid-template-columns: 1fr 1.32fr;
+          gap: 44px;
           align-items: center;
         }
         .ta-left {
@@ -8336,7 +8320,7 @@
         }
 
         /* =========================================
-           1:1 DITTO SOLAR SYSTEM ARTWORK + MOVABLE PLANETS
+           1:1 DITTO CLEAN SOLAR SYSTEM ARTWORK (WIDE & CRISP)
            ========================================= */
         .ta-right {
           position: relative;
@@ -8344,15 +8328,14 @@
           align-items: center;
           justify-content: center;
           width: 100%;
-          min-height: 560px;
         }
 
         .ta-solar-showcase {
           position: relative;
           width: 100%;
-          max-width: 600px;
-          height: 560px;
-          border-radius: 26px;
+          max-width: 720px;
+          aspect-ratio: 1024 / 682;
+          border-radius: 24px;
           overflow: hidden;
           background: #050814;
           border: 1.5px solid rgba(0, 245, 255, 0.35);
@@ -8360,7 +8343,7 @@
             0 25px 75px rgba(0, 0, 0, 0.9),
             0 0 40px rgba(0, 245, 255, 0.18),
             inset 0 0 50px rgba(0, 245, 255, 0.05);
-          perspective: 1200px;
+          perspective: 1000px;
           transform-style: preserve-3d;
           user-select: none;
           transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -8374,23 +8357,23 @@
             inset 0 0 70px rgba(0, 245, 255, 0.1);
         }
 
-        /* EXACT DITTO IMAGE BASE */
+        /* EXACT 1:1 DITTO CLEAN BASE IMAGE - ZERO DUPLICATES */
         .ta-solar-base-img {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          object-position: center;
+          object-fit: fill;
           pointer-events: none;
           z-index: 1;
+          display: block;
         }
 
-        /* Specular Starlight Glare */
+        /* Specular Starlight Glare following mouse */
         .ta-solar-glare {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle 350px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 245, 255, 0.16), transparent 70%);
+          background: radial-gradient(circle 350px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 245, 255, 0.18), transparent 70%);
           pointer-events: none;
           z-index: 2;
           mix-blend-mode: screen;
@@ -8401,8 +8384,8 @@
           opacity: 1;
         }
 
-        /* INTERACTIVE PLANETS LAYER */
-        .ta-solar-planets-layer {
+        /* INTERACTIVE HOTSPOTS LAYER */
+        .ta-solar-hotspots {
           position: absolute;
           inset: 0;
           width: 100%;
@@ -8411,52 +8394,58 @@
           pointer-events: none;
         }
 
-        /* MOVABLE PLANET NODE */
-        .ta-planet-node {
+        /* CLEAN PLANET HOTSPOT (NO DUPLICATE SPRITE IMAGE) */
+        .ta-planet-hotspot {
           position: absolute;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
           pointer-events: auto;
           cursor: pointer;
-          transform: translate(-50%, -50%);
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+          transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+          z-index: 10;
         }
 
-        /* Planet floating animation */
-        .ta-planet-sprite {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          filter: drop-shadow(0 0 6px var(--glow, #00f5ff));
-          transition: filter 0.25s ease, transform 0.25s ease;
-          animation: planet-orbit-float var(--dur, 5s) ease-in-out infinite alternate;
+        .ta-planet-hotspot::before {
+          content: '';
+          position: absolute;
+          inset: -4px;
+          border-radius: 50%;
+          border: 1.5px solid transparent;
+          opacity: 0;
+          transition: opacity 0.25s ease, transform 0.25s ease;
         }
 
-        @keyframes planet-orbit-float {
-          0% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(var(--dx, 3px), var(--dy, -4px)) scale(1.04); }
-          100% { transform: translate(calc(-1 * var(--dx, 3px)), calc(-1 * var(--dy, -4px))) scale(0.97); }
+        .ta-planet-hotspot:hover {
+          transform: translate(-50%, -50%) scale(1.1);
+          backdrop-filter: brightness(1.35) contrast(1.15) saturate(1.25);
+          -webkit-backdrop-filter: brightness(1.35) contrast(1.15) saturate(1.25);
         }
 
-        .ta-planet-node:hover {
-          transform: translate(-50%, -50%) scale(1.3) !important;
-          z-index: 50;
-        }
-        .ta-planet-node:hover .ta-planet-sprite {
-          animation-play-state: paused;
-          filter: drop-shadow(0 0 16px var(--glow, #00f5ff)) drop-shadow(0 0 28px var(--glow, #00f5ff)) brightness(1.22);
+        .ta-planet-hotspot:hover::before {
+          opacity: 1;
+          border-color: var(--glow, #00f5ff);
+          box-shadow: 0 0 20px var(--glow, #00f5ff), inset 0 0 14px var(--glow, #00f5ff);
+          background: radial-gradient(circle, var(--glow-alpha, rgba(0, 245, 255, 0.2)) 0%, transparent 75%);
+          animation: hotspot-pulse 2s ease-in-out infinite alternate;
         }
 
-        /* SIMPLE, CHHOTA SA & CLEAN TOOLTIP */
+        @keyframes hotspot-pulse {
+          0% { transform: scale(0.96); opacity: 0.8; }
+          100% { transform: scale(1.06); opacity: 1; }
+        }
+
+        /* CHHOTA SA & CLEAN TOOLTIP - ON HOVER ONLY */
         .ta-simple-tip {
           position: absolute;
-          bottom: calc(100% + 6px);
+          bottom: calc(100% + 8px);
           left: 50%;
           transform: translateX(-50%) translateY(4px);
-          background: rgba(5, 8, 22, 0.95);
+          background: rgba(5, 8, 22, 0.94);
           border: 1px solid var(--glow, #00f5ff);
-          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.85), 0 0 10px var(--glow, #00f5ff);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.9), 0 0 12px var(--glow, #00f5ff);
           padding: 3px 9px;
           border-radius: 6px;
           font-size: 11px;
@@ -8470,14 +8459,15 @@
           backdrop-filter: blur(8px);
           z-index: 100;
         }
-        .ta-planet-node:hover .ta-simple-tip,
-        .ta-sun-node:hover .ta-simple-tip {
+
+        .ta-planet-hotspot:hover .ta-simple-tip,
+        .ta-sun-hotspot:hover .ta-simple-tip {
           opacity: 1;
           transform: translateX(-50%) translateY(0);
         }
 
-        /* Central GitHub Sun */
-        .ta-sun-node {
+        /* Central GitHub Sun Hotspot */
+        .ta-sun-hotspot {
           position: absolute;
           top: 49.5%;
           left: 49.4%;
@@ -8487,18 +8477,23 @@
           pointer-events: auto;
           cursor: pointer;
           border-radius: 50%;
-          z-index: 10;
+          z-index: 6;
         }
-        .ta-sun-halo-glow {
+        .ta-sun-halo {
           position: absolute;
-          inset: -12px;
+          inset: -10px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(0, 245, 255, 0.4) 0%, transparent 70%);
-          animation: sun-breathe 4s ease-in-out infinite alternate;
+          background: radial-gradient(circle, rgba(0, 245, 255, 0.35) 0%, transparent 70%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        .ta-sun-hotspot:hover .ta-sun-halo {
+          opacity: 1;
+          animation: sun-breathe 2s ease-in-out infinite alternate;
         }
         @keyframes sun-breathe {
-          0% { transform: scale(0.9); opacity: 0.4; }
-          100% { transform: scale(1.15); opacity: 0.9; }
+          0% { transform: scale(0.95); opacity: 0.6; }
+          100% { transform: scale(1.1); opacity: 1; }
         }
 
         @media (max-width: 960px) {
@@ -8506,21 +8501,8 @@
             grid-template-columns: 1fr;
             gap: 40px;
           }
-          .ta-right {
-            min-height: 480px;
-          }
           .ta-solar-showcase {
             max-width: 100%;
-            height: 480px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .ta-right {
-            min-height: 380px;
-          }
-          .ta-solar-showcase {
-            height: 380px;
           }
         }</style>
     
